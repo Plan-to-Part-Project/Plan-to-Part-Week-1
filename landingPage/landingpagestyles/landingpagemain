@@ -1,0 +1,274 @@
+* {
+	margin: 0;
+	padding: 0;
+	
+}
+html {
+	background-color:#FFFFFF;
+}
+
+body {	
+    font-size: 100%;
+    width: 99%;                     /* changed from 800 pixels */
+   /* max-width: 1024px;*/
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+a{
+	color:white;
+	text-decoration: none;
+}
+a:focus, a:hover {
+	font-style: italic;
+}
+
+/* the styles for the header */
+header {
+	padding: 1.5em 1em 1.5em 1em;
+	background-color: #FFFFFF;
+}
+
+
+/* Style the navbar */
+#topnavbar {
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+/* Navbar links */
+#topnavbar a {
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 110%;
+  text-decoration: none;
+}
+
+
+
+#topnavbar img {
+	float: left;
+	display: block;
+	width: 180px;
+	height: 60px;
+	
+}
+
+#topnavbar table{
+	float: right;
+	background-color: #154E89;
+	width: 180px;
+	height: 60px;
+	
+}
+
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+
+/* the styles for the main content */
+main {
+	text-align: left;
+	font-size: 160%
+}
+
+main p {
+	padding-bottom: 1em;
+}
+main blockquote {
+	padding: 0 2em;
+	font-style: italic;
+}
+
+section {
+	width: 525px;
+	float: left;
+	padding: 0 20px 20px 20px;
+}
+section h1 {
+	font-size: 150%;
+	padding: 1em 0 .25em 0;
+	margin: 0;               
+}
+
+article {
+	padding: 1em 0;
+	float: left;
+	font-size: 120%;
+}
+
+article ul {
+	padding: 0 0 .25em 1.25em;
+}
+article li {
+	padding-bottom: .35em;
+}
+
+article img {
+	float: right;
+	margin: 0em 2em 1em 2em;
+	width:380px;
+	height:340px;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.slideshow > div {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: 240px;
+    max-height: 100%;
+}
+
+.slideshow > div > img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+table {
+	margin: 0;
+	padding: 0 2em;
+	
+}/* Place the navbar at the bottom of the page, and make it stick */
+.navbar {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  text-align:center; 
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+	display: inline-block;
+  color: #000000;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+/* the styles for the footer */
+footer {
+	background-color: #FFFFFF;
+	clear: both;
+
+}
+footer p {
+	text-align: center;
+	color: #000000;
+	padding: 1em 0;
+}

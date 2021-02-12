@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="Style/Digital.css">
+	<link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/5a4ae6e4-c67f-4814-ae9f-42123000f196%2Ffavicon-32x32.png?v=1601518716705"
+      type="image/x-icon"
+    />
+</head>
+<header>
+<nav class="navbar">
+      <div class="inner-width">
+        <a href="https://web.njit.edu/~an543/PLANTOPART/homePage.html"><img src="Icons/PlanToPart.PNG" height=85" width="250" class="logo"/></a>
+        <button class="menu-toggler">
+        </button>
+        <!-- Where all the nav bar will list -->
+        <div class="navbar-menu">
+          <a href="https://web.njit.edu/~an543/PLANTOPART/homePage.html"> Home</a>
+          <a href="https://web.njit.edu/~ha382/IT491/html5up-hyperspace/#"> Plans</a>
+          <a href="https://web.njit.edu/~htl5/PlanToPart/contactUs.html"> Contact</a>
+          <a href="#"> About Us</a>
+          <a href="#"> Security</a>
+          <a href="#"> Helps</a>
+          <a href="https://web.njit.edu/~vvk28/download/Plantopart/Loginpage.html" id="login"> Login </a>
+        </div>
+      </div>
+    </nav>
+</header>
+<!-- Trigger/Open The Modal 
+<button id="myBtn">Open Modal</button>
+-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p><center><b>No Place Like Home</b></center></p>
+	<p><center>Home is where we feel safe and can always go to relax to escape from the stress of the world. What is your residence status?</center></p>
+	<div class="container">
+	<div class="boxed">
+		<input type="checkbox" id="Option1" name="Option1" value="HomeOwner">
+		<img src="Icons/House.png" width=40/>
+		<label for="Option1">I am currently a homeowner</label><br>
+	</div>
+	<div class="boxed">
+		<input type="checkbox" id="Option2" name="Option2" value="rent">
+		<img src="Icons/Lease.png" width=40/>
+		<label for="Option2"> I currently rent or lease my residence </label><br>
+	</div>
+	<div class="boxed">
+		<input type="checkbox" id="Option3" name="Option3" value="Other">
+		<label for="Option3">Other</label><br><br>
+	</div>
+	<form action="Employment.html">
+	<center><button type="submit" class="button">Continue</button></center>
+	</form>
+  </div>
+    <button onclick="goBack()" class="button">Go Back</button>
+	<center><div class= "progress-bar" style="--width:25"
+	data-label="2/8"></div></center>
+</div>
+</div>
+<footer>
+      <div class="inner-width">
+        <div class="policy">
+          <a class="bt" href="#">About Us</a>
+          <a class="bt" href="#">Plans</a>
+          <a class="bt" href="#">Privacy</a>
+        </div>
+        <div class="copyright">
+          &copy; |<a href="#">Plan To Part </a>
+        </div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+</html>

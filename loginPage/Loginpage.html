@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+<head>
+    <title>PLAN TO PART - SIGN IN</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/bde716c8-a7be-413a-8d34-d62a703710c6%2Ficon.png?v=1603746656779"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="Style/style.css">
+</head>
+  <body>
+       
+        <nav class="navbar">
+                <div class="inner-width">
+                  <a href="#" class="logo"></a>
+				  
+                  <a href="https://web.njit.edu/~an543/PLANTOPART/homePage.html"> <img src = "../Images/logo.PNG" class= "logo"/> </a>
+                 
+       
+                </div>
+    </nav>
+            
+    <section class= "background">
+        <div class= "form-box">
+            <div class= "buttonbox">
+                <div id= "bcolor"></div>
+            <button type="button" class="buttonsize" onclick="Login()">Log In</button>
+            <button type="button" class="buttonsize" onclick="Signup()">Sign Up</button>
+            </div>
+            <form id="Login" class="input-group">
+            <input type= "text" class= "userinput" placeholder="Enter your Email" required>
+            <input type= "text" class= "userinput" placeholder="Enter your password" required>
+            <input type= "checkbox" class="checkbox"> <span> Remember me  </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><a href="#">Forgot Password?</a></span>
+            
+            <a href="https://web.njit.edu/~an543/PLANTOPART/homePage.html" class="submitbutton"> <!--<button type="submit" class="submitbutton" > Log In</button>  --> <p> Log In </p> </a>
+        </form>
+        
+        <form id="Signup" class="input-group">
+            <input type= "text" class= "userinput" placeholder="Enter your First Name" required>
+            <input type= "text" class= "userinput" placeholder="Enter your Last Name" required>
+            <input type= "text" class= "userinput" placeholder="Enter your Email" required>
+            <input type= "text" class= "userinput" placeholder="Enter your password" required>
+            <input type= "checkbox" class="checkbox"> <span>I agree to the <a href="#">terms & conditions</a><td></td></span>
+			
+			 <a href=" https://web.njit.edu/~law25/PLANTOPART/Introduction.html 
+" class="submitbutton">
+        <!--    <button type="submit" class="submitbutton">Sign Up</button> --> <p> Sign Up </p>   </a>
+			
+			
+			
+        </form>
+    </div>
+      <div class = "footer">
+         &copy; | 2020, <a href="#">Plan To Part </a>
+      </div>
+      
+        </section>
+  
+        <script>
+        var x= document.getElementById("Login");
+        var y= document.getElementById("Signup");
+        var z= document.getElementById("bcolor");
+
+        function Signup(){
+            x.style.left= "-400px";
+            y.style.left= "50px";
+            z.style.left= "110px";
+        }
+        function Login(){
+            x.style.left= "50px";
+            y.style.left= "450px";
+            z.style.left= "0";
+        }
+        </script>
+    
+  </body>
+</html>
+
+
+

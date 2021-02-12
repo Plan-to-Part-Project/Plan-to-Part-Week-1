@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="Style/Introstyle.css">
+	<link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/5a4ae6e4-c67f-4814-ae9f-42123000f196%2Ffavicon-32x32.png?v=1601518716705"
+      type="image/x-icon"
+    />
+</head>
+<header>
+ <nav class="navbar">
+      <div class="inner-width">
+        <a href="#" class="logo"></a>
+        <button class="menu-toggler">
+        </button>
+        <!-- Where all the nav bar will list -->
+        <div class="navbar-menu">
+          <a href="https://web.njit.edu/~an543/PLANTOPART/homePage.html"> Home</a>
+          <a href="https://web.njit.edu/~ha382/IT491/html5up-hyperspace/#"> Plans</a>
+          <a href="https://web.njit.edu/~htl5/PlanToPart/contactUs.html"> Contact</a>
+          <a href="#"> About Us</a>
+          <a href="#"> Security</a>
+          <a href="#"> Helps</a>
+          <a href="https://web.njit.edu/~vvk28/download/Plantopart/Loginpage.html" id="login"> Login </a>
+        </div>
+      </div>
+    </nav>
+</header>
+<body>
+<div id="logo"> 
+	<a href="https://web.njit.edu/~an543/PLANTOPART/homePage.html"> <img src="Icons/PlanToPart.PNG"></a>
+</div>
+<body>
+</body>
+
+<!-- Trigger/Open The Modal 
+<button id="myBtn">Your Journey Awaits</button>
+-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+ <!--
+    <span class="close">&times;</span>
+--->
+	<center><img src="Icons/PlanToPart.PNG" height="60"/></center>
+	<p><center>Welcome to Plan to Part</center></p>
+	<p>Thank you for choosing us to help with such a sensitive matter.
+	We will work diligently to make sure you are satisfied with our service.</p>
+	<p>We love to get to know you some more. We will ask some
+general questions to help personalize your experience with
+Plan to Part. Your Journey awaits!</p>
+<div class="container">
+<form action="Digital.html">
+<center><button type="submit" class="button">Let's get going!</button></center>
+  </div>
+ </form>
+</div>
+</div>
+ <footer>
+      <div class="inner-width">
+        <div class="policy">
+          <a class="bt" href="#">About Us</a>
+          <a class="bt" href="#">Plans</a>
+          <a class="bt" href="#">Privacy</a>
+        </div>
+        <div class="copyright">
+          &copy; |<a href="#">Plan To Part </a>
+        </div>
+
+
+<script>
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+/*
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+*/
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+</body>
+</html>

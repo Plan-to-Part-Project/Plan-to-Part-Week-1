@@ -1,0 +1,188 @@
+<style>
+/* Navigation Bar*/
+.navbar {
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  padding: 30px 0;
+  top: 0;
+  z-index: 999;
+  transition: 0.3s linear;
+}
+
+.inner-width {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.navbar .inner-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-toggler {
+  background: black;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  z-index: 999;
+  display: none;
+}
+.menu-toggler span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  position: relative;
+  transition: 0.3s linear;
+}	
+
+.navbar-menu a{
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 30px;
+  transition: 0.2s linear;
+}
+
+.navbar-menu a:hover {
+  color: #48dbfb !important;
+}
+
+.sticky {
+  background-color: white;
+  padding: 18px 0;
+}
+
+.sticky .navbar-menu a {
+  color: black;
+}
+
+.sticky .menu-toggler span {
+  background-color: #111;
+}
+.logo{
+position:absolute;
+left:0;
+top:0;
+}
+
+*font-family: 'Lora', serif;
+
+
+/* the modal (background) */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed; /* stay in place */
+  z-index: 1; /* sit on top */
+  padding-top: 0px; /* location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* full width */
+  height: 100%; /* full height */
+  overflow: auto; /* enable scroll if needed */
+  background-color: rgb(0,0,0); /* fallback color */
+  background-color: rgba(0,0,0,0.4); /* black w/ opacity */
+  font-size: 20px;
+}
+
+/* modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 45%;
+}
+
+/*styles the progress bar*/
+.progress-bar{
+	position:relative;
+	width:300px;
+	height: 3em;
+	background-color: #111;
+	border-radius: 1.5em;
+	color: white;
+}
+
+.progress-bar::before{
+	content: attr(data-label);
+	display:flex;
+	align-items:center;
+	position: absolute;
+	left: .5em;
+	top: .5em;
+	bottom:.5em;	
+	width:calc(var(--width,0)*1%);
+	min-width: 2rem;
+	max-width: calc(100%-1em);
+	background-color: #069;
+	border-radius: 1em;
+	padding: 1em;
+}
+
+.boxed {
+  border: 1px solid black ;
+  margin: 10px;
+  padding:20px;
+}
+
+/*adjust the size of the checkbox*/
+input[type=checkbox] {
+    width:20px;
+	height:20px;
+}
+
+body {
+ background: url("../Images/journey.PNG");
+ background-size: cover;
+ background-repeat: no-repeat;
+ width:100%;
+ height:100%;
+}
+/*For the submit and back button*/
+.button {
+  background-color: #48dbfb; /* blue */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size:16px;
+  border-radius: 12px;
+}
+
+footer {
+  color: white;
+  padding:0px;
+  text-align: center;
+  position:0;
+  bottom:0;
+  width:100%;
+}
+
+.copyright {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color:white;
+}
+.policy a {
+  font-family: "Lora", serif;
+  font-size: 18px;
+  padding: 0 3px 50px 3px;
+  color: white;
+}
+
+.copyright a {
+  font-size: 18px;
+  color: #48dbfb;
+  font-weight: 500px;
+  margin-top: 10px;
+}
+
+
+</style>

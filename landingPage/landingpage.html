@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name = "viewport" content="width=device-width, initial-scale=1">
+		<title>PLAN TO PART</title>
+		<link rel="shortcut icon" href="landingpageimages/favicon.ico">
+		<link rel="stylesheet" href="landingpagestyles/landingpagemain.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+
+
+	</head>
+	<body>
+	<header>
+	<div id="topnavbar">
+		<a href="homePage.html">
+		<img src="landingpageimages/ptplogo.png"  alt="Plan To Part Logo">
+		</a>
+		<table>
+			<tr>
+				<th><a href="https://loginpage-plantopart.glitch.me/register.html">Sign Up Free Now</a></th>
+			</tr>
+		</table>
+	</div>
+	</header>
+	
+<script>
+window.onscroll = function() {myFunction()};
+
+var topnavbar = document.getElementById("topnavbar");
+var sticky = topnavbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    topnavbar.classList.add("sticky")
+  } else {
+    topnavbar.classList.remove("sticky");
+  }
+}
+</script>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="landingpageimages/slideimage1.jpg" alt="Senior couple reading book in park" style="width:100%">
+    <div class="text">If not now, when?</div>
+  </div>
+  
+ <!-- <a href="https://depositphotos.com/category/business-finance.html">Senior couple reading book in park - null</a> -->
+
+  <div class="mySlides fade">
+    <img src="landingpageimages/slideimage2.jpg" alt="Portrait of smiling parents with daughter and little labrador puppy in forest" style="width:100%">
+    <div class="text">It’s about more than money</div>
+  </div>
+  
+ <!-- <a href="https://depositphotos.com/category/decoration.html">Portrait of smiling parents with daughter and little labrador puppy in forest - null</a> -->
+
+  <div class="mySlides fade">
+    <img src="landingpageimages/slideimage3.jpg"  alt="Multiethnic friends taking selfie on smartphone while resting on green lawn together"style="width:100%">
+    <div class="text"> Let's get started with this quick and easy plan of action that covers everything</div>
+  </div>
+  
+ <!-- <a href="https://depositphotos.com/category/holidays-events.html">Multiethnic friends taking selfie on smartphone while resting on green lawn together - null</a> -->
+
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+var slides,dots;
+
+function showSlides() {
+    var i;
+    slides = document.getElementsByClassName("mySlides");
+    dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+function plusSlides(position) {
+    slideIndex +=position;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    else if(slideIndex<1){slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
+
+function currentSlide(index) {
+    if (index> slides.length) {index = 1}
+    else if(index<1){index = slides.length}
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[index-1].style.display = "block";  
+    dots[index-1].className += " active";
+}
+</script>
+
+
+	<main>
+		<article>
+			<img src="landingpageimages/ptpsignupimage.jpg" alt="Plan To Part IMG2">
+			<h1>What is Plan to Part?</h1>
+			<br>
+			<p><b>Plan to Part</b> is a software service powered by 
+			real people that help you plan your end of life
+			celebration and affairs. Through our simple web interface,
+			Plan to Part takes your preferences
+			to deliver a modern real-world plan.</p>
+			<ul>
+					<li>Comprehensive step-by-step guide</li>
+					<li>Safe and secure cloud storage</li>
+					<li><em>Future Forward</em> sends your love after you're gone</li>
+			</ul>
+			
+			<br>
+			
+			<table id="learnmore">
+		<tr>
+			<th><a href="../homePage.html">Learn More</a></th>
+		</tr>
+		</table>
+	<br>
+		</article>
+		
+		<table style="width:100%">
+		<tr>
+			<th><p>Just peace of mind. No stress, no chaos.</p>
+				<p>Leave behind more than loved ones, financial assets and real estate.</p>
+				<p>Make your end-of-life plans about fond memories, meaningful keepsakes, and family traditions.</p></th>
+			<th><blockquote>&ldquo;The idea is not to live forever, but to create something that will.&rdquo;<br>—Andy Warhol</blockquote></th>
+		</tr>
+		</table>
+	</main>
+	
+	<br>
+	<br>
+	<br>
+	
+	<div class="navbar">
+		<a href="../homePage.html">About Us</a>
+		<a href="../Dashboard_Sidebar/Membership_Section/membership.html">Plans</a>
+		<a href="#">Privacy Policy</a>
+	</div>
+	<footer>
+		<p>&copy; | 2020, <a href="../homePage.html">Plan To Part</a></p>
+	</footer>
+</body>
+</html>

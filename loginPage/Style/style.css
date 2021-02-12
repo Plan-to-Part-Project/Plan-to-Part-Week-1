@@ -1,0 +1,134 @@
+*
+{
+    margin:0;
+    padding: 0;
+    font-family: sans-derif;
+    font-size: 15px;
+
+}
+
+.logo{
+    position: absolute;
+    float: left;
+    width:  250px;
+    height: 100px;
+    background-repeat:   no-repeat;
+}
+
+.background{
+    height: 100%;
+    width: 100%;
+    background-image: url(https://cdn.glitch.com/bde716c8-a7be-413a-8d34-d62a703710c6%2Fimg19.jpg?v=1603304469440);
+    background-position: relative;
+    background-size: cover;
+    position: absolute;
+
+}
+.form-box{
+    width:350px;
+    height: 390px;
+    position: absolute;
+    right: 10%;
+    bottom: 200px;
+    margin: 6% auto;
+    background: #ffff;
+    padding: 5px;
+    overflow: hidden;     
+}
+.buttonbox{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.buttonsize{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#bcolor{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #25A1F9, #2851FA);
+    border-radius: 30px;
+    transition: .5s;
+}
+.input-group{
+    top: 30%;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.userinput{
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #9999;
+    outline: none;
+    background: transparent;
+}
+.submitbutton{
+    width: 85%;
+    padding: 13px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #25A1F9, #2851FA);
+    border: 0;
+    outline: none;
+    border-radius: 45px;
+}
+
+.submitbutton a {
+	width: 85%;
+    padding: 13px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #25A1F9, #2851FA);
+    border: 0;
+    outline: none;
+    border-radius: 45px;
+
+}
+.submitbutton p {
+	
+	margin-left: 88px;
+	text-decoration: bold;
+}
+
+.checkbox{
+    margin: 30px 10px 30px 0;
+}
+
+span{
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    bottom: 68px;
+    position: absolute;
+}
+#Login{
+    left: 50px;
+}
+#Signup{
+    left: 450px;
+}
+
+  
+.footer {
+  margin-left: 50%;
+  width: 100%;
+  margin-top: 700px;
+  
+}

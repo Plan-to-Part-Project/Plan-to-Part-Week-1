@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAN TO PART</title>
+	 <link
+      rel="shortcut icon"
+      href="icons/icon.png"
+      type="image/x-icon"
+    />
+	 <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.cs"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="js/homeScript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+	 <link rel="stylesheet" href="css/homeStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+		<a href="https://web.njit.edu/~an543/PLANTOPART/homePage.html">
+		<img src="icons/icon.png"  alt="Plan To Part Logo" >
+		</a>
+      </div>
+	  
+      <div class="right_area">
+	  
+	  <a href="#" class="logout_btn">Logout</a>
+	  <a href="#" >Helps</a>
+	  <a href="#" >Security</a>
+	   <a href="#">About Us</a>
+	   <a href="#" >Contact</a>
+	   <a href="#" >Plans</a>
+		<a href="#" >Home</a>
+	    
+      </div>
+	  
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <img src="1.png" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fas fa-cogs"></i><span>Personal Info & ID's</span></a>
+        <a href="#"><i class="fas fa-table"></i><span>Home & Property</span></a>
+        <a href="file:///C:/Users/hanhl/OneDrive/Desktop/Dashboard%20Sidebar%20-%20Plan%20To%20Part/financial.html"><i class="fas fa-th"></i><span>Financial</span></a>
+        <a href="#"><i class="fas fa-info-circle"></i><span>Social Network</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Health</span></a>
+		<a href="#"><i class="fas fa-sliders-h"></i><span>Legal</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+
+
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="icons/Legal.png" class="profile_image" alt="">
+        <h4>New User</h4>
+      </div>
+      <a href="#"><i class="fas fa-desktop"></i>
+	  <span>Dashboard</span></a>
+      <a href="#"><i class="fas fa-cogs"></i>
+	  <span>Personal Info & ID's</span></a>
+      <a href="#"><i class="fas fa-table"></i>
+	  <span>Home & Property</span></a>
+      <a href="#"><i class="fas fa-th"></i>
+	  <span>Financial</span></a>
+      <a href="#"><i class="fas fa-info-circle"></i>
+	  <span>Social Network</span></a>
+      <a href="#"><i class="fas fa-sliders-h"></i>
+	  <span>Health</span></a>
+	  <a href="#"><i class="fas fa-drafting-compass"></i>     
+	  
+	  <span>Legal</span></a>
+    </div>
+    <!--sidebar end-->
+
+<!-- Dashboard end -->
+    <div class="list" id="listmenu">
+       <form class="menu">
+           <span style="font-size: 20px; margin-left: 700px; margin-top: 400px;">Add to your profile</span>
+        
+        <div class="inner-menu">
+        <i class="fas fa-plus"></i>
+        <button style="margin-left:500px; margin-top: 100px; background-color: white;  width: 700px; height: 70px; color:green; text-align: left; font-size: 18px;
+        " class="open-button" onclick="openBank()">&nbsp;&nbsp;<i class="fas fa-plus" ></i>&nbsp; &nbsp; Banks &nbsp;&nbsp;</button>
+        </div>
+        <div class="bank" id="bankForm" style="display: none; 
+        margin-left: 515px;
+        text-align: left;        
+        height: 500px;
+        width: 600px;
+        margin-top: 20px;
+        border: 3px solid #f1f1f1;">
+        <form class ="bankInfo">
+             <h1 style="text-align:center; margin-top: 30px;">Bank Account</h1>
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;" for="yourBank"><b>Your bank:</b></label>
+             <input  style="margin-left: 155px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="text" placeholder="Enter Your Bank" name="bank" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;" for="acctType"><b>Type of account:</b></label>
+             <input  style="margin-left: 120px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Type of Account" name="type" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;"for="acctNumber"><b>Account number:</b></label>
+             <input  style="margin-left: 115px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Your Account Number" name="account" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:15px;"for="contactPerson"><b>Personal contact (if applicable):</b></label>
+             <input  style="margin-left: 20px; margin-top:15px;width: 200px; height: 30px;"type="text" placeholder="" name="contact">
+             </div>
+    
+             <div class="inputBox"></div>
+             <label  style="margin-left: 50px; margin-top:25px;" for="notes"><b>Notes:</b></label>
+             <input  style="margin-left: 195px; margin-top:25px;width: 200px; height: 30px;" type="textarea" placeholder="" name="note" >
+             
+             <br><button style="margin-left: 200px; margin-top:45px; height: 30px; width: 60px; border: none;"type="button" class="btn cancel" onclick="closeBank()"><b>Cancel</b></button>
+             <button style="margin-left: 80px; margin-top:15px; height: 30px; width: 60px; background-color: lightgreen; border:lightgreen;"type="submit" class="btn"><b>SAVE</b></button>
+             
+             </div>
+            </form>
+        </div>
+
+        <div class="inner-menu">
+            <i class="fas fa-plus"></i>
+            <button style="margin-left:500px; margin-top: 20px; background-color: white;  width: 700px; height: 70px; color:green; text-align: left; font-size: 18px;
+            " class="open-button" onclick="openAsset()">&nbsp;&nbsp;<i class="fas fa-plus" ></i>&nbsp; &nbsp; Assets &nbsp;&nbsp;</button>
+        </div>      
+       <div class="asset" id="assetForm" style="display: none; 
+        margin-left: 515px;
+        text-align: left;        
+        height: 500px;
+        width: 600px;
+        margin-top: 20px;
+        border: 3px solid #f1f1f1;">
+        <form class ="assetInfo">
+             <h1 style="text-align:center; margin-top: 30px;">Assets</h1>
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;" for="yourAsset"><b>Asset name:</b></label>
+             <input  style="margin-left: 155px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="text" placeholder="Enter Your Asset Name" name="asset" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;" for="acctType"><b>Type of account:</b></label>
+             <input  style="margin-left: 120px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Type of Account" name="type" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;"for="account"><b>Account number:</b></label>
+             <input  style="margin-left: 115px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Account Number" name="account" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:15px;"for="contactPerson"><b>Personal contact (if applicable):</b></label>
+             <input  style="margin-left: 20px; margin-top:15px;width: 200px; height: 30px; "type="text" placeholder="" name="contact">
+             </div>
+    
+             <div class="inputBox"></div>
+             <label  style="margin-left: 50px; margin-top:25px;" for="notes"><b>Notes:</b></label>
+             <input  style="margin-left: 195px; margin-top:25px;width: 200px; height: 30px; " type="textarea" placeholder="" name="note" >
+             
+             <br><button style="margin-left: 200px; margin-top:45px;height: 30px; width: 60px; border: none;"type="button" class="btn cancel" onclick="closeAsset()"><b>Cancel</b></button>
+             <button style="margin-left: 80px; margin-top:15px;height: 30px; width: 60px; background-color: lightgreen; border:lightgreen;"type="submit" class="btn"><b>SAVE</b></button>
+             
+             </div>
+            </form>
+        </div>
+        
+   
+        <div class="inner-menu">
+           
+            <button style="margin-left:518px; margin-top: 20px; background-color: white; width: 700px; height: 70px; color:green;text-align: left; font-size: 18px; 
+            " class="open-button" onclick="openCard()">&nbsp;&nbsp;<i class="fas fa-plus" ></i>&nbsp; &nbsp; Credit Cards &nbsp;&nbsp;</button>
+        </div>
+        <div class="cards" id="cardForm" style="display: none; 
+        margin-left: 515px;
+        text-align: left;        
+        height: 500px;
+        width: 600px;
+        margin-top: 20px;
+        border: 3px solid #f1f1f1;">
+        <form class ="cardInfo">
+             <h1 style="text-align:center; margin-top: 30px;">Credit Cards</h1>
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;" for="issuer"><b>Issuer: </b></label>
+             <input  style="margin-left: 155px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="text" placeholder="Enter Card Issuer" name="issuer" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;" for="cardName"><b>Name on the card:</b></label>
+             <input  style="margin-left: 80px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Name on the Card" name="name" required>
+             </div>
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;"for="cardNumber"><b>Card number:</b></label>
+             <input  style="margin-left: 105px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter card Number" name="cardNumber" required>
+             </div>
+             <div class="inputBox">
+                <label  style="margin-left: 50px; margin-top:25px;"for="cvvNumber"><b>CVV number:</b></label>
+                <input  style="margin-left: 105px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter CVV number" name="cvvNumber" required>
+                </div>
+
+             <div class="inputBox"></div>
+             <label  style="margin-left: 50px; margin-top:25px;" for="notes"><b>Notes:</b></label>
+             <input  style="margin-left: 155px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="textarea" placeholder="" name="note" >
+             
+             <br><button style="margin-left: 200px; margin-top:45px;height: 30px; width: 60px; border: none;"type="button" class="btn cancel" onclick="closeCard()"><b>Cancel</b></button>
+             <button style="margin-left: 80px; margin-top:15px;height: 30px; width: 60px; background-color: lightgreen; border:lightgreen;"type="submit" class="btn"><b>SAVE</b></button>
+             
+             </div>
+            </form>
+        </div>
+        
+
+
+        <div class="inner-menu">
+            <i class="fas fa-plus"></i>
+            <button style="margin-left:500px; margin-top: 20px; background-color: white;  width: 700px; height: 70px; color:green; text-align: left; font-size: 18px;
+            " class="open-button" onclick="openLoan()">&nbsp;&nbsp;<i class="fas fa-plus" ></i>&nbsp; &nbsp; Loans &nbsp;&nbsp;</button>
+        </div>
+        <div class="loans" id="loanForm" style="display: none; 
+        margin-left: 515px;
+        text-align: left;        
+        height: 500px;
+        width: 600px;
+        margin-top: 20px;
+        border: 3px solid #f1f1f1;">
+        <form class ="loanInfo">
+             <h1 style="text-align:center; margin-top: 30px;">Loans</h1>
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;" for="loan"><b>Loan name: </b></label>
+             <input  style="margin-left: 120px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="text" placeholder="Enter Loan Name" name="loan" required>
+             </div>
+    
+             <div class="inputBox">
+                <label  style="margin-left: 50px; margin-top:25px;" for="loanType"><b>Type of loan:</b></label>
+                <input  style="margin-left: 116px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Type of Loan" name="type" required>
+                </div>
+       
+    
+             <div class="inputBox">
+             <label  style="margin-left: 50px; margin-top:25px;"for="institution"><b>Financial Institution</b></label>
+             <input  style="margin-left: 65px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Financial Institution" name="institution" required>
+             </div>
+             <div class="inputBox">
+                <label  style="margin-left: 50px; margin-top:25px;"for="acctNumber"><b>Account number:</b></label>
+                <input  style="margin-left: 90px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Account Number" name="acctNumber" required>
+                </div>
+
+             <div class="inputBox"></div>
+             <label  style="margin-left: 50px; margin-top:25px;" for="notes"><b>Notes:</b></label>
+             <input  style="margin-left: 165px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="textarea" placeholder="" name="note" >
+             
+             <br><button style="margin-left: 200px; margin-top:45px;height: 30px; width: 60px; border: none;"type="button" class="btn cancel" onclick="closeLoan()"><b>Cancel</b></button>
+             <button style="margin-left: 80px; margin-top:15px;height: 30px; width: 60px; background-color: lightgreen; border:lightgreen;"type="submit" class="btn"><b>SAVE</b></button>
+             
+             </div>
+            </form>
+        </div>
+
+        <div class="inner-menu">
+            <i class="fas fa-plus"></i>
+            <button style="margin-left:500px; margin-top: 20px; background-color: white;   width: 700px; height: 70px; color:green; text-align: left; font-size: 18px;
+            " class="open-button" onclick="openIsr()">&nbsp;&nbsp;<i class="fas fa-plus" ></i>&nbsp; &nbsp; Life Insurance &nbsp;&nbsp;</button>
+        </div>
+    </div>
+    <div class="lifeisr" id="isrForm" style="display: none; 
+    margin-left: 515px;
+    text-align: left;        
+    height: 630px;
+    width: 600px;
+    margin-top: 20px;
+    border: 3px solid #f1f1f1;">
+    <form class ="isrInfo">
+         <h1 style="text-align:center; margin-top: 30px;">Life Insurance</h1>
+         <div class="inputBox">
+         <label  style="margin-left: 50px; margin-top:25px;" for="isr"><b>Name of insurance company: </b></label>
+         <input  style="margin-left: 45px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="text" placeholder="Enter Name of Insurance" name="isr" required>
+         </div>
+
+         <div class="inputBox">
+         <label  style="margin-left: 50px; margin-top:25px;" for="type"><b>Type of policy:</b></label>
+         <input  style="margin-left: 145px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Type of Policy" name="type" required>
+         </div>
+
+         <div class="inputBox">
+         <label  style="margin-left: 50px; margin-top:25px;"for="policyNumber"><b>Policy number:</b></label>
+         <input  style="margin-left: 145px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Policy Number" name="policyNumber" required>
+         </div>
+         <div class="inputBox">
+            <label  style="margin-left: 50px; margin-top:25px;"for="isrName"><b>Name of insurer person</b></label>
+            <input  style="margin-left: 95px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter name of insuere person" name="isrName" required>
+        </div>
+        <div class="inputBox">
+            <label  style="margin-left: 50px; margin-top:25px;"for="start"><b>Start date: </b></label>
+            <input  style="margin-left: 180px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="--/--/----" name="startDate" required>
+         </div>
+         <div class="inputBox">
+            <label  style="margin-left: 50px; margin-top:25px;"for="exp"><b>Expiration date: </b></label>
+            <input  style="margin-left: 145px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="--/--/----" name="expDate" required>
+         </div>
+         <div class="inputBox">
+            <label  style="margin-left: 50px; margin-top:25px;"for="vlD"><b>Value of Death</b></label>
+            <input  style="margin-left: 145px; margin-top:25px;width: 200px; height: 30px; text-align: center;"type="text" placeholder="Enter Value of Death" name="value" required>
+        </div>
+
+         <div class="inputBox"></div>
+         <label  style="margin-left: 50px; margin-top:25px;" for="notes"><b>Notes:</b></label>
+         <input  style="margin-left: 205px; margin-top:25px;width: 200px; height: 30px; text-align: center;" type="textarea" placeholder="" name="note" >
+         
+         <br><button style="margin-left: 200px; margin-top:45px;height: 30px; width: 60px; border: none;"type="button" class="btn cancel" onclick="closeIsr()"><b>Cancel</b></button>
+         <button style="margin-left: 80px; margin-top:15px;height: 30px; width: 60px; background-color: lightgreen; border:lightgreen;"type="submit" class="btn"><b>SAVE</b></button>
+         
+         </div>
+        </form>
+    </div>
+
+        <div class="inner-menu">
+            <i class="fas fa-plus"></i>
+            <button style="margin-left:500px; margin-top: 20px; background-color: white;  width: 700px; height: 70px; color:green; text-align: left; font-size: 18px;
+            " class="open-button" onclick="openForm()">&nbsp;&nbsp;<i class="fas fa-plus" ></i>&nbsp; &nbsp; Pension &nbsp;&nbsp;</button>
+        </div>
+
+         
+         
+         
+         
+         
+
+
+
+
+
+
+
+
+
+
+       </form>
+    </div>
+
+
+    <script>
+        function showHide(ele){
+            if((document.getElementById("bankForm")) != null){
+                if((document.getElementById("bankForm")) == "block"){
+                    document.getElementById("bankForm").style.display = "none";
+                }
+                else{
+                    document.getElementById("bankForm").style.display = "block";
+                }
+               
+            }
+        }
+
+        function openBank() {
+          document.getElementById("bankForm").style.display = "block";
+        }
+        
+        function closeBank() {
+          document.getElementById("bankForm").style.display = "none";
+        }
+        function openAsset() {
+          document.getElementById("assetForm").style.display = "block";
+        }
+        
+        function closeAsset() {
+          document.getElementById("assetForm").style.display = "none";
+        }
+        function openCard() {
+          document.getElementById("cardForm").style.display = "block";
+        }
+        
+        function closeCard() {
+          document.getElementById("cardForm").style.display = "none";
+        }
+        function openLoan() {
+          document.getElementById("loanForm").style.display = "block";
+        }
+        
+        function closeLoan() {
+          document.getElementById("loanForm").style.display = "none";
+        }
+        function openIsr() {
+          document.getElementById("isrForm").style.display = "block";
+        }
+        
+        function closeIsr() {
+          document.getElementById("isrForm").style.display = "none";
+        }
+        
+    </script>
+
+
+
+
+
+<!-- Footer--->
+
+    <footer>
+      <div class="inner-width">
+        <div class="policy">
+          <a class="bt" href="#">About Us</a>
+          <a class="bt" href="#">Plans</a>
+          <a class="bt" href="#">Privacy</a>
+        </div>
+
+        <div class="copyright">
+          &copy; | 2020, <a href="#">Plan To Part </a>
+        </div>
+
+        <div class="sm">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!--Go Back Top-->
+    <button class="goTop fas fa-arrow-up"></button>
+	
+	
+	
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+
+  </body>
+</html>
+
+
+
+
+
+  <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
