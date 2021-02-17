@@ -1,9 +1,40 @@
 <?php
-include("dbconnect.php");
+//DB CONNECTION
+include ( ".env" );
+
+$db_connect = mysqli_connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_NAME)or die();
+
+//Check the connection 
+if (mysqli_connect_errno())
+{
+	echo " Failed to connect to Server. Try Again!".mysqli_connect_error();
+}
+
+print "Successfully connected to MySQL.<br><br><br>";
+mysqli_select_db( $db_connect, $DB_NAME ); 
+$input = file_get_contents('php://input');
+//INSERT DATA
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$msg = $_POST['message'];
+
+
+//Insert date to table 
+
+$inserting = "INSERT INTO users(name,email,phone,message) VALUES ('$name','$email','$phone','$msg')";
+mysqli_query($DB_HOST, $inserting)  or die (mysqli_error($DB_HOST)) ;
+
+echo "Inserted $user into the database";
+
+mysqli_close($db_connect);
+
+//header("location: contactUs.php?note=success");
 
 ?>
-
 <!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
