@@ -13,5 +13,4 @@ echo " Failed to connect to Server. Try Again!".mysqli_connect_error();
 
 
 
-
 ?>
