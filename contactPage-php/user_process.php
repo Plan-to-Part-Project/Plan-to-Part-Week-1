@@ -10,7 +10,7 @@ $msg = $_REQUEST['message'];
 //Insert date to table 
 
 $query = mysqli_query($db_connect,
-"INSERT INTO user(name,email,phone,message)
+"INSERT INTO users(name,email,phone,message)
  VALUES ('$name','$email','$phone','$msg')") 
  or die(mysqli_error($db_connect));
 
