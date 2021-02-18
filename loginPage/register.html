@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<!--This is the newer login page!-->
 <html>
   <head>
-    <title>PLAN TO PART - SIGN IN PAGE</title>
+    <title>Register</title>
     <link
       rel="shortcut icon"
       href="https://cdn.glitch.com/bde716c8-a7be-413a-8d34-d62a703710c6%2Ficon.png?v=1603746656779"
@@ -56,43 +55,75 @@
       crossorigin="anonymous"
     ></script>
   </head>
-
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-6 col-md-6 form-container">
-          <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+          <div
+            class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center"
+          >
             <div class="logo mt-5 mb-3">
-              <img src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2FLegal.png?v=1606109730158" width="150px"/>
+              <img
+                src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2FComputerlock.png?v=1606285757209"
+                width="150px"
+              />
             </div>
             <div class="heading mb-3">
-              <h4>Login into your - Plan To Part </h4>
+              <h4>Create an account</h4>
             </div>
-
-            <form>            
-            <div class="form-input">
-							<span><i class="fa fa-envelope"></i></span>
-							<input type="email" id="inputEmail" placeholder="Email Address" required>
-						</div>
-						<div class="form-input">
-							<span><i class="fa fa-lock"></i></span>
-							<input type="password" id="inputPassword" placeholder="Password" required>
-						</div>
-            <div class="row mb-3">
-              <div class="col-6 d-flex">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="cb1"/>
-                    <label class="custom-control-label text-white" for="cb1">Remember me</label>
+            <form>
+              <div class="form-input">
+                <span><i class="fa fa-user"></i></span>
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <span><i class="fa fa-envelope"></i></span>
+                <input
+                  type="email"
+                  id="inputEmail"
+                  placeholder="Email Address"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <span><i class="fa fa-lock"></i></span>
+                <input
+                  type="password"
+                  id="inputPassword"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="row mb-3">
+                <div class="col-12 d-flex">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="cb1"
+                    />
+                    <label class="custom-control-label text-white" for="cb1"
+                      >I agree all terms & conditions</label
+                    >
                   </div>
-                </div>
-                <div class="col-6 text-right">
-                  <a href="forget.html" class="forget-link">Forget password</a>
                 </div>
               </div>
               <div class="text-left mb-3">
-                <button onclick="https://web.njit.edu/~an543/planTopart/Dashboard_Sidebar/Membership_Section/membership.html" type="button" id="signIn" class="btn btn-primary"> Sign In </button>
+                <button
+                  type="button"
+                  id="signUp"
+                  class="btn btn-info "
+                  onclick="https://web.njit.edu/~an543/planTopart/formPage/Introduction.html"
+                >
+                  Sign Up
+                </button>
               </div>
-              <div class="text-white mb-3">or login with</div>
+              <div class="text-white mb-3">or register with</div>
               <div class="row mb-3">
                 <div class="col-4">
                   <a href="" class="btn btn-block btn-social btn-facebook">
@@ -110,16 +141,30 @@
                   </a>
                 </div>
               </div>
-              <div class="text-white"> Don't have an account? <a href="register.html" class="register-link">Register here</a> </div>
+              <div class="text-white">
+                Already have an account?
+                <a
+                  href="https://loginpage-plantopart.glitch.me/Loginpage.html"
+                  class="login-link"
+                  >Login here</a
+                >
+              </div>
             </form>
           </div>
         </div>
-      <div class="col-lg-6 col-md-6 d-none d-md-block "> <img src = "https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2Fchewy-DR6wPYR2DRc-unsplash.jpg?v=1603075265987" width = "790px" height = "890px"></div>
+
+        <div class="col-lg-6 col-md-6 d-none d-md-block ">
+          <img
+            src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2Fimg15.jpg?v=1606286283014"
+            width="790px"
+            height="890px"
+          />
+        </div>
+      </div>
     </div>
-    </div>
-    <!-- all scripts will place here -->
+
     <script>
-      var currentUser = {};
+      //var currentUser = {};
 
       // pick up new user
       $("#signUp").click(function() {
@@ -127,7 +172,7 @@
         var email = $("#inputEmail").val();
         var password = $("#inputPassword").val();
         console.log("New User =" + name + " " + email + " " + password);
-        SignUp(name, email, password);
+        SignUp(email, password);
       });
       // Sign in existin Users
       $("#signIn").click(function() {
@@ -137,17 +182,19 @@
         SignIn(email, password);
       });
 
-      function SignUp(name, email, password) {
+      function SignUp(email, password) {
         firebase
           .auth()
-          .createUserWithEmailAndPassword(name, email, password)
+          .createUserWithEmailAndPassword(email, password)
           .then(user => {
+            window.location.href =
+              "https://web.njit.edu/~an543/planTopart/formPage/Introduction.html";
             alert(" Welcome to Plan To Part");
           })
           .catch(error => {
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage);
+            console.log(errorMessage);
           });
       }
       function SignIn(email, password) {
@@ -156,7 +203,7 @@
           .signInWithEmailAndPassword(email, password)
           .then(user => {
             window.location.href =
-              "https://web.njit.edu/~an543/planTopart/Dashboard_Sidebar/Membership_Section/membership.html";
+              "https://web.njit.edu/~an543/planTopart/formPage/Introduction.html";
             alert("Welcome Back" + " " + email);
           })
           .catch(error => {
@@ -166,18 +213,6 @@
             alert(errorMessage);
           });
       }
-
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          var displayName = user.displayName;
-          var email = user.email;
-          currentUser = user;
-          console.log(currentUser.email + "has logged in");
-        } else {
-          // User is signed out
-        }
-      });
     </script>
   </body>
 </html>
