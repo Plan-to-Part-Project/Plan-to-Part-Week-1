@@ -104,12 +104,7 @@
                         </div>
                     </div>
                     <div class="text-left mb-3">
-                        <button
-                                type="button"
-                                id="signUp"
-                                class="btn btn-info "
-                                onclick="https://web.njit.edu/~an543/planTopart/formPage/Introduction.html"
-                        >
+                        <button type="button" id="signUp" class="btn btn-info" onclick="location.href='../formPage/Introduction.html'">
                             Sign Up
                         </button>
                     </div>
@@ -133,7 +128,7 @@
                     </div>
                     <div class="text-white">
                         Already have an account?
-                        <a href="/loginPage/login_glitch.html" class="login-link">Login here</a>
+                        <a href="login.html" class="login-link">Login here</a>
                     </div>
                 </form>
             </div>
@@ -173,8 +168,7 @@
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then(user => {
-                window.location.href =
-                    "https://web.njit.edu/~an543/planTopart/formPage/Introduction.html";
+                window.location.href = "../formPage/Introduction.html";
                 alert(" Welcome to Plan To Part");
             })
             .catch(error => {
@@ -189,8 +183,7 @@
             .auth()
             .signInWithEmailAndPassword(email, password)
             .then(user => {
-                window.location.href =
-                    "https://web.njit.edu/~an543/planTopart/formPage/Introduction.html";
+                window.location.href = "../formPage/Introduction.html";
                 alert("Welcome Back" + " " + email);
             })
             .catch(error => {

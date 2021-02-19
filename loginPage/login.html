@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="text-left mb-3">
-                        <button onclick="https://web.njit.edu/~an543/planTopart/Dashboard_Sidebar/Membership_Section/membership.html"
+                        <button onclick=" location.href='../Dashboard_Sidebar/Membership_Section/membership.html' "
                                 type="button" id="signIn" class="btn btn-primary"> Sign In
                         </button>
                     </div>
@@ -165,7 +165,7 @@
             .signInWithEmailAndPassword(email, password)
             .then(user => {
                 window.location.href =
-                    "https://web.njit.edu/~an543/planTopart/Dashboard_Sidebar/Membership_Section/membership.html";
+                    "../Dashboard_Sidebar/Membership_Section/membership.html";
                 alert("Welcome Back" + " " + email);
             })
             .catch(error => {
