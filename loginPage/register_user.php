@@ -7,7 +7,7 @@ use Kreait\Firebase\ServiceAccount;
 
 class Users {
     protected $database;
-    protected $dbname = 'users';
+    protected $dbname = 'Users';
 
     public function __construct(){
         $acc = ServiceAccount::fromJsonFile(__DIR__ . '/secret/arthursystems-php-tutorials-0066e2bd5954.json');
@@ -34,17 +34,6 @@ class Users {
         }
 
         return TRUE;
-    }
-
-    public function delete(int $userID) {
-        if (empty($userID) || !isset($userID)) { return FALSE; }
-
-        if ($this->database->getReference($this->dbname)->getSnapshot()->hasChild($userID)){
-            $this->database->getReference($this->dbname)->getChild($userID)->remove();
-            return TRUE;
-        } else {
-            return FALSE;
-        }
     }
 }
 
