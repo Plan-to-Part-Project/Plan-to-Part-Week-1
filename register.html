@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Register</title>
     <link
@@ -112,12 +112,12 @@
                     <div class="text-left mb-3">
                         <button
                                 type="submit"
-                                id="signUp"
+                                id="ignUp"
                                 class="btn btn-info "
                                 name="push"
                         >
                             Sign Up
-                    </button>
+                        </button>
                     </div>
                     <div class="text-white mb-3">or register with</div>
                     <div class="row mb-3">
@@ -159,7 +159,7 @@
     //var currentUser = {};
 
     // pick up new user
-    $("#signUp").click(function () {
+    $('#signUp').click(function () {
         var name = $("#fullName").val();
         var email = $("#inputEmail").val();
         var password = $("#inputPassword").val();
@@ -177,14 +177,13 @@
     });
     var database = firebase.database();
     function writeUserData(name, email) {
-        firebase.database().ref('/Users/').push({
+        firebase.database().ref('/Users').push({
             "username": name,
             "email": email
         });
     }
 
     function SignUp(email, password, name) {
-      
       writeUserData(name, email);
             firebase
             .auth()

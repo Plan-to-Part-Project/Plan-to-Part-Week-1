@@ -1,5 +1,17 @@
 {
+    "name": "henil/p2p",
+    "description": "plan to part",
+    "type": "project",
+    "license": "GNU3",
+    "authors": [
+        {
+            "name": "henil14",
+            "email": "henil1008@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
-        "kreait/firebase-php": "^5.14"
+        "kreait/firebase-php": "5.x-dev",
+        "php": ">7.*"
     }
 }
