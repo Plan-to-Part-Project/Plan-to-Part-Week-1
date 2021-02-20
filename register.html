@@ -139,7 +139,7 @@
                     </div>
                     <div class="text-white">
                         Already have an account?
-                        <a href="/loginPage/login_glitch.html" class="login-link">Login here</a>
+                        <a href="./loginPage/login.html" class="login-link">Login here</a>
                     </div>
                 </form>
             </div>
@@ -190,7 +190,7 @@
             .createUserWithEmailAndPassword(email, password)
             .then(user => {
                 window.location.href =
-                    "https://web.njit.edu/~an543/planTopart/formPage/Introduction.html";
+                    "/formPage/Introduction.html";
                 alert(" Welcome to Plan To Part");
             })
             .catch(error => {
@@ -207,7 +207,7 @@
             .signInWithEmailAndPassword(email, password)
             .then(user => {
                 window.location.href =
-                    "https://web.njit.edu/~an543/planTopart/formPage/Introduction.html";
+                    "/formPage/Introduction.html";
                 alert("Welcome Back" + " " + email);
             })
             .catch(error => {
