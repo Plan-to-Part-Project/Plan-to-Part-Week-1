@@ -153,11 +153,11 @@ body{
   }
   
   .content{
-    width: (100% - 250px);
+    width: 100%;
     margin-top: 60px;
     padding: 20px;
     margin-left: 250px;
-    background: url(background.png) no-repeat;
+    background: url(/loginPage/Images/background.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -218,7 +218,7 @@ body{
   
     .nav_bar{
       background: #222;
-      width: (100% - 0px);
+      width:100%;
       margin-top: 70px;
       display: flex;
       justify-content: space-between;
