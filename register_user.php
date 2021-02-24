@@ -12,7 +12,6 @@ if(isset($_POST['push'])){
     $factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-6de9295712.json')->createAuth()->createUserWithEmailAndPassword($email, $pass);
     header("Location: homePage.html");
 }
-//this is a test for links branch
 
 /*
 if(isset($_POST['push'])) {
