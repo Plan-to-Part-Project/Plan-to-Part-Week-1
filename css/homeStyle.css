@@ -20,7 +20,6 @@
 .search-box:hover > .search-txt{
   width: 240px;
   padding: 0 6px;
-  
 }
 
 .search-btn{
@@ -407,7 +406,7 @@ footer {
 .copyright a {
   font-size: 16px;
   color: #48dbfb;
-  font-weight: 500px;
+  font-weight: 500;
   margin-top: 10px;
 }
 
@@ -449,7 +448,7 @@ footer {
 }
 
 .work::before{
-  content = "";
+  content: "";
   position: absolute;
   width: 100%;
   height:100%;
