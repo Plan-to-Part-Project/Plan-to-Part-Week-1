@@ -31,7 +31,7 @@
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
             crossorigin="anonymous"
     />
-
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 </head>
 
@@ -46,7 +46,7 @@
                 <div class="heading mb-3">
                     <h4>Create an account</h4>
                 </div>
-                <form action="register_user.php" method="post" >
+                <form action="register_user.php" method="post">
                     <div class="form-input">
                         <span><i class="fa fa-user"></i></span>
                         <input type="text" id="fullName" name="name" placeholder="Full Name" required/>
@@ -57,6 +57,7 @@
                                 type="email"
                                 id="inputEmail"
                                 name="email"
+                                onkeyup="send()"
                                 placeholder="Email Address"
                                 required
                         />
@@ -90,10 +91,9 @@
                     <div class="text-left mb-3">
                         <button
                                 type="submit"
-                                id="ignUp"
+                                id="SignUp"
                                 class="btn btn-info "
-                                name="push"
-                        >
+                                name="push" >
                             Sign Up
                         </button>
                     </div>
@@ -119,6 +119,7 @@
                         Already have an account?
                         <a href="./loginPage/login.html" class="login-link">Login here</a>
                     </div>
+
                 </form>
             </div>
         </div>
@@ -133,6 +134,15 @@
     </div>
 </div>
 
+<script>
+    function send() {
+        var email = document.getElementById("inputEmail").value;
+        sessionStorage.setItem("email", email);
+    }
+
+
+
+</script>
 
 </body>
 </html>
