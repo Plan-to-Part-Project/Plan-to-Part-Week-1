@@ -25,6 +25,10 @@ if(isset($_POST['push'])){
         'Users/'.$u."/User_Data" => $data,
     ];
 
+    //Sending the verification link to the new user
+
+    (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json')-> createAuth()->sendEmailVerificationLink($email);
+
 
 //die(print_r($data));
 
