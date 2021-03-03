@@ -8,11 +8,21 @@ use Kreait\Firebase\Auth;
 if(isset($_POST['push'])){
     $email = $_POST['email'];
     $pass = $_POST['pass'];
+    $name = $_POST['name'];
+    $userProperties = [
+        'email' => $email,
+        'emailVerified' => false,
+        'phoneNumber' => '+15555550100',
+        'password' => $pass,
+        'displayName' => $name,
+        'photoUrl' => ' ',
+        'disabled' => false,
+    ];
     //creates an new user with email and pass.
-    $u = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json')->createAuth()->createUserWithEmailAndPassword($email, $pass)->uid;
+    $u = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json')->createAuth()->createUser($userProperties)->uid;
     $factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
     $temp = $factory->createDatabase();
-    $name = $_POST['name'];
+
     $data = [
         'name' => $name,
         'email' => $email,
