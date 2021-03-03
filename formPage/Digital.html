@@ -10,7 +10,7 @@
       type="image/x-icon"
     />	
 </head>
-<body onload="myfun()">
+<body onload="config()">
 
 <header>
     <body>
@@ -41,11 +41,18 @@
     <div id="myModal" class="modal">
   <!-- Modal content -->
       <div class="modal-content">
-            <p><center><b>Digital Footprint</b></center></p>
-	        <p>Your devices and accounts all have personal stories behind them and hold valuable information. We love to hear about it</p>
+          <div id="topic">
+            <p ><center><b>Digital Footprint</b></center></p>
+          </div>
+          <div id="des">
+              <p>Your devices and accounts all have personal stories behind them and hold valuable information. We love to hear about it</p>
+          </div>
 	    <div class="container">
             <form action="Digital.php" method="post">
+            <div id="0">
+                <!-- Digtial -->
                 <div class="boxed">
+                    <!-- The Digital -->
                     <input type="checkbox" id="Option1" name="Option1" value="Phone">
                     <img src="Icons/PhoneLock.png" width="40" />
                     <label for="Option1">My phone has a password</label><br>
@@ -60,14 +67,169 @@
                     <img src="Icons/Centrallist.png" width="40" />
                     <label for="Option3">I have a centralized list of passwords</label><br><br>
                 </div>
+            </div>
+
+            <div id="1">
+                <!-- Residence -->
+                <div class="boxed">
+                    <input type="checkbox" id="Option4" name="Option4" value="HomeOwner">
+                    <img src="Icons/House.png" width=40/>
+                    <label for="Option1">I am currently a homeowner</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option5" name="Option5" value="rent">
+                    <img src="Icons/Lease.png" width=40/>
+                    <label for="Option2"> I currently rent or lease my residence </label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option6" name="Option6" value="Other">
+                    <label for="Option3">Other</label><br><br>
+                </div>
+            </div>
+
+            <div id="2">
+                <!-- Insurance -->
+                <div class="boxed">
+                    <input type="checkbox" id="Option7" name="Option7" value="Health Insurance">
+                    <img src="Icons/Health.png" width=40/>
+                    <label for="Option1">I have Health Insurance</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option8" name="Option8" value="Life Insurance">
+                    <img src="Icons/LifeInsurance.png"width=40/>
+                    <label for="Option2">I have Life Insurance</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option9" name="Option9" value="Disability Insurance">
+                    <img src="Icons/Disability.png"width=40/>
+                    <label for="Option3">I have Disability Insurance</label><br><br>
+                </div>
+            </div>
+            <div id="3">
+                <!-- Employment -->
+                <div class="boxed">
+                    <input type="checkbox" id="Option10" name="Option10" value="Employed">
+                    <img src="Icons/Employed.png" width=40/>
+                    <label for="Option1">I am currently employed</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option11" name="Option11" value="Unemployeed">
+                    <img src="Icons/Unemployed.png" width=40/>
+                    <label for="Option2"> I am a currently unemployed</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option12" name="Option12" value="Self-Employed">
+                    <img src="Icons/Self-Employed.png" width=40/>
+                    <label for="Option2"> I am a Business owner/Self-Employed</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option13" name="Option13" value="Retired">
+                    <img src="Icons/retired.png" width=40/>
+                    <label for="Option3">I am happily retired</label><br><br>
+                </div>
+            </div>
+
+            <div id="4">
+                <!-- Future -->
+                <div class="boxed">
+                    <input type="checkbox" id="Option14" name="Option14" value="Will">
+                    <img src="Icons/Will.png" width=40/>
+                    <label for="Option1">I have a Will</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option15" name="Option15" value="Attorney">
+                    <img src="Icons/Attorney.png" width=40/>
+                    <label for="Option2">I appointed an Attorney to manage my finances</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option16" name="Option16" value="Disability Insurance">
+                    <img src="Icons/Nurse.png" width=40/>
+                    <label for="Option3">I have already created an Advance (Health) Directive</label><br><br>
+                </div>
+                <div class="boxed">
+                    <p><a href="..."/>I want to learn more about legal documentation and what is offered.</a></p>
+                </div>
+            </div>
+
+            <div id="5">
+                <!-- Dependents -->
+                <div class="boxed">
+                    <input type="checkbox" id="Option17" name="Option17" value="Children">
+                    <img src="Icons/children.png" width=40/>
+                    <label for="Option1">I have children under the age of 18</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option18" name="Option18" value="Adult Dependents">
+                    <img src="Icons/Elderly.png" width=50/>
+                    <label for="Option2">I have adult dependents</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option19" name="Option19" value="Pets">
+                    <img src="Icons/pets.png" width=50/>
+                    <label for="Option3">I have pets</label><br><br>
+                </div>
+
+            </div>
+
+            <div id="6">
+                <!-- Relationships -->
+                <div class="boxed">
+                    <input type="checkbox" id="Option20" name="Option20" value="Single">
+                    <img src="Icons/single.png" width=40/>
+                    <label for="Option1">I am single</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option21" name="Option21" value="Partner">
+                    <img src="Icons/Partner.jpg" width=40/>
+                    <label for="Option2">I have a partner or spouse</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option22" name="Option22" value="Other">
+                    <label for="Option3">I have a different situation</label><br><br>
+                </div>
+            </div>
+
+            <div id="7">
+                <!-- Advisor -->
+                <div class="boxed">
+                    <input type="checkbox" id="Option23" name="Option23" value="Planner">
+                    <img src="Icons/Financialplanner.png" width=40/>
+                    <label for="Option1">I have a financial planner</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option24" name="Option24" value="Accountant">
+                    <img src="Icons/Account.png" width=40/>
+                    <label for="Option2">I have an accountant</label><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option25" name="Option24" value="Attorney">
+                    <img src="Icons/Letter.png" width=40/>
+                    <label for="Option3">I have a power of attorney</label><br><br>
+                </div>
+                <div class="boxed">
+                    <input type="checkbox" id="Option26" name="Option26" value="Guardian">
+                    <img src="Icons/Legal.png" width=40/>
+                    <label for="Option4">I have a legal guardian</label><br><br>
+                </div>
+            </div>
+
+
                 <div>
                     <input type="hidden" id="email" name="email" >
                 </div>
-                <center><button type="submit" name="sub" class="button">Continue</button></center>
+                <center><button type="submit" id="sub" name="sub" class="button">Submit</button>
+                </center>
+                <p>
+
+                </p>
             </form>
+            <center> <button onclick="goBack()" id="back" class="button">Go Back</button>
+                 <button onclick="next()" id="next" class="button">Next</button></center>
         </div>
-      <button onclick="goBack()" class="button">Go Back</button>
-  <center><div class="progress-bar" style="--width:12" data-label="1/8" ></div></center>
+<p>
+
+</p>
+  <center><div class="progress-bar" style="--width:36" data-label="1/8" ></div></center>
       </div>
     </div>
 <script>
@@ -76,8 +238,59 @@
         document.getElementById("email").value = sessionStorage.getItem('email');
     }
     // Get the modal
+    var topic = ['Digital Footprint',
+        'No Place Like Home',
+        'Guaranteed Protection',
+        'Paying the Bills',
+        'Thinking Of The Future',
+        'Those Who Depend On Me',
+        'Relationships',
+        'A Helping Hand' ];
+    var current = 0;
+    var description = ['Your devices and accounts all have personal stories behind them and hold valuable information. We love to hear about it',
+        'Home is where we feel safe and can always go to relax to escape from the stress of the world. What is your residence status?',
+        'Which of the following insurances do you have?',
+        'Jobs take up a lot of our daily lives, but they keep the lights on. What is your current employment status',
+        'Which of the following official, legal documents do you have in place? If you do not have any of these in place do not worry we are here to help. We will gladly help you get situated.',
+        'Taking care of your loved one\'s show an enormous amount of kindness and compassion. Who do you care for? animals count too.',
+        'Relationships can be a beautiful thing. We would like to know if you share your life with anyone special',
+        'Experienced professionals make sure everything is up to date and ensure you are on the right path. Do you have any of the professionals listed below?',
+    ];
+    //document.getElementById("myModel").addEventListener("load", config);
+    function config(){
+        for (let i = 1; i < 8; i++) {
+            document.getElementById(i).style.display = "none";
+        }
+        myfun();
+        check();
+    }
+    function check(){
+        if(current === 0){
+            document.getElementById("back").style.display = "none";
+            document.getElementById("sub").style.display = "none";
+        }
+        else if (current === 7){
+            document.getElementById("next").style.display = "none";
+            document.getElementById("sub").style.display = "inline";
+            document.getElementById("back").style.display = "inline";
+        }
+        else{
+            document.getElementById("sub").style.display = "none";
+            document.getElementById("back").style.display = "inline";
+        }
+    }
 
-
+    function next(){
+        if(current < 7) {
+            document.getElementById(current).style.display = "none";
+            current = current + 1;
+            //console.log(topic[current]);
+            document.getElementById("des").innerText = description[current];
+            document.getElementById("topic").innerHTML = "<p><center><b>" + topic[current] + "</b></center></p>";
+            document.getElementById(current).style.display = "block";
+        }
+        check();
+    }
     var modal = document.getElementById("myModal");
 
     // Get the button that opens the modal
@@ -98,7 +311,14 @@
     }
     //Go back function
     function goBack() {
-        window.history.back();
+        if(current!=0) {
+            document.getElementById(current).style.display = "none";
+            current = current - 1;
+            document.getElementById("des").innerText = description[current];
+            document.getElementById("topic").innerHTML = "<p><center><b>" + topic[current] + "</b></center></p>";
+            document.getElementById(current).style.display = "block";
+        }
+        check();
     }
 
 
