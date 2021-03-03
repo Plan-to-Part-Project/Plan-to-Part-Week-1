@@ -21,7 +21,7 @@ foreach ($_POST as $key => $value) {
     $u = $factory->createAuth()->getUserByEmail($email)->uid;
     $temp = $factory->createDatabase()->getReference("Users/".$u."/Questions")->update($data);
 
-    header("Location: temp.php");
+    header("Location: ../loginPage/login.html");
 }
 
 ?>
