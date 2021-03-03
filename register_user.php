@@ -12,7 +12,7 @@ if(isset($_POST['push'])){
     $userProperties = [
         'email' => $email,
         'emailVerified' => false,
-        'phoneNumber' => '+15555550100',
+        //'phoneNumber' => '+15555550100',
         'password' => $pass,
         'displayName' => $name,
         'photoUrl' => ' ',
