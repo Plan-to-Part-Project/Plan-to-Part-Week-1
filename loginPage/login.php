@@ -6,8 +6,8 @@ use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Auth;
 
 //This file is used to check if the user's email is marked as verified
-$email = $_POST ['inputEmail'];
-$pass = $_POST['inputPassword'];
+$email = $_POST ['email'];
+$pass = $_POST['password'];
 
 $factory = (new Factory)->withServiceAccount('C:\Users\Michael\PhpstormProjects\Plan-to-Part-Week-1\secret\plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
 //$u = $factory->createAuth()->getUserByEmail($email)->uid;
