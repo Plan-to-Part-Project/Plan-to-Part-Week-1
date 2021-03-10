@@ -48,4 +48,29 @@ if(isset($_POST['push'])){
     header("Location: ./formPage/Introduction.html");
     //echo "Done";
 }
+else{
+    $response = file_get_contents('php://input');
+    $Questions = json_decode($response, true);
+    $factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
+    $u = $factory->createAuth()->signInWithGoogleIdToken($Questions['id_token'])->firebaseUserId();
+    //$factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
+    $temp = $factory->createDatabase();
+    $name = $factory->createAuth()->getUserByEmail($Questions['email'])->displayName;
+    $email = $Questions['email'];
+    $data = [
+        'name' => $name,
+        'email' => $email,
+    ];
+
+    $newPostKey = $temp->getReference('Users')->push()->getKey();
+
+    $parent_data = [
+        //'Users/'.$newPostKey => $data,
+        'Users/'.$u."/User_Data" => $data,
+    ];
+    $temp->getReference()->update($parent_data);
+
+    echo json_encode("./formPage/Introduction.html");
+    //header("Location: ./formPage/Introduction.html");
+}
 ?>
