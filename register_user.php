@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/vendor/autoload.php';
+require __DIR__.'./vendor/autoload.php';
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Auth;
@@ -34,6 +34,10 @@ if(isset($_POST['push'])){
         //'Users/'.$newPostKey => $data,
         'Users/'.$u."/User_Data" => $data,
     ];
+
+    //Sending the verification link to the new user
+
+    (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json')-> createAuth()->sendEmailVerificationLink($email);
 
 
 //die(print_r($data));

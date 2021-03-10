@@ -18,8 +18,8 @@
 }
 
 .inner-width {
-  max-width: 1600px;
-  padding : 0 40px;
+  max-width: 2500px;
+  padding : 40px 40px;
 }
 
 .navbar .inner-width {
@@ -62,7 +62,7 @@
 
 .navbar-menu a {
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   margin-left: 30px;
   transition: 0.2s linear;
@@ -108,7 +108,7 @@ background-size: cover;
 color: white;
 width:100%;
 padding: 80px 0;
-text-align
+text-align: center;
 border: 1px solid #2196F3;
 }
 
@@ -216,7 +216,7 @@ footer {
 }
 .policy a {
   font-family: "David Libre", serif;
-  font-size: 18pßx;
+  font-size: 18px;
   padding: 0 3px 50px 3px;
   color: white;
 }
@@ -224,7 +224,7 @@ footer {
 .copyright a {
   font-size: 16px;
   color: #48dbfb;
-  font-weight: 500px;
+  font-weight: 500;
   margin-top: 10px;
 }
 

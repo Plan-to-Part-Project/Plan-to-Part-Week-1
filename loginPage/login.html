@@ -159,9 +159,13 @@
             });
     }
 
+    //We need to fix this sign in function it does not work properly!!!
+
     function SignIn(email, password) {
         firebase
             .auth()
+            .auth().getUserByEmail(email)
+                //.then(//check to see if email is verified)
             .signInWithEmailAndPassword(email, password)
             .then(user => {
                 window.location.href =
