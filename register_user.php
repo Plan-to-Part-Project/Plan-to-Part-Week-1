@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'./vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Auth;
@@ -73,4 +73,3 @@ else{
     echo json_encode("./formPage/Introduction.html");
     //header("Location: ./formPage/Introduction.html");
 }
-?>
