@@ -3,25 +3,13 @@ require __DIR__.'/vendor/autoload.php';
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Auth;
-
-$option1 = "test";
-$option2 = "test";
-$option3 = "test";
-
-
-
-
-
-$data = [
-    'phone_Pass' => $option1,
-    'Comp_pass' => $option2,
-    'Cent_pass' => $option3,
-];
-
-
-    $factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
-    $u = $factory->createAuth()->getUserByEmail("newtestcase@gmail.com")->uid;
-    $temp = $factory->createDatabase()->getReference("Users/".$u."/Questions")->update($data);
-
-    echo "done"
+use Google\Auth\AccessToken;
+use Google\Auth\OAuth2;
+//$a = (new Auth)->signInWithGoogleIdToken(eyJhbGciOiJSUzI1NiIsImtpZCI6ImU4NzMyZGIwNjI4NzUxNTU1NjIxM2I4MGFjYmNmZDA4Y2ZiMzAyYTkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNDM4MzMzMjI5MDQ1LTFscWhwYmUzaWFjanE0MmJmbjEyODk1bWJwOGN2NGJwLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNDM4MzMzMjI5MDQ1LTFscWhwYmUzaWFjanE0MmJmbjEyODk1bWJwOGN2NGJwLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0NDA4NDY4OTYxNTIyMzI1MDAyIiwiaGQiOiJuaml0LmVkdSIsImVtYWlsIjoiaGpzMzRAbmppdC5lZHUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IktraF9IaUs4RnJLZVh3NjFEM1l6Q0EiLCJuYW1lIjoiSGVuaWwgU2hhaCIsInBpY3R1cmUiOiJodHRwczovL2xoNC5nb29nbGV1c2VyY29udGVudC5jb20vLTMzbWZ5VXoyR0VrL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FNWnV1Y25zS1VacmpNdEhlSTVHd09SVy12R05CcnVvMkEvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkhlbmlsIiwiZmFtaWx5X25hbWUiOiJTaGFoIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE2MTUyNjQ0NTksImV4cCI6MTYxNTI2ODA1OSwianRpIjoiNzA2YTk2NzYwMzM4Mzk1MTJhYTU3MGZmNTZiNzM5YWViMDIxOWZlMCJ9.EAs3XuRz8bgixctQEkkNdYbiAR9hKTJJvs03fi116ySred2oU25ONNjTrGfrJe4q87XOKUrp3cJBxRg5pDzzgBYn4C6kuHIoGkbJQ5w90zoM4wGbX6fvclnkWN-Jh01IqLt3qtPViq_rYeij0ROvDnE6EP_Mf00SAwAcKopBoFY69ztG1PLpEasOt7l4Y8pSF73nkB7OHrmvBRUXpILIYXroBi3JgXJ0yD5e2Pg_VYSPOikcYRCBysskD-o5Qrv5wX_hWUhTSfmsfkInK6ysSeKnbu4u9eZeoD3mjKO9bWkLXxwqO0-qHPGUV_IXv9IpZid9CeBKc47-RVhbNHYuhA,"www.google.com");
+    //$factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json')->createAuth()->signInWithGoogleIdToken("eyJhbGciOiJSUzI1NiIsImtpZCI6ImU4NzMyZGIwNjI4NzUxNTU1NjIxM2I4MGFjYmNmZDA4Y2ZiMzAyYTkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNDM4MzMzMjI5MDQ1LTFscWhwYmUzaWFjanE0MmJmbjEyODk1bWJwOGN2NGJwLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNDM4MzMzMjI5MDQ1LTFscWhwYmUzaWFjanE0MmJmbjEyODk1bWJwOGN2NGJwLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0NDA4NDY4OTYxNTIyMzI1MDAyIiwiaGQiOiJuaml0LmVkdSIsImVtYWlsIjoiaGpzMzRAbmppdC5lZHUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IktraF9IaUs4RnJLZVh3NjFEM1l6Q0EiLCJuYW1lIjoiSGVuaWwgU2hhaCIsInBpY3R1cmUiOiJodHRwczovL2xoNC5nb29nbGV1c2VyY29udGVudC5jb20vLTMzbWZ5VXoyR0VrL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FNWnV1Y25zS1VacmpNdEhlSTVHd09SVy12R05CcnVvMkEvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkhlbmlsIiwiZmFtaWx5X25hbWUiOiJTaGFoIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE2MTUyNjQ0NTksImV4cCI6MTYxNTI2ODA1OSwianRpIjoiNzA2YTk2NzYwMzM4Mzk1MTJhYTU3MGZmNTZiNzM5YWViMDIxOWZlMCJ9.EAs3XuRz8bgixctQEkkNdYbiAR9hKTJJvs03fi116ySred2oU25ONNjTrGfrJe4q87XOKUrp3cJBxRg5pDzzgBYn4C6kuHIoGkbJQ5w90zoM4wGbX6fvclnkWN-Jh01IqLt3qtPViq_rYeij0ROvDnE6EP_Mf00SAwAcKopBoFY69ztG1PLpEasOt7l4Y8pSF73nkB7OHrmvBRUXpILIYXroBi3JgXJ0yD5e2Pg_VYSPOikcYRCBysskD-o5Qrv5wX_hWUhTSfmsfkInK6ysSeKnbu4u9eZeoD3mjKO9bWkLXxwqO0-qHPGUV_IXv9IpZid9CeBKc47-RVhbNHYuhA","");
+    // foreach ($factory as $k => $v)
+    //    echo "$k : $v \n";
+$factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json')->createAuth()->getUserByEmail("hjs34@njit.edu")->uid;
+    echo "done";
+    echo $factory;
 ?>

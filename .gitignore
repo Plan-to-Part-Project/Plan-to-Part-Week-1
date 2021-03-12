@@ -1,5 +1,6 @@
 *.env
 /secret
 /vendor
-composer.lock
 composer.json
+composer.lock
+.idea

@@ -72,14 +72,14 @@
                     <h4>Login into your - Plan To Part </h4>
                 </div>
 
-                <form>
+                <form action = "login.php" method="post">
                     <div class="form-input">
                         <span><i class="fa fa-envelope"></i></span>
-                        <input type="email" id="inputEmail" placeholder="Email Address" required>
+                        <input type="email" id="inputEmail" placeholder="Email Address" name ="email" required>
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-lock"></i></span>
-                        <input type="password" id="inputPassword" placeholder="Password" required>
+                        <input type="password" id="inputPassword" placeholder="Password" name = "password" required>
                     </div>
                     <div class="row mb-3">
                         <div class="col-6 d-flex">
@@ -93,9 +93,10 @@
                         </div>
                     </div>
                     <div class="text-left mb-3">
-                        <button onclick=" location.href='../Dashboard_Sidebar/Membership_Section/membership.html' "
+                        <button type="submit" id="signIn" class="btn btn-primary">Sign In</button>
+                        <!--<button onclick=" location.href='../Dashboard_Sidebar/Membership_Section/membership.html' "
                                 type="button" id="signIn" class="btn btn-primary"> Sign In
-                        </button>
+                        </button>-->
                     </div>
                     <div class="text-white mb-3">or login with</div>
                     <div class="row mb-3">
@@ -126,6 +127,7 @@
     </div>
 </div>
 <!-- all scripts will place here -->
+<!--
 <script>
     var currentUser = {};
 
@@ -159,9 +161,13 @@
             });
     }
 
+    //We need to fix this sign in function it does not work properly!!!
+
     function SignIn(email, password) {
         firebase
             .auth()
+            .auth().getUserByEmail(email)
+                //.then(//check to see if email is verified)
             .signInWithEmailAndPassword(email, password)
             .then(user => {
                 window.location.href =
@@ -188,5 +194,6 @@
         }
     });
 </script>
+-->
 </body>
 </html>
