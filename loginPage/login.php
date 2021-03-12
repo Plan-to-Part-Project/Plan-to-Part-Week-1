@@ -1,6 +1,5 @@
 <?php
 require "/Users/christy/PhpstormProjects/PTPLink/Plan-to-Part-Week-1/vendor/autoload.php";
-
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Auth;
@@ -20,7 +19,8 @@ try{
             $auth->signInWithEmailAndPassword($email, $pass);
             ?>
             <script>
-                alert(" Welcome to Plan To Part");
+                sessionStorage.setItem("login", "true");
+                alert("Welcome to Plan To Part");
                 window.location.href='../Dashboard_SideBar/Membership_Section/membership.html';
             </script>
             <?php

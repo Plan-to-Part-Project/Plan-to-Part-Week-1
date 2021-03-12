@@ -37,8 +37,14 @@
 
 </head>
 <body>
-
-
+<!--Make sure User logged in  -->
+<script>
+    let login = sessionStorage.getItem("login");
+    if(login !== "true"){
+        alert("You have not logged in");
+        window.location.href = "../../loginPage/login.html";
+    }
+</script>
 <input type="checkbox" id="check">
 <!--header area start-->
 <header>

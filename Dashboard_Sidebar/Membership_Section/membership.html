@@ -36,7 +36,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
-
+<!--Make sure User logged in  -->
+<script>
+    let login = sessionStorage.getItem("login"); // return "true"
+    if(login !== "true"){
+        alert("You have not logged in");
+        window.location.href = "../../loginPage/login.html";
+    }
+</script>
 <input type="checkbox" id="check">
 <!--header area start-->
 <header>
