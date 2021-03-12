@@ -1,5 +1,5 @@
 <?php
-require "/Users/christy/PhpstormProjects/PTPLink/Plan-to-Part-Week-1/vendor/autoload.php";
+require "../vendor/autoload.php";
 
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
@@ -9,7 +9,7 @@ use Kreait\Firebase\Auth;
 $email = $_POST ['email'];
 $pass = $_POST['password'];
 
-$factory = (new Factory)->withServiceAccount('/Users/christy/PhpstormProjects/PTPLink/Plan-to-Part-Week-1/secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
+$factory = (new Factory)->withServiceAccount('../secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
 $auth = $factory->createAuth();
 
 try{

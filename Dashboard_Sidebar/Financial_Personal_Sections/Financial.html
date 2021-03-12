@@ -35,8 +35,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 
+    <style>
+
+        .submit_button {
+            background-color: #4fbce3; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+
 </head>
-<body>
+<body onload="dataLoad()">
 
 <input type="checkbox" id="check">
 <!--header area start-->
@@ -138,186 +165,150 @@
 <center><h2>Add to your Plan to Part:</h2></center>
 <br>
 <center>
+    <div id="status">
+        
+    </div>
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <form id="bankData" name="bankData" onsubmit="return submit()" method="post">
+
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Banks
     </button>
-
     <!-- Content of Home tab which will be displayed when clicked -->
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
             <label for="bank">Your bank: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Chase, TD Bank, etc"></textarea><br><br>
-            <label for="type">Type of account: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
+        <input type="text" id="bank" name="bank" placeholder="Ex: Chase, TD Bank, etc"/><br><br>
+            <label for="acctype">Type of account: </label><br>
+        <input type="text" id="acctype" name="acctype" placeholder=""/><br><br>
             <label for="accNumber">Account number: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="contact">Personal contact (if applicable): </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
+        <input type="number" maxlength="10" id="accNumber" name="accNumber" placeholder=""/><br><br>
+            <label for="contact_bank">Personal contact (if applicable): </label><br>
+        <input type="text" id="contact_bank" name="contact_bank" placeholder=""/><br><br>
             <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+        <input type="test" id="notes" name="notes" placeholder=""/><br><br>
         </p>
     </div>
 
 
-    <!-- All the tabs are designed here -->
-    <button class="accordion">
-        <span class="icon">+</span>
-        Assets
-    </button>
+        <!-- All the tabs are designed here -->
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Assets
+        </button>
 
-    <!-- Content of Home tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
-            <label for="asset">Assets name: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: 401K, primary account"></textarea><br><br>
-            <label for="type">Type of account: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="accNumber">Account number: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="contact">Personal contact (if applicable): </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+        <!-- Content of Home tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the home tab will be clicked -->
+                <label for="asset">Assets name: </label><br>
+                <input type="text" id="asset" name="asset" placeholder="Ex: 401K, primary account"></input><br><br>
+                <label for="Asset_type">Type of account: </label><br>
+                <input type="text" id="Asset_type" name="Asset_type" placeholder=""></input><br><br>
+                <label for="Asset_accNumber">Account number: </label><br>
+                <input type="number" id="Asset_accNumber" name="Asset_accNumber" placeholder=""></input><br><br>
+                <label for="contact_asset">Personal contact (if applicable): </label><br>
+                <input type="tel" id="contact_asset" name="contact_asset" placeholder=""></input><br><br>
+                <label for="notes_asset">Speacial notes: </label><br>
+                <input type="text" id="notes_asset" name="notes_asset" placeholder=""></input><br><br>
+            </p>
+        </div>
+
+        <!-- All the tabs are designed here -->
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Credit Cards
+        </button>
+        <!-- Content of Home tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the home tab will be clicked -->
+
+                <label for="issuer">Issuer: </label><br>
+                <input type="text" id="issuer" name="issuer" placeholder="Ex: Chase, Bank of American, etc"/><br><br>
+                <label for="Credit_name">Name on the Card </label><br>
+                <input type="text" id="Credit_name" name="Credit_name" placeholder=""/><br><br>
+                <label for="cardNumber">Card number: </label><br>
+                <input type="number" id="cardNumber" name="cardNumber" placeholder=""/><br><br>
+                <label for="cvvNumber">CVV number </label><br>
+                <input type="number" id="cvvNumber" name="cvvNumber" placeholder=""/><br><br>
+                <label for="credit_notes">Speacial notes: </label><br>
+                <input type="text" id="credit_notes" name="credit_notes" placeholder=""/><br><br>
+            </p>
+        </div>
+
+        <!-- All the tabs are designed here -->
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Loans
+        </button>
+        <!-- Content of Home tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the home tab will be clicked -->
+                <label for="loan">Loan name: </label><br>
+                <input type="text" id="loan" name="loan" placeholder="Ex: Credible, LendingTree, etc"/><br><br>
+                <label for="loan_type">Type of loan: </label><br>
+                <input type="text" id="loan_type" name="loan_type" placeholder=""/><br><br>
+                <label for="institution">Financial Institution </label><br>
+                <input type="text" id="institution" name="institution" placeholder=""/><br><br>
+                <label for="Loan_accNumber">Account number: </label><br>
+                <input type="number" id="Loan_accNumber" name="Loan_accNumber" placeholder=""/><br><br>
+                <label for="Loan_notes">Speacial notes: </label><br>
+                <input type="text" id="Loan_notes" name="Loan_notes" placeholder=""/><br><br>
+            </p>
+        </div>
+        <!-- All the tabs are designed here -->
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Life Insurance
+        </button>
+        <!-- Content of Home tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the home tab will be clicked -->
+                <label for="Insurance">Name of insurance company: </label><br>
+                <input type="text" id="Insurance" name="Insurance" placeholder="Ex: Prudential, State Farm, etc"/><br><br>
+                <label for="Ins_type">Type of policy: </label><br>
+                <input type="text" id="Ins_type" name="Ins_type" placeholder=""/><br><br>
+                <label for="Ins_policy">Policy number: </label><br>
+                <input type="text" id="Ins_policy" name="Ins_policy" placeholder=""/><br><br>
+                <label for="Ins_issuer">Name of insurer person: </label><br>
+                <input type="text" id="Ins_issuer" name="Ins_issuer" placeholder=""/<br><br>
+                <label for="Ins_start">Start date:: </label><br>
+                <input type="text" id="Ins_start" name="Ins_start" placeholder=""/<br><br>
+                <label for="Ins_exp">Expiration date: </label><br>
+                <input type="date" id="Ins_exp" name="Ins_exp" placeholder=""/><br><br>
+                <label for="Ins_value">Value of death: </label><br>
+                <input type="number" id="Ins_value" name="Ins_value" placeholder=""/><br><br>
+                <label for="Ins_notes">Speacial notes: </label><br>
+                <input type="text" id="Ins_notes" name="Ins_notes" placeholder=""><br><br>
+            </p>
+        </div>
+
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Other Important Possessions
+        </button>
+        <div class="panel2">
+            <p>
+                <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
+                <label for="possession">Other Possessions:</label><br>
+                <input type="text" id="possession" name="possession" placeholder="Enter Other Possessions">
+            </p>
+        </div>
+
+        <br>
+        <br>
             <center>
-                <button type="submit" name="submit" value="submit">Save</button>
+                <input class="submit_button" type="submit" name="submit" value="SAVE"/>
             </center>
-        </form>
-        </p>
-    </div>
+
+    </form>
 
 
-    <!-- All the tabs are designed here -->
-    <button class="accordion">
-        <span class="icon">+</span>
-        Credit Cards
-    </button>
-
-    <!-- Content of Home tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
-            <label for="issuer">Issuer: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Chase, Bank of American, etc"></textarea><br><br>
-            <label for="name">Name on the Card </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="cardNumber">Card number: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="cvvNumber">CVV number </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
-        </p>
-    </div>
-
-
-    <!-- All the tabs are designed here -->
-    <button class="accordion">
-        <span class="icon">+</span>
-        Loans
-    </button>
-
-    <!-- Content of Home tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
-            <label for="loan">Loan name: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Credible, LendingTree, etc"></textarea><br><br>
-            <label for="type">Type of loan: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="institution">Financial Institution </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="accNumber">Account number: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
-        </p>
-    </div>
-
-
-    <!-- All the tabs are designed here -->
-    <button class="accordion">
-        <span class="icon">+</span>
-        Life Insurance
-    </button>
-
-    <!-- Content of Home tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
-            <label for="loan">Name of insurance company: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Prudential, State Farm, etc"></textarea><br><br>
-            <label for="type">Type of policy: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="policy">Policy number: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="issuer">Name of insurer person: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="start">Start date:: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="exp">Expiration date: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="value">Value of death: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
-        </p>
-    </div>
-
-
-    <button class="accordion">
-        <span class="icon">+</span>
-        Other Important Possessions
-    </button>
-    <div class="panel2">
-        <p>
-            <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
-        <form>
-            <label for="possession">Other Possessions:</label><br>
-            <textarea id="possession" name="possession" placeholder="Enter Other Possessions"></textarea>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
-        </p>
-    </div>
-
-
-</center>
 <!-- Footer--->
 
 <footer>
@@ -342,20 +333,11 @@
 <!--Go Back Top-->
 <button class="goTop fas fa-arrow-up"></button>
 
-<!---	
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $('.nav_btn').click(function(){
-        $('.mobile_nav_items').toggleClass('active');
-      });
-    });
-    </script>
----->
 <script>
     // Javascript is used here to show the opening and closing functionality of the tab
     var acc = document.getElementsByClassName("accordion");
     var i;
-
+    const form = document.getElementById("bankData");
     // this for loop will check all the tabs with className "accordion" and provide them the same functionality
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
@@ -368,6 +350,66 @@
             }
         });
     }
+    var inputs = document.getElementsByTagName('input');
+    var data = {};
+    var d = {};
+    function dataLoad(){
+        d['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+            //alert(String( xhr.responseText));
+                if(xhr.responseText==='"NO"')
+                    alert("no data");
+                else{
+                    var response = JSON.parse(xhr.response);
+                    for (var i = 0; i < inputs.length-1; ++i) {
+
+                        var id = String(inputs[i].id);
+                        if(id!=null)
+                        if(String(xhr.response[id])!=null)
+                        document.getElementById(id).value = String(response[id]);
+                        }
+                }
+            }
+        };
+        xhr.open('POST', 'Financial_load.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(d));
+        xhr.send(JSON.stringify(d));
+
+
+    }
+
+
+
+
+    // ...and take over its submit event.
+
+        function submit(event) {
+            var form = document.getElementById("bankData");
+            var inputs = document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; ++i) {
+                data[inputs[i].id] = inputs[i].value;
+            }
+            data['email'] = String(sessionStorage.getItem("email"));
+            console.log(data);
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("status").innerText = "Data Saved Successfully";
+                    console.log(xhr.responseText);
+                    alert(String(xhr.responseText));
+                }
+            };
+            xhr.open('POST', 'Financial.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            console.log(JSON.stringify(data));
+            xhr.send(JSON.stringify(data));
+            event.preventDefault();
+        }
+    document.getElementById("bankData").addEventListener("submit", submit);
+
 </script>
 </body>
 </html>
