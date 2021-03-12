@@ -60,7 +60,7 @@
 
     <div class="right_area">
 
-        <a href="../../loginPage/login.html" class="logout_btn">Logout</a>
+        <button onclick="logOut()" class="logout_btn">Logout</button>
         <a href="../../helpPage/help.html">Helps</a>
         <a href="../../SecurityPage/security.html">Security</a>
         <a href="../../homePage.html#about">About Us</a>
@@ -303,6 +303,16 @@
                 panel.style.display = "block";
             }
         });
+    }
+    function logOut(){
+        sessionStorage.clear();
+        // Testing code HERE----------
+        //let login = sessionStorage.getItem("login");
+        //let email = sessionStorage.getItem("user_email");
+        //alert(login + email); // return 0 after clearing
+        // Testing code HERE----------
+        alert("You've successfully logged out.");
+        window.location.href = "../../loginPage/login.html";
     }
 </script>
 </body>
