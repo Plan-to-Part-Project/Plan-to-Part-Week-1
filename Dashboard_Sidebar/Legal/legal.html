@@ -40,6 +40,7 @@
 <!--Make sure User logged in  -->
 <script>
     let login = sessionStorage.getItem("login");
+    let email = sessionStorage.getItem("user_email");
     if(login !== "true"){
         alert("You have not logged in");
         window.location.href = "../../loginPage/login.html";
