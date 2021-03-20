@@ -138,8 +138,12 @@
 <center><h2>Add to your Plan to Part:</h2></center>
 <br>
 <center>
+    <div id="status">
+
+    </div>
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <form id="HomePropertyData" name="HomePropertyData" onsubmit="return submit()" method="post">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Homes
     </button>
@@ -148,7 +152,6 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
             <label for="basic">Label this home:</label><br>
             <textarea id="label" name="label" placeholder="Ex: Primary Residence, my apartment"></textarea><br><br>
             <label for="address">Address:</label><br>
@@ -160,15 +163,11 @@
             <input type="text" id="lname" name="lname" placeholder="Enter Zipcode"><br><br>
             <label for="photos">Upload photos of your property:</label><br><br>
             <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
         </p>
     </div>
 
     <!-- Content of Home Insurance tab which will be displayed when clicked -->
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Home Insurance
     </button>
@@ -176,7 +175,6 @@
         <p>
 
             <!-- This form will be displayed when the Home Insurance tab will be clicked -->
-        <form>
             <label for="Insurance">Name of the Insurance:</label><br><br>
             <input type="text" name="Insurance"><br><br>
             <label for="InsuranceType">What types of home insurance do you have with this company</label><br><br>
@@ -200,31 +198,17 @@
             <input type="text" id="policy" name="policy"><br><br>
             <label for="photos">Upload a photo,scan, or PDF of policy documents:</label><br><br>
             <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-
-            <!---
-              <label>Select Insurance Type:</label>
-              <select>
-                <option>Yearly Insurance</option>
-                <option>Halfyearly Insurance</option>
-                <option>Quaterly Insurance</option>
-              </select>
-              ---->
-        </form>
         </p>
     </div>
     <!-- Content of Other real estate tab which will be displayed when clicked -->
 
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Other Real Estate
     </button>
     <div class="panel">
         <p>
             <!-- This form will be displayed when the  Other Real Estate tab will be clicked -->
-        <form>
             <label for="basic">Label this home:</label><br>
             <textarea id="label" name="label" placeholder="Ex: Primary Residence, my apartment"></textarea><br><br>
             <label>Type of property:</label><br><br>
@@ -245,14 +229,10 @@
             <input type="text" id="code" name="code" placeholder="Enter Zipcode"><br><br>
             <label for="photos">Upload photos of your property:</label><br><br>
             <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
         </p>
     </div>
 
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Vehicles
     </button>
@@ -261,7 +241,6 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
             <label for="basic">Type of Vehicle:</label><br>
             <select>
                 <option>Car</option>
@@ -343,23 +322,18 @@
             <input type="location" id="location" name="location" placeholder="Example:In my garage"><br><br>
             <label for="photos">Upload photos of your vehicle:</label><br><br>
             <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
         </p>
     </div>
 
     <!-- Content of Vehicle Insurance  tab which will be displayed when clicked -->
 
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Vehicle Insurance
     </button>
     <div class="panel">
         <p>
             <!-- This form will be displayed when the  Vehicle Insurance tab will be clicked -->
-        <form>
             <label for="insuranceco">Name of insurance company:</label><br>
             <input type="insuranceco" id="insuranceco" name="insuranceco"><br><br>
             <label for="accnum">Account number:</label><br>
@@ -368,23 +342,18 @@
             <input type="paperwork" id="paperwork" name="paperwork"><br><br>
             <label for="photos">Upload a photo,scan, or PDF of policy</label><br><br>
             <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
         </p>
     </div>
 
     <!-- Content of Storage Facility  tab which will be displayed when clicked -->
 
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Storage Facility
     </button>
     <div class="panel">
         <p>
             <!-- This form will be displayed when the Storage Facility tab will be clicked -->
-        <form>
             <label for="storage">Name of storage facility:</label><br>
             <input type="storage" id="storage" name="storage"><br><br>
             <label for="unitnum">Unit Number:</label><br>
@@ -398,23 +367,18 @@
             <input type="text" id="code" name="code" placeholder="Enter Zipcode"><br><br>
             <label for="photos">Upload a scan,photo, or PDF of any related documents:</label><br><br>
             <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
         </p>
     </div>
 
     <!-- Content of Storage Facility  tab which will be displayed when clicked -->
 
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Safe Deposit Box
     </button>
     <div class="panel">
         <p>
             <!-- This form will be displayed when the Storage Facility tab will be clicked -->
-        <form>
             <label for="bank">Name of bank:</label><br>
             <input type="bank" id="bank" name="bank"><br><br>
             <label for="unitnum">Location of bank:</label><br>
@@ -432,31 +396,25 @@
             <input type="key" id="key" name="key"><br><br>
             <label for="photos">Upload a scan,photo, or PDF of any related documents:</label><br><br>
             <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
         </p>
     </div>
     <!-- Content of Other Important Possessions tab which will be displayed when clicked -->
 
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Other Important Possessions
     </button>
     <div class="panel">
         <p>
             <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
-        <form>
             <label for="possession">Other Possessions:</label><br>
             <textarea id="possession" name="possession" placeholder="Example:A rare collection,Jewelry"></textarea>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
         </p>
     </div>
-
+        <center>
+            <input class="submit_button" type="submit" name="submit" value="SAVE"/>
+        </center>
+    </form>
 
 </center>
 <!-- Footer--->
@@ -496,7 +454,7 @@
     // Javascript is used here to show the opening and closing functionality of the tab
     var acc = document.getElementsByClassName("accordion");
     var i;
-
+    const form = document.getElementById("HomePropertyData");
     // this for loop will check all the tabs with className "accordion" and provide them the same functionality
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
@@ -509,6 +467,66 @@
             }
         });
     }
+    var inputs = document.getElementsByTagName('input');
+    var data = {};
+    var d = {};
+    function dataLoad(){
+        d['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                //alert(String( xhr.responseText));
+                if(xhr.responseText==='"NO"')
+                    alert("no data");
+                else{
+                    var response = JSON.parse(xhr.response);
+                    for (var i = 0; i < inputs.length-1; ++i) {
+
+                        var id = String(inputs[i].id);
+                        if(id!=null)
+                            if(String(xhr.response[id])!=null)
+                                document.getElementById(id).value = String(response[id]);
+                    }
+                }
+            }
+        };
+        xhr.open('POST', 'HomeProperty_load.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(d));
+        xhr.send(JSON.stringify(d));
+
+
+    }
+
+
+
+
+    // ...and take over its submit event.
+
+    function submit(event) {
+        var form = document.getElementById("HomePropertyData");
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; ++i) {
+            data[inputs[i].id] = inputs[i].value;
+        }
+        data['email'] = String(sessionStorage.getItem("email"));
+        console.log(data);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("status").innerText = "Data Saved Successfully";
+                console.log(xhr.responseText);
+                alert(String(xhr.responseText));
+            }
+        };
+        xhr.open('POST', 'HomeProperty.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+        event.preventDefault();
+    }
+    document.getElementById("HomePropertyData").addEventListener("submit", submit);
+
 </script>
 </body>
 </html>
