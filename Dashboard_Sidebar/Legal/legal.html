@@ -36,7 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 
 </head>
-<body>
+<body onload="dataLoad()">
 
 
 <input type="checkbox" id="check">
@@ -151,7 +151,7 @@
             <!-- This form will be displayed when the home tab will be clicked -->
         <form>
             <label for="basic"><b>Attorney Information</b></label><br>
-            <select>
+            <select id="attinfo">
                 <option>None</option>
                 <option>Name</option>
                 <option>Phone</option>
@@ -234,7 +234,7 @@
             }
         });
     }
-    var inputs = document.getElementsByTagName('input');
+    var inputs = document.querySelectorAll('select, input, textarea');
     var data = {};
     var d = {};
     function dataLoad(){
@@ -272,7 +272,8 @@
 
     function submit(event) {
         var form = document.getElementById("legalData");
-        var inputs = document.getElementsByTagName('input');
+        //var inputs = document.getElementsByTagName('input');
+        var inputs = document.querySelectorAll('select, input, textarea')
         for (var i = 0; i < inputs.length; ++i) {
             data[inputs[i].id] = inputs[i].value;
         }
