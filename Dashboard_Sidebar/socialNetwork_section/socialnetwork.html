@@ -132,7 +132,7 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the Add Social Media tab will be clicked -->
-        <form id="socialmedia" onsubmit="">
+        <form id="socialMedia" name="socialMedia" onsubmit="return submit()" method="post">
             <input type="checkbox" id="social1" name="social1" value="facebook">
             <label for="social1"> I have a Facebook account</label><br>
             <input type="checkbox" id="social2" name="social2" value="twitter">
@@ -146,22 +146,13 @@
             <input type="checkbox" id="social6" name="social5" value="other">
             <label for="social6"> Other:</label><br>
             <input type="text" id="social6" name="social6"><br>
-            <input type="submit" value="Save">
+            <input class="submit_button" type="submit" value="Save">
         </form>
         </p>
     </div>
 
     <!-- Content of Social Network tab which will be displayed when clicked -->
-    <button class="accordion">
-        <span class="icon">+</span>
-        View &amp; Edit Social Media List
-    </button>
-    <div class="panel">
-        <p>
-            <!-- List will be displayed when the View & Edit Social Media tab will be clicked -->
 
-        </p>
-    </div>
 
 
 </center>
@@ -221,6 +212,64 @@
             }
         });
     }
+
+    var inputs = document.getElementsByTagName('input');
+    var data = {};
+    var d = {};
+    const cb = document.getElementById('social1');
+    console.log(cb.checked);
+    function dataLoad() {
+        d['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                //alert(String( xhr.responseText));
+                if (xhr.responseText === '"NO"')
+                    alert("no data");
+                else {
+                    var response = JSON.parse(xhr.response);
+                    for (var i = 0; i < inputs.length - 1; ++i) {
+
+                        var id = String(inputs[i].id);
+                        if (id != null)
+                            if (String(xhr.response[id]) != null)
+                                document.getElementById(id).value = String(response[id]);
+                    }
+                }
+            }
+        };
+        xhr.open('POST', 'socialnetwork_load.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(d));
+        xhr.send(JSON.stringify(d));
+    }
+    function submit(event) {
+        var form = document.getElementById("socialMedia");
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; ++i) {
+            data[inputs[i].id] = inputs[i].value;
+        }
+        data['email'] = String(sessionStorage.getItem("email"));
+        console.log(data);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("status").innerText = "Data Saved Successfully";
+                console.log(xhr.responseText);
+                alert(String(xhr.responseText));
+            }
+        };
+        xhr.open('POST', 'socialnetwork.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+        event.preventDefault();
+    }
+    document.getElementById("socialMedia").addEventListener("submit", submit);
+
+
+
+
 </script>
 
 </body>
