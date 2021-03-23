@@ -34,7 +34,31 @@
     <link rel="stylesheet" href="css/homeStyle.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <style>
 
+        .submit_button {
+            background-color: #4fbce3; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
 <!--Make sure User logged in  -->
@@ -46,6 +70,8 @@
         window.location.href = "../../loginPage/login.html";
     }
 </script>
+<body onload="dataLoad()">
+
 <input type="checkbox" id="check">
 <!--header area start-->
 <header>
@@ -123,6 +149,7 @@
 
 <section id="works">
     <div class="inner-width">
+        <h1>
         <center><h1 class="section-title">
             Personal Info and ID's
         </center>
@@ -146,8 +173,12 @@
 <center><h2>Add to your Plan to Part:</h2></center>
 <br>
 <center>
+    <div id="status">
+
+    </div>
+    <form id="personalData" name="personalData" onsubmit="return submit()" method="post">
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         My Contact Info
     </button>
@@ -156,27 +187,23 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
-            <label for="contact">Personal contact info </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Name of your wife, your mom, etc"></textarea><br><br>
-            <label for="phone">Phone number: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="email">Email: </label> </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+
+            <label for="My_contact">Personal contact info </label><br>
+            <input type="text" id="My_contact" name="My_contact" placeholder="Ex: Name of your wife, your mom, etc"></input><br><br>
+            <label for="Contact_phone">Phone number: </label><br>
+            <input type="text" id="Contact_phone" name="Contact_phone" placeholder=""></input><br><br>
+            <label for="Contact_email">Email: </label> </label><br>
+            <input type="email" id="Contact_email" name="Contact_email" placeholder=""></input><br><br>
+            <label for="Contact_notes">Speacial notes: </label><br>
+            <input type="text" id="Contact_notes" name="Contact_notes" placeholder=""></input><br><br>
+
+
         </p>
     </div>
 
 
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Social Security Card
     </button>
@@ -185,29 +212,24 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
+
             <label for="ssn">Social Security Number: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: 0000-00-0000"></textarea><br><br>
-            <label for="name">Name on the card: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="dob">DOB: </label><br>
-            <textarea id="label" name="label" placeholder="--/--/----"></textarea><br><br>
-            <label for="contact">Where do you keep the card? </label><br>
-            <textarea id="label" name="label" placeholder="Ex: In your wallet, etc"></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+            <input type="number" id="ssn" name="ssn" placeholder="Ex: 0000-00-0000"></input><br><br>
+            <label for="Social_name">Name on the card: </label><br>
+            <input type="text" id="Social_name" name="Social_name" placeholder=""></input><br><br>
+            <label for="Social_dob">DOB: </label><br>
+            <input type="date" id="Social_dob" name="Social_dob" placeholder="--/--/----"></input><br><br>
+            <label for="Social_contact">Where do you keep the card? </label><br>
+            <input type="text" id="Social_contact" name="Social_contact" placeholder="Ex: In your wallet, etc"></input><br><br>
+            <label for="Social_notes">Speacial notes: </label><br>
+            <input type="text" id="Social_notes" name="Social_notes" placeholder=""></input><br><br>
+
         </p>
     </div>
 
 
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Driver's License
     </button>
@@ -216,13 +238,13 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
+
             <label for="licenseNumber">License number: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="states">State: </label><br>
-            <select name="state"
+            <input type="text" id="licenseNumber" name="licenseNumber" placeholder=""></input><br><br>
+            <label for="License_states">State: </label><br>
+            <select name="License_states"
                     style=" font-size: 15px; height: 40px;width: 200px;margin-top: 15px;margin-bottom: 30px;"
-                    id="state">
+                    id="License_states">
                 <option value="" selected="selected" id="menu">Select a State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -277,24 +299,19 @@
                 <option value="WY">Wyoming</option>
             </select>
             <br>
-            <label for="exp">Expiration date: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: --/--/----"></textarea><br><br>
-            <label for="location">Location of Driver's License: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+            <label for="Lic_exp">Expiration date: </label><br>
+            <input type="date" id="Lic_exp" name="Lic_exp" placeholder="Ex: --/--/----"></input><br><br>
+            <label for="Lic_location">Location of Driver's License: </label><br>
+            <input type="text" id="Lic_location" name="Lic_location" placeholder=""></input><br><br>
+            <label for="Lic_notes">Speacial notes: </label><br>
+            <input id="Lic_notes" name="Lic_notes" placeholder=""></input><br><br>
+
         </p>
     </div>
 
 
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Passport
     </button>
@@ -303,11 +320,12 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
-            <label for="countryIssue">Country of issue: </label><br>
-            <select name="country"
+
+            <label for="Pass_countryIssue">Country of issue: </label><br>
+            <select name="Pass_countryIssue"
                     style=" font-size: 15px; height: 40px;width: 200px;margin-top: 15px;margin-bottom: 30px;"
-                    id="country">
+                    id="Pass_countryIssue">
+                <option value="" selected="selected" id="Pass_menu">Select a Country</option>
                 <option value="AF">Afghanistan</option>
                 <option value="AX">Åland Islands</option>
                 <option value="AL">Albania</option>
@@ -559,25 +577,20 @@
                 <option value="ZW">Zimbabwe</option>
             </select><br>
             <label for="passprtNumber">Passport number </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="expDate">Expiration date: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="location">Location of passport </label><br>
-            <textarea id="label" name="label" placeholder="Ex: In your wallet, etc"></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+            <input type="text" id="passprtNumber" name="passprtNumber" placeholder=""></input><br><br>
+            <label for="Pass_expDate">Expiration date: </label><br>
+            <input type="text" id="Pass_expDate" name="Pass_expDate" placeholder=""></input><br><br>
+            <label for="Pass_location">Location of passport </label><br>
+            <input type="text" id="Pass_location" name="Pass_location" placeholder="Ex: In your wallet, etc"></input><br><br>
+            <label for="Pass_notes">Speacial notes: </label><br>
+            <input type="text" id="Pass_notes" name="Pass_notes" placeholder=""></input><br><br>
+
         </p>
     </div>
 
 
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Employment
     </button>
@@ -586,31 +599,25 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
-            <label for="contact">Employment status: </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Self-employed, retirement, etc"></textarea><br><br>
-            <label for="phone">Name of company: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="email">Supervisor contact info: </label> </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Job title </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Full-time of part-time? </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+
+            <label for="Emp_contact">Employment status: </label><br>
+            <input type="text" id="Emp_contact" name="Emp_contact" placeholder="Ex: Self-employed, retirement, etc"></input><br><br>
+            <label for="Emp_phone">Name of company: </label><br>
+            <input type="tel" id="Emp_phone" name="Emp_phone" placeholder=""></input><br><br>
+            <label for="Emp_email">Supervisor contact info: </label> </label><br>
+            <input type="email" id="Emp_email" name="Emp_email" placeholder=""></input><br><br>
+            <label for="job_title">Job title </label><br>
+            <input type="text" id="job_title" name="job_title" placeholder=""></input><br><br>
+            <label for="Emp_status">Full-time of part-time? </label><br>
+            <input type="text" id="Emp_status" name="Emp_status" placeholder=""></input><br><br>
+            <label for="Emp_notes">Speacial notes: </label><br>
+            <input type="text" id="Emp_notes" name="Emp_notes" placeholder=""></input><br><br>
         </p>
     </div>
 
 
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Religion
     </button>
@@ -619,29 +626,24 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
+
             <label for="religion">What is your religion? </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Christianity, Hinduism, etc"></textarea><br><br>
-            <label for="place">Place of worship: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="contact">Religious leader contact info: </label> </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="contactNumber">Phone number of contact infor: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+            <input type="text" id="religion" name="religion" placeholder="Ex: Christianity, Hinduism, etc"></input><br><br>
+            <label for="Religion_place">Place of worship: </label><br>
+            <input type="text" id="Religion_place" name="Religion_place" placeholder=""></input><br><br>
+            <label for="Religion_contact">Religious leader contact info: </label> </label><br>
+            <input type="text" id="Religion_contact" name="Religion_contact" placeholder=""></input><br><br>
+            <label for="Rel_con_num">Phone number of contact information: </label><br>
+            <input type="number" id="Rel_con_num" name="Rel_con_num" placeholder=""></input><br><br>
+            <label for="Religion_notes">Speacial notes: </label><br>
+            <input type="text" id="Religion_notes" name="Religion_notes" placeholder=""></input><br><br>
+
         </p>
     </div>
 
 
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Military Service
     </button>
@@ -650,40 +652,35 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
+
             <label for="branch">Which branch did you serve? </label><br>
-            <textarea id="label" name="label" placeholder="Ex: Air Force, Army, Navy, etc"></textarea><br><br>
-            <label for="rank">Your rank: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="when">When did you serve? </label> </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="location">Location: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="notes">Speacial notes: </label><br>
-            <textarea id="label" name="label" placeholder=""></textarea><br><br>
-            <label for="upload">Upload a photo, or PDF of documents: </label><br>
-            <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit"><b>SAVE</b></button>
-            </center>
-        </form>
+            <input type="text" id="branch" name="branch" placeholder="Ex: Air Force, Army, Navy, etc"></input ><br><br>
+            <label for="branch_rank">Your rank: </label><br>
+            <input  id="branch_rank" name="branch_rank" placeholder=""></input ><br><br>
+            <label for="branch_when">When did you serve? </label> </label><br>
+            <input  id="branch_when" name="branch_when" placeholder=""></input ><br><br>
+            <label for="banch_location">Location: </label><br>
+            <input  id="banch_location" name="banch_location" placeholder=""></input ><br><br>
+            <label for="branch_notes">Speacial notes: </label><br>
+            <input  id="branch_notes" name="branch_notes" placeholder=""></input ><br><br>
+
         </p>
     </div>
 
 
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Other Important Possessions
     </button>
     <div class="panel2">
         <p>
             <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
-        <form>
+
             <label for="possession">Other Possessions:</label><br>
-            <textarea id="possession" name="possession" placeholder="Enter Other Possessions"></textarea>
+            <input  id="possession" name="possession" placeholder="Enter Other Possessions"></input >
             <center>
-                <button type="submit" name="submit" value="submit">Save</button>
+        <input class="submit_button" type="submit" name="submit" value="SAVE"/>
             </center>
         </form>
         </p>
@@ -751,6 +748,78 @@
         alert("You've successfully logged out.");
         window.location.href = "../../loginPage/login.html";
     }
+
+    var inputs = document.getElementsByTagName('input');
+    var op = document.getElementsByTagName("select");
+
+    var data = {};
+    var d = {};
+    function dataLoad(){
+        d['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                //alert(String( xhr.responseText));
+                if(xhr.responseText==='"NO"')
+                   // alert("no data");
+                    console.log("NO data");
+                else{
+                    var response = JSON.parse(xhr.response);
+                    for (var i = 0; i < inputs.length-1; ++i) {
+                        var id = String(inputs[i].id);
+                        if(id!=null)
+                            if(String(xhr.response[id])!=null)
+                                document.getElementById(id).value = String(response[id]);
+                    }
+
+                    for (var i = 0; i < op.length; ++i) {
+                        var id = String(op[i].id);
+                        if(id!=null)
+                            if(String(xhr.response[id])!=null)
+                                document.getElementById(id).value = String(response[id]);
+
+                    }
+                }
+            }
+        };
+        xhr.open('POST', 'personalInfo_load.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(d));
+        xhr.send(JSON.stringify(d));
+
+
+    }
+
+    // ...and take over its submit event.
+
+    function submit(event) {
+        var form = document.getElementById("personalData");
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; ++i) {
+            data[inputs[i].id] = inputs[i].value;
+        }
+        data['email'] = String(sessionStorage.getItem("email"));
+        var op = document.getElementsByTagName("select");
+        for (var i = 0; i < op.length; ++i) {
+            data[op[i].id] = op[i].value;
+        }
+
+        //console.log(data);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("status").innerText = "Data Saved Successfully";
+                //console.log(xhr.responseText);
+                alert(String(xhr.responseText));
+            }
+        };
+        xhr.open('POST', 'personalInfo.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+       // console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+        event.preventDefault();
+    }
+    document.getElementById("personalData").addEventListener("submit", submit);
 </script>
 </body>
 </html>

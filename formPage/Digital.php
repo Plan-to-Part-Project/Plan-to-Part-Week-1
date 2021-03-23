@@ -17,7 +17,7 @@ foreach ($_POST as $key => $value) {
         }
     }
 }
-    $factory = (new Factory)->withServiceAccount('C:\Users\Michael\PhpstormProjects\Plan-to-Part-Week-1\secret\plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
+    $factory = (new Factory)->withServiceAccount('C:\Users\henil\Desktop\P2P\Plan-to-Part-Week-1\secret\plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
     $u = $factory->createAuth()->getUserByEmail($email)->uid;
     $temp = $factory->createDatabase()->getReference("Users/".$u."/Questions")->update($data);
 
