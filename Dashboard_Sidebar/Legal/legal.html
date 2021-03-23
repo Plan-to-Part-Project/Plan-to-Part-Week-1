@@ -36,7 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 
 </head>
-<body>
+<body onload="dataLoad()">
 
 
 <input type="checkbox" id="check">
@@ -135,8 +135,12 @@
 <center><h2>Add to your Plan to Part:</h2></center>
 <br>
 <center>
+    <div id="status">
+
+    </div>
+    <form id="legalData" name="legalData" onsubmit="return submit()" method="post">
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Legal
     </button>
@@ -147,7 +151,7 @@
             <!-- This form will be displayed when the home tab will be clicked -->
         <form>
             <label for="basic"><b>Attorney Information</b></label><br>
-            <select>
+            <select id="attinfo">
                 <option>None</option>
                 <option>Name</option>
                 <option>Phone</option>
@@ -171,11 +175,12 @@
             <textarea id="healthcomment" name="healthcomment" placeholder="Any other information?"></textarea>
 
             <center>
-                <button type="submit" name="submit" value="submit">Save</button>
+                <input class="submit_button" type="submit" name="submit" value="SAVE"/>
             </center>
         </form>
         </p>
     </div>
+    </form>
 
 
 </center>
@@ -216,7 +221,7 @@
     // Javascript is used here to show the opening and closing functionality of the tab
     var acc = document.getElementsByClassName("accordion");
     var i;
-
+    const form = document.getElementById("legalData");
     // this for loop will check all the tabs with className "accordion" and provide them the same functionality
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
@@ -229,6 +234,68 @@
             }
         });
     }
+    var inputs = document.querySelectorAll('select, input, textarea');
+    var data = {};
+    var d = {};
+    function dataLoad(){
+        d['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                //alert(String( xhr.responseText));
+                if(xhr.responseText==='"NO"')
+                    alert("no data");
+                else{
+                    var response = JSON.parse(xhr.response);
+                    for (var i = 0; i < inputs.length-1; ++i) {
+
+                        var id = String(inputs[i].id);
+                        if(id!=null)
+                            if(String(xhr.response[id])!=null)
+                                document.getElementById(id).value = String(response[id]);
+                    }
+                }
+            }
+        };
+        xhr.open('POST', 'legal_load.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(d));
+        xhr.send(JSON.stringify(d));
+
+
+    }
+
+
+
+
+    // ...and take over its submit event.
+
+    function submit(event) {
+        var form = document.getElementById("legalData");
+        //var inputs = document.getElementsByTagName('input');
+        var inputs = document.querySelectorAll('select, input, textarea')
+        for (var i = 0; i < inputs.length; ++i) {
+            data[inputs[i].id] = inputs[i].value;
+        }
+        data['email'] = String(sessionStorage.getItem("email"));
+        console.log(data);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("status").innerText = "Data Saved Successfully";
+                console.log(xhr.responseText);
+                alert(String(xhr.responseText));
+            }
+        };
+        xhr.open('POST', 'legal.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+        event.preventDefault();
+    }
+
+    document.getElementById("legalData").addEventListener("submit", submit);
+
 </script>
 </body>
 </html>

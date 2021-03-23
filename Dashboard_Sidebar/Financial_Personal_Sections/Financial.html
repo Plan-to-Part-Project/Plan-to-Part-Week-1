@@ -360,11 +360,11 @@
             if (this.readyState === 4 && this.status === 200) {
             //alert(String( xhr.responseText));
                 if(xhr.responseText==='"NO"')
-                    alert("no data");
+                    // alert("no data");
+                    console.log("NO data");
                 else{
                     var response = JSON.parse(xhr.response);
                     for (var i = 0; i < inputs.length-1; ++i) {
-
                         var id = String(inputs[i].id);
                         if(id!=null)
                         if(String(xhr.response[id])!=null)
@@ -375,7 +375,7 @@
         };
         xhr.open('POST', 'Financial_load.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        console.log(JSON.stringify(d));
+        //console.log(JSON.stringify(d));
         xhr.send(JSON.stringify(d));
 
 
@@ -393,18 +393,18 @@
                 data[inputs[i].id] = inputs[i].value;
             }
             data['email'] = String(sessionStorage.getItem("email"));
-            console.log(data);
+           // console.log(data);
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                     document.getElementById("status").innerText = "Data Saved Successfully";
-                    console.log(xhr.responseText);
+                    //console.log(xhr.responseText);
                     alert(String(xhr.responseText));
                 }
             };
             xhr.open('POST', 'Financial.php', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            console.log(JSON.stringify(data));
+            //console.log(JSON.stringify(data));
             xhr.send(JSON.stringify(data));
             event.preventDefault();
         }

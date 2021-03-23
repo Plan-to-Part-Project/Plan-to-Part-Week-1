@@ -61,7 +61,7 @@
                 <form action = "login.php" method="post">
                     <div class="form-input">
                         <span><i class="fa fa-envelope"></i></span>
-                        <input type="email" id="inputEmail" placeholder="Email Address" name ="email" required>
+                        <input type="email" id="inputEmail" placeholder="Email Address" name ="email" onkeyup="send()" required>
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-lock"></i></span>
@@ -115,6 +115,10 @@
 <!-- all scripts will place here -->
 
 <script>
+    function send() {
+        var email = document.getElementById("inputEmail").value;
+        sessionStorage.setItem("email", email);
+    }
     function onSuccess(googleUser) {
         var id_token = googleUser.getAuthResponse().id_token;
         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
