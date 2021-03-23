@@ -34,7 +34,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 </head>
-
+<!--Make sure User logged in  -->
+<script>
+    let login = sessionStorage.getItem("login");
+    if(login !== "true"){
+        alert("You have not logged in");
+        window.location.href = "../../loginPage/login.html";
+    }
+</script>
 <body>
 <input type="checkbox" id="check">
 <!--header area start-->
@@ -50,7 +57,7 @@
 
     <div class="right_area">
 
-        <a href="../../loginPage/login.html" class="logout_btn">Logout</a>
+        <button onclick="logOut()" class="logout_btn">Logout</button>
         <a href="../../helpPage/help.html">Helps</a>
         <a href="../../SecurityPage/security.html">Security</a>
         <a href="../../homePage.html#about">About Us</a>
@@ -212,6 +219,17 @@
             }
         });
     }
+    function logOut(){
+        sessionStorage.clear();
+        // Testing code HERE----------
+        //let login = sessionStorage.getItem("login");
+        //let email = sessionStorage.getItem("user_email");
+        //alert(login + email); // return 0 after clearing
+        // Testing code HERE----------
+        alert("You've successfully logged out.");
+        window.location.href = "../../loginPage/login.html";
+    }
+
 
     var inputs = document.getElementsByTagName('input');
     var data = {};
@@ -266,9 +284,6 @@
         event.preventDefault();
     }
     document.getElementById("socialMedia").addEventListener("submit", submit);
-
-
-
 
 </script>
 

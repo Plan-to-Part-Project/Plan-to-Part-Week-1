@@ -19,7 +19,10 @@ try{
             $auth->signInWithEmailAndPassword($email, $pass);
             ?>
             <script>
-                alert(" Welcome to Plan To Part");
+                let email = "<?php echo $email ?>";
+                sessionStorage.setItem("login", "true");
+                sessionStorage.setItem("user_email", String(email));
+                alert("Welcome to Plan To Part");
                 window.location.href='../Dashboard_SideBar/Membership_Section/membership.html';
             </script>
             <?php

@@ -36,7 +36,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
-
+<!--Make sure User logged in  -->
+<script>
+    let login = sessionStorage.getItem("login"); // return "true"
+    let email = sessionStorage.getItem("user_email");
+    if(login !== "true"){
+        alert("You have not logged in");
+        window.location.href = "../../loginPage/login.html";
+    }
+</script>
 <input type="checkbox" id="check">
 <!--header area start-->
 <header>
@@ -50,7 +58,7 @@
     </div>
 
     <div class="right_area">
-        <a href="../../loginPage/login.html" class="logout_btn">Logout</a>
+        <button onclick="logOut()" class="logout_btn">Logout</button>
         <a href="../../helpPage/help.html">Helps</a>
         <a href="../../SecurityPage/security.html">Security</a>
         <a href="../../homePage.html#about">About Us</a>
@@ -334,6 +342,17 @@
             $('.mobile_nav_items').toggleClass('active');
         });
     });
+    function logOut(){
+        sessionStorage.clear();
+        // Testing code HERE----------
+        //let login = sessionStorage.getItem("login");
+        //let email = sessionStorage.getItem("user_email");
+        //alert(login + email); // return 0 after clearing
+        // Testing code HERE----------
+        alert("You've successfully logged out.");
+        window.location.href = "../../loginPage/login.html";
+    }
+
 </script>
 
 </body>
