@@ -35,6 +35,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 
+    <style>
+
+        .submit_button {
+            background-color: #3db2db; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #78c3de;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
 </head>
 <body>
 <!--Make sure User logged in  -->
@@ -231,11 +260,11 @@
             </select>
             <br><br>
             <label for="address">Address:</label><br>
-            <input type="country" id="escountry" name="country" placeholder="Enter Country"><br><br>
-            <input type="address1" id="esaddres1" name="address1" placeholder="Enter Address Line 1"><br><br>
-            <input type="address2" id="esaddres2" name="address2" placeholder="Enter Address Line 2"><br><br>
-            <input type="city" id="escity" name="city" placeholder="Enter City"><br><br>
-            <input type="state" id="esstate" name="state" placeholder="State/Province/Region"><br><br>
+            <input type="text" id="escountry" name="country" placeholder="Enter Country"><br><br>
+            <input type="text" id="esaddres1" name="address1" placeholder="Enter Address Line 1"><br><br>
+            <input type="text" id="esaddres2" name="address2" placeholder="Enter Address Line 2"><br><br>
+            <input type="text" id="escity" name="city" placeholder="Enter City"><br><br>
+            <input type="text" id="esstate" name="state" placeholder="State/Province/Region"><br><br>
             <input type="text" id="escode" name="code" placeholder="Enter Zipcode"><br><br>
             <label for="photos">Upload photos of your property:</label><br><br>
             <input type="file" name="fileToUpload" id="esfileToUpload"><br><br>
@@ -390,18 +419,18 @@
         <p>
             <!-- This form will be displayed when the Storage Facility tab will be clicked -->
             <label for="bank">Name of bank:</label><br>
-            <input type="bank" id="bank" name="bank"><br><br>
+            <input type="text" id="bank" name="bank"><br><br>
             <label for="unitnum">Location of bank:</label><br>
-            <input type="country" id="boxcountry" name="country" placeholder="Enter Country"><br><br>
-            <input type="address1" id="boxaddres1" name="address1" placeholder="Enter Address Line 1"><br><br>
-            <input type="address2" id="boxaddres2" name="address2" placeholder="Enter Address Line 2"><br><br>
-            <input type="city" id="boxcity" name="city" placeholder="Enter City"><br><br>
-            <input type="state" id="boxstate" name="state" placeholder="State/Province/Region"><br><br>
+            <input type="text" id="boxcountry" name="country" placeholder="Enter Country"><br><br>
+            <input type="text" id="boxaddres1" name="address1" placeholder="Enter Address Line 1"><br><br>
+            <input type="text" id="boxaddres2" name="address2" placeholder="Enter Address Line 2"><br><br>
+            <input type="text" id="boxcity" name="city" placeholder="Enter City"><br><br>
+            <input type="text" id="boxstate" name="state" placeholder="State/Province/Region"><br><br>
             <input type="text" id="boxcode" name="code" placeholder="Enter Zipcode"><br><br>
             <label for="accnum">Account Number:</label><br>
-            <input type="accnum" id="boxaccnum" name="accnum"><br><br>
+            <input type="text" id="boxaccnum" name="accnum"><br><br>
             <label for="boxnum">Box number:</label><br>
-            <input type="boxnum" id="boxnum" name="boxnum"><br><br>
+            <input type="text" id="boxnum" name="boxnum"><br><br>
             <label for="key">Location of key:</label><br>
             <input type="key" id="key" name="key"><br><br>
             <label for="photos">Upload a scan,photo, or PDF of any related documents:</label><br><br>

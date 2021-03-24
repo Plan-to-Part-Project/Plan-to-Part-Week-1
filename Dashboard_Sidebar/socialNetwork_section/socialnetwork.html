@@ -4,26 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAN TO PART</title>
-    <link
-            rel="shortcut icon"
-            href="icons/icon.png"
-            type="image/x-icon"
-    />
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css"
-    />
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.cs"
-    />
+    <link rel="shortcut icon" href="icons/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.cs"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -33,7 +19,37 @@
     <link rel="stylesheet" href="css/homeStyle.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <style>
+
+        .submit_button {
+            background-color: #3db2db; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #78c3de;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
 </head>
+
 <!--Make sure User logged in  -->
 <script>
     let login = sessionStorage.getItem("login");
@@ -42,7 +58,8 @@
         window.location.href = "../../loginPage/login.html";
     }
 </script>
-<body>
+<body onload="dataLoad()">
+
 <input type="checkbox" id="check">
 <!--header area start-->
 <header>
@@ -129,8 +146,12 @@
 
 
 <center>
+    <div id="status">
+
+    </div>
+    <form id="socialMedia" name="socialMedia" onsubmit="return submit()" method="post">
     <!-- All the tabs are designed here -->
-    <button class="accordion">
+    <button type="button" class="accordion">
         <span class="icon">+</span>
         Add Social Media
     </button>
@@ -139,29 +160,25 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the Add Social Media tab will be clicked -->
-        <form id="socialMedia" name="socialMedia" onsubmit="return submit()" method="post">
-            <input type="checkbox" id="social1" name="social1" value="facebook">
-            <label for="social1"> I have a Facebook account</label><br>
-            <input type="checkbox" id="social2" name="social2" value="twitter">
-            <label for="social2"> I have a Twitter account</label><br>
-            <input type="checkbox" id="social3" name="social" value="instagram">
-            <label for="social3"> I have an Instagram account</label><br>
-            <input type="checkbox" id="social4" name="social4" value="snapchat">
-            <label for="social4"> I have a Snapchat account</label><br>
-            <input type="checkbox" id="social5" name="social5" value="linkedIn">
-            <label for="social5"> I have a LinkedIn account</label><br>
-            <input type="checkbox" id="social6" name="social5" value="other">
-            <label for="social6"> Other:</label><br>
-            <input type="text" id="social6" name="social6"><br>
-            <input class="submit_button" type="submit" value="Save">
-        </form>
+            <input type="checkbox" id="Facebook" name="Facebook">
+            <label for="Facebook"> I have a Facebook account</label><br>
+            <input type="checkbox" id="Twitter" name="Twitter">
+            <label for="Twitter"> I have a Twitter account</label><br>
+            <input type="checkbox" id="Instagram" name="Instagram">
+            <label for="Instagram"> I have an Instagram account</label><br>
+            <input type="checkbox" id="Snapchat" name="Snapchat">
+            <label for="Snapchat"> I have a Snapchat account</label><br>
+            <input type="checkbox" id="LinkedIn" name="LinkedIn">
+            <label for="LinkedIn"> I have a LinkedIn account</label><br>
+            <input type="checkbox" id="Social_other" name="Social_other">
+            <label for="Social_other"> Other:</label><br>
+            <input type="text" id="Social_comment" name="Social_other"><br>
         </p>
     </div>
-
-    <!-- Content of Social Network tab which will be displayed when clicked -->
-
-
-
+        <center>
+            <input class="submit_button" type="submit" name="submit" value="SAVE"/>
+        </center>
+    </form>
 </center>
 
 <!-- Dashboard end -->
@@ -231,11 +248,9 @@
     }
 
 
-    var inputs = document.getElementsByTagName('input');
+    var inputs = document.querySelectorAll('input, textarea');
     var data = {};
     var d = {};
-    const cb = document.getElementById('social1');
-    console.log(cb.checked);
     function dataLoad() {
         d['email'] = String(sessionStorage.getItem("email"));
         var xhr = new XMLHttpRequest();
@@ -249,9 +264,12 @@
                     for (var i = 0; i < inputs.length - 1; ++i) {
 
                         var id = String(inputs[i].id);
-                        if (id != null)
-                            if (String(xhr.response[id]) != null)
-                                document.getElementById(id).value = String(response[id]);
+                        if(id!=null)
+                            if(String(xhr.response[id])!=null)
+                                if (String(response[id])==="true")
+                                    document.getElementById(id).checked = true;
+                                else
+                                    document.getElementById(id).value = String(response[id]);
                     }
                 }
             }
@@ -261,11 +279,17 @@
         console.log(JSON.stringify(d));
         xhr.send(JSON.stringify(d));
     }
+
+
+
     function submit(event) {
         var form = document.getElementById("socialMedia");
-        var inputs = document.getElementsByTagName('input');
+        var inputs = document.querySelectorAll('input, textarea');
         for (var i = 0; i < inputs.length; ++i) {
-            data[inputs[i].id] = inputs[i].value;
+            if (inputs[i].type=="checkbox")
+                data[inputs[i].id] = inputs[i].checked;
+            else
+                data[inputs[i].id] = inputs[i].value;
         }
         data['email'] = String(sessionStorage.getItem("email"));
         console.log(data);

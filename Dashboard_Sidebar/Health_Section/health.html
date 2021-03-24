@@ -35,6 +35,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 
+    <style>
+
+        .submit_button {
+            background-color: #3db2db; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #78c3de;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+
 </head>
 <body>
 <!--Make sure User logged in  -->
@@ -46,6 +76,8 @@
         window.location.href = "../../loginPage/login.html";
     }
 </script>
+<body onload="dataLoad()">
+
 <input type="checkbox" id="check">
 <!--header area start-->
 <header>
@@ -142,6 +174,9 @@
 <center><h2>Add to your Plan to Part:</h2></center>
 <br>
 <center>
+    <div id="status">
+
+    </div>
     <!-- All the tabs are designed here -->
     <form id="healthData" name="healthData" onsubmit="return submit()" method="post">
 
@@ -154,9 +189,8 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
             <label for="basic"><b>Type of health insurance plan:</b></label><br>
-            <select>
+            <select id="health_insurance_type">
                 <option>None</option>
                 <option>Medicare</option>
                 <option>Medicaid</option>
@@ -164,26 +198,25 @@
                 <option>Other</option>
             </select>
             <br><br><br>
-            <label for="carrier"><b>Name of Insurance:</b></label><br>
-            <input type="text" id="carrier" placeholder="Insurance Company"><br><br>
+            <label for="insurance_name"><b>Name of Insurance:</b></label><br>
+            <input type="text" id="insurance_name" placeholder="Insurance Company"><br><br>
 
-            <label for="mname"><b>Member Name:</b></label><br>
-            <input type="text" id="mname" placeholder="Memeber Name"><br><br>
+            <label for="member_name"><b>Member Name:</b></label><br>
+            <input type="text" id="member_name" placeholder="Member Name"><br><br>
 
-            <label for="idnumber"><b>Member ID number:</b></label><br>
-            <input type="text" id="idnumber" placeholder="Membership Number"><br><br>
+            <label for="id_number"><b>Member ID number:</b></label><br>
+            <input type="text" id="id_number" placeholder="Membership Number"><br><br>
 
-            <label for="gnumber"><b>Group ID Number:</b></label><br>
-            <input type="text" id="gnumber" placeholder="Group Number"><br><br>
+            <label for="g_number"><b>Group ID Number:</b></label><br>
+            <input type="text" id="g_number" placeholder="Group Number"><br><br>
 
-            <label for="healthcomment">Anything else you would like to add about your health plan?</label><br>
-            <textarea id="healthcomment" name="healthcomment" placeholder="Any other information?"></textarea>
-        </form>
+            <label for="health_comment">Anything else you would like to add about your health plan?</label><br>
+            <textarea id="health_comment" placeholder="Any other information?"></textarea>
         </p>
     </div>
 
     <!-- Content of health insurance tab which will be displayed when clicked -->
-    <button class="accordion">
+    <button type = "button" class="accordion">
         <span class="icon">+</span>
         Doctor:
     </button>
@@ -191,21 +224,19 @@
         <p>
 
             <!-- This form will be displayed when the doctor tab will be clicked -->
-        <form>
-            <label for="doctor"><b>Type of Doctor:</b></label><br><br>
-            <input type="text" name="doctor" placeholder="Example: Surgeon"><br><br>
+            <label for="type_doctor"><b>Type of Doctor:</b></label><br><br>
+            <input type="text" id="type_doctor" placeholder="Example: Surgeon"><br><br>
 
             <label for="contact"><b>Doctor's contact info:</b></label><br><br>
-            <input type="text" name="docotorname" placeholder="Name of the Docotor: "><br><br>
-            <input type="text" class="street" placeholder="Street Address">
-            <input type="text" class="city" placeholder="City">
-            <input type="text" class="state" placeholder="State">
+            <input type="text" id="doctor_name" placeholder="Doctor's name: "><br><br>
+            <input type="text" id="street" class="street" placeholder="Street Address">
+            <input type="text" id="city" class="city" placeholder="City">
+            <input type="text" id="state" class="state" placeholder="State">
             <br><br>
 
-            <label for="notes">Notes and Instructions:</label><br>
-            <textarea id="notes" name="notes"></textarea>
+            <label for="doctor_notes">Notes and Instructions:</label><br>
+            <textarea id="doctor_notes" name="notes" placeholder="Any other notes?"></textarea>
 
-        </form>
         </p>
     </div>
     <!-- Content of Other real estate tab which will be displayed when clicked -->
@@ -216,13 +247,11 @@
     </button>
     <div class="panel">
         <p>
-        <form>
             <label for="upload">Upload medical document:</label><br>
             <input type="file" name="file" multiple="multiple" id="file"><br><br>
-            <center>
-                <button type="submit" name="submit" value="submit">Save</button>
-            </center>
-        </form>
+<!--            <center>-->
+<!--                <button type="submit" name="submit" value="submit">Save</button>-->
+<!--            </center>-->
         </p>
     </div>
 
@@ -235,11 +264,9 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
-        <form>
             <label for="possession">Anything else you would like to add:</label><br>
             <textarea id="possession" name="possession"
                       placeholder="Any message to your loved one about your health?"></textarea>
-        </form>
         </p>
     </div>
 
@@ -315,7 +342,7 @@
         window.location.href = "../../loginPage/login.html";
     }
 
-    var inputs = document.getElementsByTagName('input');
+    var inputs = document.querySelectorAll('select, input, textarea');
     var data = {};
     var d = {};
     function dataLoad(){
@@ -333,7 +360,10 @@
                         var id = String(inputs[i].id);
                         if(id!=null)
                             if(String(xhr.response[id])!=null)
-                                document.getElementById(id).value = String(response[id]);
+                                if (String(response[id])==="true")
+                                    document.getElementById(id).checked = true;
+                                else
+                                    document.getElementById(id).value = String(response[id]);
                     }
                 }
             }
@@ -353,7 +383,7 @@
 
     function submit(event) {
         var form = document.getElementById("healthData");
-        var inputs = document.getElementsByTagName('input');
+        var inputs = document.querySelectorAll('select, input, textarea');
         for (var i = 0; i < inputs.length; ++i) {
             data[inputs[i].id] = inputs[i].value;
         }

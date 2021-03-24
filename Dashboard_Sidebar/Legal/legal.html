@@ -35,6 +35,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 
+    <style>
+
+        .submit_button {
+            background-color: #3db2db; /* aqua */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #78c3de;
+        }
+        input{
+            width: 60%;
+            padding: 10px 4px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            width: 40%;
+            padding: 10px 4px;
+            margin: 12px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
 </head>
 <body>
 <!--Make sure User logged in  -->
@@ -157,7 +186,6 @@
     <div class="panel">
         <p>
             <!-- This form will be displayed when the home tab will be clicked -->
-        <form>
             <label for="basic"><b>Attorney Information</b></label><br>
             <select id="attinfo">
                 <option>None</option>
@@ -181,13 +209,11 @@
 
             <label for="healthcomment">Anything else you would like to add about your legal right?</label><br>
             <textarea id="healthcomment" name="healthcomment" placeholder="Any other information?"></textarea>
-
-            <center>
-                <input class="submit_button" type="submit" name="submit" value="SAVE"/>
-            </center>
-        </form>
         </p>
     </div>
+        <center>
+            <input class="submit_button" type="submit" name="submit" value="SAVE"/>
+        </center>
     </form>
 
 
