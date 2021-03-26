@@ -98,8 +98,8 @@
 <!--sidebar start-->
 <div class="sidebar">
     <div class="profile_info">
-        <img src="icons/Legal.png" class="profile_image" alt="">
-        <h4>New User</h4>
+        <img id="Pro_pic" src="icons/Legal.png" class="profile_image" alt="">
+        <h4 id="user_name">New User</h4>
     </div>
     <a href="membership.html"><i class="fas fa-desktop"></i>
         <span>Dashboard</span></a>
@@ -172,7 +172,7 @@
              --->
 </section>
 <!-- Dashboard end -->
-<body>
+<body onload="load()">
 <div class="comparison">
     <table>
         <thead>
@@ -340,6 +340,15 @@
 
 
 <script type="text/javascript">
+    function load() {
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+    else{
+        console.log("No Img");
+        }
+    }
     $(document).ready(function () {
         $('.nav_btn').click(function () {
             $('.mobile_nav_items').toggleClass('active');
@@ -355,6 +364,7 @@
         alert("You've successfully logged out.");
         window.location.href = "../../loginPage/login.html";
     }
+
 
 </script>
 

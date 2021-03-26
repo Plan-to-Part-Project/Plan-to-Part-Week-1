@@ -27,7 +27,6 @@ $parent_data = [
     'Users/'.$u."/User_Data" => $data,
 ];
 $temp->getReference()->update($parent_data);
-
 echo json_encode("../Dashboard_SideBar/Membership_Section/membership.html");
 //header("Location: ./formPage/Introduction.html");
 }

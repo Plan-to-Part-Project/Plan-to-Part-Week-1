@@ -73,7 +73,7 @@
         window.location.href = "../../loginPage/login.html";
     }
 </script>
-<body>
+<body onload="load()">
 
 <input type="checkbox" id="check">
 <!--header area start-->
@@ -131,8 +131,8 @@
 <!--sidebar start-->
 <div class="sidebar">
     <div class="profile_info">
-        <img src="icons/Legal.png" class="profile_image" alt="">
-        <h4>New User</h4>
+        <img id="Pro_pic" src="icons/Legal.png" class="profile_image" alt="">
+        <h4 id="user_name">New User</h4>
     </div>
     <a href="../Membership_Section/membership.html"><i class="fas fa-desktop"></i>
         <span>Dashboard</span></a>
@@ -192,7 +192,15 @@
 
 <script>
     // Javascript is used here to show the opening and closing functionality of the tab
-
+    function load() {
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+        else{
+            console.log("No Img");
+        }
+    }
     function logOut(){
         sessionStorage.clear();
         // Testing code HERE----------

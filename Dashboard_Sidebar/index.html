@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 </head>
-<body>
+<body onload="load()">
 
 <input type="checkbox" id="check">
 <!--header area start-->
@@ -83,8 +83,8 @@
 <!--sidebar start-->
 <div class="sidebar">
     <div class="profile_info">
-        <img src="icons/Legal.png" class="profile_image" alt="">
-        <h4>New User</h4>
+        <img id="Pro_pic"src="icons/Legal.png" class="profile_image" alt="">
+        <h4 id="user_name">New User</h4>
     </div>
     <a href="#"><i class="fas fa-desktop"></i>
         <span>Dashboard</span></a>
@@ -220,6 +220,15 @@
 
 
 <script type="text/javascript">
+    function load() {
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+        else{
+            console.log("No Img");
+        }
+    }
     $(document).ready(function () {
         $('.nav_btn').click(function () {
             $('.mobile_nav_items').toggleClass('active');

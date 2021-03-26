@@ -155,6 +155,8 @@
             if (this.readyState === 4 && this.status === 200) {
                 console.log('Signed in as: ' + JSON.parse(xhr.responseText));
                 sessionStorage.setItem("email",googleUser.getBasicProfile().getEmail())
+                sessionStorage.setItem("login", "true");
+                sessionStorage.setItem("user_email", String(email));
                 window.location.assign(String(JSON.parse(xhr.responseText)));
             }
         };

@@ -91,11 +91,7 @@
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </div>
-                        <div class="col-4">
-                            <a href="" class="btn btn-block btn-social btn-google">
-                                <i class="fa fa-google"></i>
-                            </a>
-                        </div>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
                         <div class="col-4">
                             <a href="" id="google_button" class="btn btn-block btn-social btn-twitter">
                                 <i class="fa fa-twitter"></i>
@@ -119,16 +115,21 @@
         var email = document.getElementById("inputEmail").value;
         sessionStorage.setItem("email", email);
     }
-    function onSuccess(googleUser) {
+    function onSignIn(googleUser) {
+
         var id_token = googleUser.getAuthResponse().id_token;
         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-        console.log(googleUser.getAuthResponse().id_token);
+        //console.log(googleUser.getAuthResponse().id_token);
+        sessionStorage.setItem("email",googleUser.getBasicProfile().getEmail());
+        sessionStorage.setItem("img",googleUser.getBasicProfile().getImageUrl());
+        sessionStorage.setItem("name",googleUser.getBasicProfile().getName());
+        sessionStorage.setItem("login", "true");
+        sessionStorage.setItem("user_email", String(googleUser.getBasicProfile().getEmail()));
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
-                console.log('Signed in as: ' + String(JSON.parse(xhr.responseText)));
-                sessionStorage.setItem("email",googleUser.getBasicProfile().getEmail())
-                window.location.assign(String(JSON.parse(xhr.responseText)));
+                //console.log('Signed in as: ' + String(JSON.parse(xhr.responseText)));
+                window.location.assign(JSON.parse(xhr.responseText));
             }
         };
         xhr.open('POST', 'login_google.php', true);
@@ -137,25 +138,8 @@
         console.log(d);
         xhr.send(JSON.stringify(d));
 
-
-
     }
-    function onFailure(error) {
-        console.log(error);
-    }
-    function renderButton() {
 
-        gapi.signin2.render('google_button', {
-            'scope': 'profile email',
-            'width': 240,
-            'height': 50,
-            'longtitle': true,
-            'theme': 'dark',
-            'onsuccess': onSuccess,
-            'onfailure': onFailure
-
-        });
-    }
 </script>
 
 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>

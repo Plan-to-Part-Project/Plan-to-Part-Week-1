@@ -132,8 +132,8 @@
 <!--sidebar start-->
 <div class="sidebar">
     <div class="profile_info">
-        <img src="icons/Legal.png" class="profile_image" alt="">
-        <h4>New User</h4>
+        <img id="Pro_pic" src="icons/Legal.png" class="profile_image" alt="">
+        <h4 id="user_name">New User</h4>
     </div>
     <a href="../Membership_Section/membership.html"><i class="fas fa-desktop"></i>
         <span>Dashboard</span></a>
@@ -523,6 +523,15 @@
     var data = {};
     var d = {};
     function dataLoad(){
+
+            if (sessionStorage.getItem("img")){
+                document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+                document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+            }
+            else{
+                console.log("No Img");
+            }
+
         d['email'] = String(sessionStorage.getItem("email"));
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
