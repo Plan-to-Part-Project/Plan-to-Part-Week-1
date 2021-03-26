@@ -55,7 +55,7 @@ else{
     $u = $factory->createAuth()->signInWithGoogleIdToken($Questions['id_token'])->firebaseUserId();
     //$factory = (new Factory)->withServiceAccount('./secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
     $temp = $factory->createDatabase();
-    $name = $factory->createAuth()->getUserByEmail($Questions['email'])->displayName;
+    $name = $factory->createAuth()->getUserByEmail($Questions['email'])->photoUrl;
     $email = $Questions['email'];
     $data = [
         'name' => $name,

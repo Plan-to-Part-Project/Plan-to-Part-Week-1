@@ -1,5 +1,5 @@
 <?php
-require "/Users/christy/PhpstormProjects/PTPLink/Plan-to-Part-Week-1/vendor/autoload.php";
+require __DIR__.'\../vendor/autoload.php';
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Auth;

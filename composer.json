@@ -12,7 +12,10 @@
     "minimum-stability": "dev",
     "require": {
         "kreait/firebase-php": "5.x-dev",
-        "php": ">7.*",
-        "ext-json": "*"
+
+        "ext-json": "*",
+        "mpdf/mpdf": "dev-development",
+        "phpmailer/phpmailer": "dev-master",
+        "swiftmailer/swiftmailer": "6.2.x-dev"
     }
 }
