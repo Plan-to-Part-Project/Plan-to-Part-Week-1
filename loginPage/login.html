@@ -48,7 +48,7 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 col-md-6 form-container">
+        <div class="form-container" style=" width:50%; background-color: lightslategray;">
             <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
                 <div class="logo mt-5 mb-3">
                     <img src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2FLegal.png?v=1606109730158"
@@ -67,19 +67,9 @@
                         <span><i class="fa fa-lock"></i></span>
                         <input type="password" id="inputPassword" placeholder="Password" name = "password" required>
                     </div>
-                    <div class="row mb-3">
-                        <div class="col-6 d-flex">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="cb1"/>
-                                <label class="custom-control-label text-white" for="cb1">Remember me</label>
-                            </div>
-                        </div>
-                        <div class="col-6 text-right">
-                            <a href="forget.html" class="forget-link">Forget password</a>
-                        </div>
-                    </div>
-                    <div class="text-left mb-3">
-                        <button type="submit" id="signIn" class="btn btn-primary">Sign In</button>
+                    <div class="col-12 mb-3 mt-3">
+                        <button type="submit" id="signIn" class="btn btn-success">Sign In</button>
+                        <button onclick="location.href = 'forget.html'" class="btn btn-warning">Forgot Password</button>
                         <!--<button onclick=" location.href='../Dashboard_Sidebar/Membership_Section/membership.html' "
                                 type="button" id="signIn" class="btn btn-primary"> Sign In
                         </button>-->
@@ -98,12 +88,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="text-white"> Don't have an account? <a href="../register.html" class="register-link">Register
-                        here</a></div>
+                    <div class="text-white"> Don't have an account?
+                        <button onclick="location.href = '../register.html'" class="btn btn-primary">Register An Account</button>
+                    </div>
                 </form>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 d-none d-md-block "><img
+        <div style="width: 50%"><img
                 src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2Fchewy-DR6wPYR2DRc-unsplash.jpg?v=1603075265987"
                 width="790px" height="890px"></div>
     </div>
