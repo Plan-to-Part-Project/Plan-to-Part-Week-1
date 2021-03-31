@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+    margin: 15px;
 }
 
 .form-box h4{
