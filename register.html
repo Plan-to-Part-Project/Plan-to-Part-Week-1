@@ -15,7 +15,10 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" type="text/css" href="/loginPage/Style/logInStyle.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="/loginPage/Style/logInStyle.css"/>-->
+    <link rel="stylesheet" type="text/css" href="./loginPage/Style/main.css"/>
+    <link rel="stylesheet" type="text/css" href="./loginPage/Style/util.css"/>
+
     <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -38,24 +41,18 @@
 </head>
 
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 form-container">
-            <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
-                <div class="logo mt-5 mb-3">
-                    <img src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2FComputerlock.png?v=1606285757209" width="150px"/>
-                </div>
-                <div class="heading mb-3">
-                    <h4>Create an account</h4>
-                </div>
-                <form action="register_user.php" method="post">
-                    <div class="form-input">
-                        <span><i class="fa fa-user"></i></span>
-                        <input type="text" id="fullName" name="name" placeholder="Full Name" required/>
+<div class="limiter">
+    <!--<div class="row">-->
+        <div class="container-login100" style="background-image: url('https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2Fimg15.jpg?v=1606286283014')">
+            <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+                <form class="login100-form validate-form flex-sb flex-w" action="register_user.php" method="post">
+                    <span class="login100-form-title p-b-53">Register a New Account</span>
+                    <div class="wrap-login100 validate-input">
+                        <input class="input100" type="text" id="fullName" name="name" placeholder="Full Name" required/>
+                        <span><i class="focus-input100"></i></span>
                     </div>
-                    <div class="form-input">
-                        <span><i class="fa fa-envelope"></i></span>
-                        <input
+                    <div class="wrap-login100 validate-input">
+                        <input  class="input100"
                                 type="email"
                                 id="inputEmail"
                                 name="email"
@@ -63,16 +60,17 @@
                                 placeholder="Email Address"
                                 required
                         />
+                        <span><i class="focus-input100"></i></span>
                     </div>
-                    <div class="form-input">
-                        <span><i class="fa fa-lock"></i></span>
-                        <input
+                    <div class="wrap-login100 validate-input">
+                        <input  class="input100"
                                 type="password"
                                 id="inputPassword"
                                 placeholder="Password"
                                 required
                                 name="pass"
                         />
+                        <span><i class="focus-input100"></i></span>
                     </div>
                     <div class="row mb-3">
                         <div class="col-12 d-flex">
@@ -84,56 +82,53 @@
                                         required
                                         name="s"
                                 />
-                                <label class="custom-control-label text-white" for="cb1"
-                                >I agree all terms & conditions</label
-                                >
+                                <label class="custom-control-label text-black" for="cb1">I agree to all
+                                    <a href="formPage/privacy.html">terms & conditions</a></label>
                             </div>
                         </div>
                     </div>
-                    <div class="text-left mb-3">
+                    <div class="container-login100-form-btn m-t-17 m-b-10">
                         <button
+                                class="login100-form-btn"
                                 type="submit"
                                 id="SignUp"
-                                class="btn btn-info "
                                 name="push" >
                             Sign Up
                         </button>
                     </div>
-                    <div class="text-white mb-3">or register with</div>
+                    <div class="text-black mb-3">or register with</div>
                     <div class="row mb-3">
-                        <div class="col-4">
+                        <!--<div class="col-4">
                             <a href="" class="btn btn-block btn-social btn-facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
-                        </div>
+                        </div>-->
                         <div class="col-4" id="google_button">
                             <a href="" class="btn btn-block btn-social btn-google">
                                 <i class="fa fa-google"></i>
                             </a>
                         </div>
-                        <div class="col-4">
+                        <!--<div class="col-4">
                             <a href="" class="btn btn-block btn-social btn-twitter">
                                 <i class="fa fa-twitter"></i>
                             </a>
-                        </div>
+                        </div>-->
                     </div>
-                    <div class="text-white">
+                    <div class="text-black">
                         Already have an account?
-                        <a href="./loginPage/login.html" class="login-link">Login here</a>
+                        <a href="./loginPage/login.html" class="btn btn-primary mb-3">Login here</a>
                     </div>
 
                 </form>
             </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 d-none d-md-block ">
+        <!--<div class="col-lg-6 col-md-6 d-none d-md-block ">
             <img
                     src="https://cdn.glitch.com/f0328534-9c08-4f7a-867f-48d6314fffae%2Fimg15.jpg?v=1606286283014"
                     width="790px"
                     height="890px"
-            />
-        </div>
-    </div>
+            />-->
 </div>
 
 <script>
