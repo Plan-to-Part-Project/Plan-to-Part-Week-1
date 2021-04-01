@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-family: "David Libre", serif;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
@@ -18,7 +18,7 @@
 }
 
 .inner-width {
-  max-width: 1600px;
+  max-width: 3000px;
   padding : 0 40px;
 }
 
@@ -48,13 +48,13 @@
   display: none;
 }
 
-img{
-  width: 600px;
-  height: 370px;
-  float:right; 
-  margin-top: 20px;
-  margin-right:40px;
-}
+/*img{*/
+/*  max-width: 50%;*/
+/*  max-height: 550px;*/
+/*  float:right;*/
+/*  margin-top: 20px;*/
+/*  margin-right:40px;*/
+/*}*/
 
 .menu-toggler span {
   display: block;
@@ -68,7 +68,7 @@ img{
 
 .navbar-menu a {
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   margin-left: 30px;
   transition: 0.2s linear;
@@ -100,7 +100,7 @@ img{
 .logan {
   width: 100%;
   color: #2196F3;
-  sjustify-content: center;
+  justify-content: center;
   margin-top: 0px;
   text-align: center;
   font-size: 28px;
@@ -122,11 +122,14 @@ img{
   font-size: 18px;
 }
 
-.contactForm {
-  margin-top: 30px;
-  margin-left: 30px;
+.contactForm1 {
   font-size: 20px;
-
+  background-image: url("./images/bgg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  min-height: 500px;
+  /*background: #4866a8;*/
 }
 hr{
   magrin-left:0px;
@@ -137,44 +140,52 @@ hr{
     position: right;
 }*/
 
+
+.inputBox{
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10%;
+  width: 50%;
+}
+
+.inputBox label{
+   display: inline-block;
+   width: 12%;
+   vertical-align: top;
+   margin: 20px 10% 0 20%;
+ }
+
 input[type="text"] {
-  margin-top: 15px;
   font-size: 20px;
-  width: 396px;
+  width: 40%;
+  min-width: 240px;
   padding: 8px 0px;
-  margin: 5px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: none;
-  margin-left: 10px;
+  margin: 15px 5% 0 5%;
 }
 
-.inputBox label{
-   display: inline-block;
-   width: 120px;
-   vertical-align: top;
-   margin-top: 20px;
-
- }
-
-
 .inputBox textarea[name="message"]{
-    margin-left: 13px;
-    width: 396px;
+    width: 40%;
+    min-width: 240px;
     height: 150px;
     text-align: left;
     resize: none;
     font-size: 15px;
-    margin-top: 10px;
+    margin: 15px 5% 0 5%;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    resize: none;
 
   }
+
+::placeholder{
+  font-size: 15px;
+}
 
 input[type="text"]::placeholder {
   text-align: center;
@@ -188,40 +199,32 @@ textarea:hover {
   background-color: lightgrey;
   color: black;
 }
-/*  textarea {
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: none;
-    margin-left: 16px;
-  }
 
-*/
 input[type="submit"]:hover {
-  background-color: lightskyblue;
-  color: #2196F3;
+  background-color: #154E89;
 }
 
 input[type="submit"] {
-  margin-top: 15px;
+  width: 10%;
+  min-width: 70px;
+  height: 45px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
-  padding: 10px 30px;
+  font-size: 17px;
   background-color: #2196F3;
-  border-color: #2196F3;
-  margin-left: 280px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 45%;
   margin-bottom: 130px;
+  border: transparent;
 }
-
-
 
 footer {
   background-image: url("https://cdn.glitch.com/5a4ae6e4-c67f-4814-ae9f-42123000f196%2Fimages.jpg?v=1602040250993");
   color: white;
   padding: 80px 0;
   text-align: center;
-  border: 1px solid #2196F3;
 }
 
 .sm a {
@@ -268,11 +271,11 @@ footer {
 
 .copyright {
   margin-bottom: 20px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 18px;
 }
 .policy a {
-  font-family: "David Libre", serif;
-  font-size: 18pßx;
+  font-size: 18px;
   padding: 0 3px 50px 3px;
   color: white;
 }
@@ -352,7 +355,7 @@ footer {
 
 .contactForm #error_message{
   margin-bottom: 20px;
-  padding : 0px;
+  padding : 0;
   background: #fe8b8e;
   text-align: center;
   font-size: 15px;

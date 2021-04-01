@@ -2,8 +2,13 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-family: "David Libre", serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -18,8 +23,8 @@
 }
 
 .inner-width {
-  max-width: 2500px;
-  padding : 40px 40px;
+  max-width: 3000px;
+  padding : 0 40px;
 }
 
 .navbar .inner-width {
@@ -92,32 +97,37 @@
 }
 
 #content .top-title{
-    text-align:left  ;
-    color:  white;
-    font-size: 45px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  margin-left: 70px;
-   
+  text-align:left;
+  color:  white;
+  font-size: 38px;
+  margin: 20px 40% 20px 70px;
 }
 
 #content .top-inner{
-margin-top:60px;
-background: url(https://cdn.glitch.com/c92254a9-06fa-4f90-bb6a-9076e7a595bf%2Flock.jpg?v=1604607487103) no-repeat center ;
-background-size: cover;
-color: white;
-width:100%;
-padding: 80px 0;
-text-align: center;
-border: 1px solid #2196F3;
+  margin-top:60px;
+  background: url(https://cdn.glitch.com/c92254a9-06fa-4f90-bb6a-9076e7a595bf%2Flock.jpg?v=1604607487103) no-repeat center ;
+  background-size: cover;
+  color: white;
+  width:100%;
+  padding: 80px 0;
+  text-align: center;
 }
 
 
 #content h2{
-    text-align: left;
-    color:  white;
-    font-size: 22px;
-    margin-left: 180px;
+  text-align: left;
+  color:  white;
+  font-size: 18px;
+  margin-left: 140px;
+  margin-right: 40%;
+  line-height: 22px;
+}
+
+#content p{
+  font-size: 18px;
+  margin-left: 8%;
+  margin-right: 8%;
+  line-height: 22px;
 }
 
 #information{
@@ -129,9 +139,10 @@ border: 1px solid #2196F3;
 }
 
 #information .topics{
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 20px;
-
+  margin-right: 15%;
+  margin-left: 15%;
 }
 
 #information img{
@@ -139,6 +150,7 @@ border: 1px solid #2196F3;
     width: 52px;
     height: 62px;
     margin-top:30px;
+
 }
 
 #information h4{
@@ -165,7 +177,6 @@ footer {
   color: white;
   padding: 80px 0;
   text-align: center;
-  border: 1px solid #2196F3;
 }
 
 .sm a {
@@ -212,13 +223,14 @@ footer {
 
 .copyright {
   margin-bottom: 20px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 18px;
 }
 .policy a {
-  font-family: "David Libre", serif;
   font-size: 18px;
   padding: 0 3px 50px 3px;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .copyright a {
@@ -226,6 +238,7 @@ footer {
   color: #48dbfb;
   font-weight: 500;
   margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .goTop {
