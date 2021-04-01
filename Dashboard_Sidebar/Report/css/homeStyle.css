@@ -6,6 +6,44 @@
   box-sizing: border-box;
 }
 
+.gen_button{
+  margin-top: 20px;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.gen_button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+
+}
+
+.gen_button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.gen_button:hover span {
+  padding-right: 25px;
+}
+
+.gen_button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 
 .search-box{
   position: absolute;
@@ -58,9 +96,8 @@
 }
 
 .inner-width {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 40px;
+  max-width: 3000px;
+  padding : 0 40px;
 }
 
 .navbar .inner-width {
@@ -343,12 +380,11 @@ section.dark .section-title::after {
 }
 
 footer {
-  background-image: url(../img/footer.jpg) ;
+  background-image: url("https://cdn.glitch.com/5a4ae6e4-c67f-4814-ae9f-42123000f196%2Fimages.jpg?v=1602040250993");
   color: white;
-  margin-top: 600px;
-  padding: 20px 0;
+  padding: 80px 0;
   text-align: center;
-  
+  margin-top: 50%;
 }
 
 .sm a {
@@ -395,16 +431,16 @@ footer {
 
 .copyright {
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 18px;
 }
 .policy a {
-  font-size: 10px;
+  font-size: 18px;
   padding: 0 3px 50px 3px;
   color: white;
 }
 
 .copyright a {
-  font-size: 16px;
+  font-size: 18px;
   color: #48dbfb;
   font-weight: 500px;
   margin-top: 10px;
