@@ -2,7 +2,7 @@
   margin: 0;
   padding:0;
   text-decoration: none;
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 
@@ -158,7 +158,6 @@
 }
 
 #home .content h1::after {
-  font-family: "David Libre", serif;
   content: " Family ";
   animation: textanim 10s linear infinite;
 }
@@ -399,7 +398,6 @@ footer {
   font-size: 15px;
 }
 .policy a {
-  font-family: "David Libre", serif;
   font-size: 10px;
   padding: 0 3px 50px 3px;
   color: white;

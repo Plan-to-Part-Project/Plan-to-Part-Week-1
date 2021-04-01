@@ -17,9 +17,10 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.cs"
     />
-    <!--google font-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap"
+            rel="stylesheet"
+    />
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
@@ -30,22 +31,12 @@
     <script src="js/homeScript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/homeStyle.css"/>
-    <link rel="stylesheet" href="../css/styleDashBoard.css"/>
+    <link rel="stylesheet" href="css/homeStyle.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
-<!--header area start-->
-<!--Make sure User logged in  -->
-<script>
-    let login = sessionStorage.getItem("login"); // return "true"
-    let email = sessionStorage.getItem("user_email");
-    if(login !== "true"){
-        alert("You have not logged in");
-        window.location.href = "../../loginPage/login.html";
-    }
-</script>
+
 <input type="checkbox" id="check">
 <!--header area start-->
 <header>
@@ -53,19 +44,21 @@
         <i class="fas fa-bars" id="sidebar_btn"></i>
     </label>
     <div class="left_area">
-        <a href="../../homePage.html">
-            <img src="icons/icon.png" alt="Plan To Part Logo">
+        <a href="../homePage.html">
+            <img src="icons/icon.png"  alt="Plan To Part Logo" >
         </a>
     </div>
 
     <div class="right_area">
-        <button onclick="logOut()" class="logout_btn">Logout</button>
-        <a href="../../helpPage/help.html">Helps</a>
-        <a href="../../SecurityPage/security.html">Security</a>
-        <a href="../../homePage.html#about">About Us</a>
-        <a href="../../contactHtml/contactUs.html">Contact</a>
-        <a href="membership.html">Plans</a>
-        <a href="../../homePage.html">Home</a>
+
+        <a href="https://loginpage-plantopart.glitch.me/Loginpage.html" class="logout_btn">Logout</a>
+        <a href="../../helpPage/help.html" >Helps</a>
+        <a href="../../SecurityPage/security.html" >Security</a>
+        <a href="../../homePage.html">About Us</a>
+        <a href="../../contactHtml/contactUs.html" >Contact</a>
+        <a href="membership.html" >Plans</a>
+        <a href="../../homePage.html" >Home</a>
+
     </div>
 
 </header>
@@ -78,37 +71,28 @@
     </div>
     <div class="mobile_nav_items">
         <a href="membership.html"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-
-        <a href="../Financial_Personal_Sections/personalInfo.html"><i
-                class="fas fa-cogs"></i><span>Personal Info & ID's</span></a>
-
-        <a href="../HomeProperty/HomeProperty.html"><i class="fas fa-table"></i><span>Home & Property</span></a>
-
-        <a href="../Financial_Personal_Sections/Financial.html"><i class="fas fa-th"></i><span>Financial</span></a>
-
-        <a href="../socialNetwork_section/socialnetwork.html"><i
-                class="fas fa-info-circle"></i><span>Social Network</span></a>
-
+        <a href="../Financial&Personal_Sections/personalInfo.html"><i class="fas fa-cogs"></i><span>Personal Info & ID's</span></a>
+        <a href="../HomeProperty/Home&Property.html"><i class="fas fa-table"></i><span>Home & Property</span></a>
+        <a href="../Financial&Personal_Sections/Financial.html"><i class="fas fa-th"></i><span>Financial</span></a>
+        <a href="../socialNetwork_section/socialnetwork.html"><i class="fas fa-info-circle"></i><span>Social Network</span></a>
         <a href="../Health_Section/health.html"><i class="fas fa-sliders-h"></i><span>Health</span></a>
-
         <a href="../Legal/legal.html"><i class="fas fa-sliders-h"></i><span>Legal</span></a>
-        <a href="../Report/Report.html"><i class="fas fa-sliders-h"></i><span>Report</span></a>
     </div>
 </div>
 <!--mobile navigation bar end-->
 <!--sidebar start-->
 <div class="sidebar">
     <div class="profile_info">
-        <img id="Pro_pic" src="icons/Legal.png" class="profile_image" alt="">
-        <h4 id="user_name">New User</h4>
+        <img src="icons/Legal.png" class="profile_image" alt="">
+        <h4>New User</h4>
     </div>
     <a href="membership.html"><i class="fas fa-desktop"></i>
         <span>Dashboard</span></a>
-    <a href="../Financial_Personal_Sections/personalInfo.html"><i class="fas fa-cogs"></i>
+    <a href="../Financial&Personal_Sections/personalInfo.html"><i class="fas fa-cogs"></i>
         <span>Personal Info & ID's</span></a>
-    <a href="../HomeProperty/HomeProperty.html"><i class="fas fa-table"></i>
+    <a href="../HomeProperty/Home&Property.html"><i class="fas fa-table"></i>
         <span>Home & Property</span></a>
-    <a href="../Financial_Personal_Sections/Financial.html"><i class="fas fa-th"></i>
+    <a href="../Financial&Personal_Sections/Financial.html"><i class="fas fa-th"></i>
         <span>Financial</span></a>
     <a href="../socialNetwork_section/socialnetwork.html"><i class="fas fa-info-circle"></i>
         <span>Social Network</span></a>
@@ -117,20 +101,16 @@
     <a href="../Legal/legal.html"><i class="fas fa-drafting-compass"></i>
 
         <span>Legal</span></a>
-    <a href="../Report/Report.html"><i class="fas fa-drafting-compass"></i>
-        <span>Report</span></a>
 </div>
 <!--sidebar end-->
 
-<section id="works">
+<section id ="works">
     <div class="inner-width">
-        <h1 class="section-title">
+        <h1 class ="section-title">
             Choose Your Plan
         </h1>
         <center>
-            <p>Once your 10-day free trial ends we love it if you browse our membership plans. Each one of these plans
-                contributes to us getting to know you better so we may be able to better assist you and your loved one's
-                needs.</p></center>
+            <p>Once your 10-day free trial ends we love it if you browse our membership plans. Each one of these plans contributes to us getting to know you better so we may be able to better assist you and your loved one's needs.</p></center>
         <!---
                 <div class = "works">
                   <a href = "icons/icon1.PNG" class = "work">
@@ -144,6 +124,7 @@
                       </div>
                     </div>
                   </a>
+
                   <a href = "icons/icon3.PNG" class = "work">
                   <img src = "icons/icon3.PNG" alt = "" >
                     <div class ="info">
@@ -155,6 +136,8 @@
                       </div>
                     </div>
                   </a>
+
+
                   <a href = "icons/icon4.PNG" class = "work">
                   <img src = "icons/icon4.PNG" alt = "" >
                     <div class ="info">
@@ -170,7 +153,7 @@
              --->
 </section>
 <!-- Dashboard end -->
-<body onload="load()">
+<body>
 <div class="comparison">
     <table>
         <thead>
@@ -311,16 +294,16 @@
     </table>
 
 
+
 </div>
-</body>
 <!-- Footer--->
 
 <footer>
     <div class="inner-width">
         <div class="policy">
-            <a class="bt" href="../../homePage.html#about">About Us</a>
-            <a class="bt" href="/Dashboard_Sidebar/Membership_Section/membership.html">Plans</a>
-            <a class="bt" href="../../formPage/privacy.html">Privacy</a>
+            <a class="bt" href="../../homePage.html">About Us</a>
+            <a class="bt" href="#">Plans</a>
+            <a class="bt" href="#">Privacy</a>
         </div>
 
         <div class="copyright">
@@ -338,33 +321,13 @@
 <button class="goTop fas fa-arrow-up"></button>
 
 
+
 <script type="text/javascript">
-    function load() {
-        if (sessionStorage.getItem("img")){
-            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
-            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
-        }
-        else{
-            console.log("No Img");
-        }
-    }
-    $(document).ready(function () {
-        $('.nav_btn').click(function () {
+    $(document).ready(function(){
+        $('.nav_btn').click(function(){
             $('.mobile_nav_items').toggleClass('active');
         });
     });
-    function logOut(){
-        sessionStorage.clear();
-        // Testing code HERE----------
-        //let login = sessionStorage.getItem("login");
-        //let email = sessionStorage.getItem("user_email");
-        //alert(login + email); // return 0 after clearing
-        // Testing code HERE----------
-        alert("You've successfully logged out.");
-        window.location.href = "../../loginPage/login.html";
-    }
-
-
 </script>
 
 </body>
