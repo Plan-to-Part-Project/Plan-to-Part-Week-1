@@ -1,7 +1,11 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
 body{
   margin: 0;
   padding: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   font-size:18px;
 }
@@ -134,7 +138,7 @@ header{
   background: #19B3D3;
   text-decoration: none;
   float: right;
-  margin-top: -30px;
+  margin-top: 0px;
   margin-right: 40px;
   border-radius: 2px;
   font-size: 15px;
