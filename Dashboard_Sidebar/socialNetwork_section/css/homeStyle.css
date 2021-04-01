@@ -42,7 +42,7 @@
   float: left;
   padding: 0;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   transition: .4s ;
   width: 0px;
 }
@@ -394,16 +394,16 @@ footer {
 
 .copyright {
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 18px;
 }
 .policy a {
-  font-size: 10px;
+  font-size: 18px;
   padding: 0 3px 50px 3px;
   color: white;
 }
 
 .copyright a {
-  font-size: 16px;
+  font-size: 18px;
   color: #48dbfb;
   font-weight: 500px;
   margin-top: 10px;
