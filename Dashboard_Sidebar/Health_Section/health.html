@@ -184,95 +184,95 @@
     <!-- All the tabs are designed here -->
     <form id="healthData" name="healthData" onsubmit="return submit()" method="post">
 
-    <button type = "button" class="accordion">
-        <span class="icon">+</span>
-        Health Insurance
-    </button>
+        <button type = "button" class="accordion">
+            <span class="icon">+</span>
+            Health Insurance
+        </button>
 
-    <!-- Content of Home tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the home tab will be clicked -->
-            <label for="basic"><b>Type of health insurance plan:</b></label><br>
-            <select id="health_insurance_type">
-                <option>None</option>
-                <option>Medicare</option>
-                <option>Medicaid</option>
-                <option>Military</option>
-                <option>Other</option>
-            </select>
-            <br><br><br>
-            <label for="insurance_name"><b>Name of Insurance:</b></label><br>
-            <input type="text" id="insurance_name" placeholder="Insurance Company"><br><br>
+        <!-- Content of Home tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the home tab will be clicked -->
+                <label for="basic"><b>Type of health insurance plan:</b></label><br>
+                <select id="health_insurance_type">
+                    <option>None</option>
+                    <option>Medicare</option>
+                    <option>Medicaid</option>
+                    <option>Military</option>
+                    <option>Other</option>
+                </select>
+                <br><br><br>
+                <label for="insurance_name"><b>Name of Insurance:</b></label><br>
+                <input type="text" id="insurance_name" placeholder="Insurance Company"><br><br>
 
-            <label for="member_name"><b>Member Name:</b></label><br>
-            <input type="text" id="member_name" placeholder="Member Name"><br><br>
+                <label for="member_name"><b>Member Name:</b></label><br>
+                <input type="text" id="member_name" placeholder="Member Name"><br><br>
 
-            <label for="id_number"><b>Member ID number:</b></label><br>
-            <input type="text" id="id_number" placeholder="Membership Number"><br><br>
+                <label for="id_number"><b>Member ID number:</b></label><br>
+                <input type="text" id="id_number" placeholder="Membership Number"><br><br>
 
-            <label for="g_number"><b>Group ID Number:</b></label><br>
-            <input type="text" id="g_number" placeholder="Group Number"><br><br>
+                <label for="g_number"><b>Group ID Number:</b></label><br>
+                <input type="text" id="g_number" placeholder="Group Number"><br><br>
 
-            <label for="health_comment">Anything else you would like to add about your health plan?</label><br>
-            <textarea id="health_comment" placeholder="Any other information?"></textarea>
-        </p>
-    </div>
+                <label for="health_comment">Anything else you would like to add about your health plan?</label><br>
+                <textarea id="health_comment" placeholder="Any other information?"></textarea>
+            </p>
+        </div>
 
-    <!-- Content of health insurance tab which will be displayed when clicked -->
-    <button type = "button" class="accordion">
-        <span class="icon">+</span>
-        Doctor:
-    </button>
-    <div class="panel">
-        <p>
+        <!-- Content of health insurance tab which will be displayed when clicked -->
+        <button type = "button" class="accordion">
+            <span class="icon">+</span>
+            Doctor:
+        </button>
+        <div class="panel">
+            <p>
 
-            <!-- This form will be displayed when the doctor tab will be clicked -->
-            <label for="type_doctor"><b>Type of Doctor:</b></label><br><br>
-            <input type="text" id="type_doctor" placeholder="Example: Surgeon"><br><br>
+                <!-- This form will be displayed when the doctor tab will be clicked -->
+                <label for="type_doctor"><b>Type of Doctor:</b></label><br><br>
+                <input type="text" id="type_doctor" placeholder="Example: Surgeon"><br><br>
 
-            <label for="contact"><b>Doctor's contact info:</b></label><br><br>
-            <input type="text" id="doctor_name" placeholder="Doctor's name: "><br><br>
-            <input type="text" id="street" class="street" placeholder="Street Address">
-            <input type="text" id="city" class="city" placeholder="City">
-            <input type="text" id="state" class="state" placeholder="State">
-            <br><br>
+                <label for="contact"><b>Doctor's contact info:</b></label><br><br>
+                <input type="text" id="doctor_name" placeholder="Doctor's name: "><br><br>
+                <input type="text" id="street" class="street" placeholder="Street Address">
+                <input type="text" id="city" class="city" placeholder="City">
+                <input type="text" id="state" class="state" placeholder="State">
+                <br><br>
 
-            <label for="doctor_notes">Notes and Instructions:</label><br>
-            <textarea id="doctor_notes" name="notes" placeholder="Any other notes?"></textarea>
+                <label for="doctor_notes">Notes and Instructions:</label><br>
+                <textarea id="doctor_notes" name="notes" placeholder="Any other notes?"></textarea>
 
-        </p>
-    </div>
-    <!-- Content of Other real estate tab which will be displayed when clicked -->
+            </p>
+        </div>
+        <!-- Content of Other real estate tab which will be displayed when clicked -->
 
-    <button type = "button" class="accordion">
-        <span class="icon">+</span>
-        Medical Document:
-    </button>
-    <div class="panel">
-        <p>
-            <label for="upload">Upload medical document:</label><br>
-            <input type="file" name="file" multiple="multiple" id="file"><br><br>
-<!--            <center>-->
-<!--                <button type="submit" name="submit" value="submit">Save</button>-->
-<!--            </center>-->
-        </p>
-    </div>
+        <button type = "button" class="accordion">
+            <span class="icon">+</span>
+            Medical Document:
+        </button>
+        <div class="panel">
+            <p>
+                <label for="upload">Upload medical document:</label><br>
+                <input type="file" name="file" multiple="multiple" id="file"><br><br>
+                <!--            <center>-->
+                <!--                <button type="submit" name="submit" value="submit">Save</button>-->
+                <!--            </center>-->
+            </p>
+        </div>
 
-    <!-- Content of Other Important Possessions tab which will be displayed when clicked -->
+        <!-- Content of Other Important Possessions tab which will be displayed when clicked -->
 
-    <button type = "button" class="accordion">
-        <span class="icon">+</span>
-        Any Comments Consider to your health?
-    </button>
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
-            <label for="possession">Anything else you would like to add:</label><br>
-            <textarea id="possession" name="possession"
-                      placeholder="Any message to your loved one about your health?"></textarea>
-        </p>
-    </div>
+        <button type = "button" class="accordion">
+            <span class="icon">+</span>
+            Any Comments Consider to your health?
+        </button>
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
+                <label for="possession">Anything else you would like to add:</label><br>
+                <textarea id="possession" name="possession"
+                          placeholder="Any message to your loved one about your health?"></textarea>
+            </p>
+        </div>
 
         <br>
         <br>
@@ -281,7 +281,8 @@
         </center>
 
     </form>
-
+</center>
+</body>
 
 
 </center>
@@ -350,13 +351,13 @@
     var data = {};
     var d = {};
     function dataLoad(){
-            if (sessionStorage.getItem("img")){
-                document.getElementById("user_name").innerText = sessionStorage.getItem("name");
-                document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
-            }
-            else{
-                console.log("No Img");
-            }
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+        else{
+            console.log("No Img");
+        }
 
         d['email'] = String(sessionStorage.getItem("email"));
         var xhr = new XMLHttpRequest();

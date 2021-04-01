@@ -184,31 +184,31 @@
 <br>
 <center>
     <div id="status">
-        
+
     </div>
     <!-- All the tabs are designed here -->
     <form id="bankData" name="bankData" onsubmit="return submit()" method="post">
 
-    <button type="button" class="accordion">
-        <span class="icon">+</span>
-        Banks
-    </button>
-    <!-- Content of Home tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the home tab will be clicked -->
-            <label for="bank">Your bank: </label><br>
-        <input type="text" id="bank" name="bank" placeholder="Ex: Chase, TD Bank, etc"/><br><br>
-            <label for="acctype">Type of account: </label><br>
-        <input type="text" id="acctype" name="acctype" placeholder=""/><br><br>
-            <label for="accNumber">Account number: </label><br>
-        <input type="number" maxlength="10" id="accNumber" name="accNumber" placeholder=""/><br><br>
-            <label for="contact_bank">Personal contact (if applicable): </label><br>
-        <input type="text" id="contact_bank" name="contact_bank" placeholder=""/><br><br>
-            <label for="notes">Speacial notes: </label><br>
-        <input type="test" id="notes" name="notes" placeholder=""/><br><br>
-        </p>
-    </div>
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Banks
+        </button>
+        <!-- Content of Home tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the home tab will be clicked -->
+                <label for="bank">Your bank: </label><br>
+                <input type="text" id="bank" name="bank" placeholder="Ex: Chase, TD Bank, etc"/><br><br>
+                <label for="acctype">Type of account: </label><br>
+                <input type="text" id="acctype" name="acctype" placeholder=""/><br><br>
+                <label for="accNumber">Account number: </label><br>
+                <input type="number" maxlength="10" id="accNumber" name="accNumber" placeholder=""/><br><br>
+                <label for="contact_bank">Personal contact (if applicable): </label><br>
+                <input type="text" id="contact_bank" name="contact_bank" placeholder=""/><br><br>
+                <label for="notes">Speacial notes: </label><br>
+                <input type="test" id="notes" name="notes" placeholder=""/><br><br>
+            </p>
+        </div>
 
 
         <!-- All the tabs are designed here -->
@@ -320,68 +320,69 @@
 
         <br>
         <br>
-            <center>
-                <input class="submit_button" type="submit" name="submit" value="SAVE"/>
-            </center>
+        <center>
+            <input class="submit_button" type="submit" name="submit" value="SAVE"/>
+        </center>
 
     </form>
+</center>
+</body>
 
+    <!-- Footer--->
 
-<!-- Footer--->
+    <footer>
+        <div class="inner-width">
+            <div class="policy">
+                <a class="bt" href="../../homePage.html#about">About Us</a>
+                <a class="bt" href="../Membership_Section/membership.html">Plans</a>
+                <a class="bt" href="../../formPage/privacy.html">Privacy</a>
+            </div>
 
-<footer>
-    <div class="inner-width">
-        <div class="policy">
-            <a class="bt" href="../../homePage.html#about">About Us</a>
-            <a class="bt" href="../Membership_Section/membership.html">Plans</a>
-            <a class="bt" href="../../formPage/privacy.html">Privacy</a>
+            <div class="copyright">
+                &copy; | 2020, <a href="#">Plan To Part </a>
+            </div>
+
+            <div class="sm">
+                <a href="https://www.facebook.com/Plan-To-Part-101162041856515"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
+    </footer>
+    <!--Go Back Top-->
+    <button class="goTop fas fa-arrow-up"></button>
 
-        <div class="copyright">
-            &copy; | 2020, <a href="#">Plan To Part </a>
-        </div>
-
-        <div class="sm">
-            <a href="https://www.facebook.com/Plan-To-Part-101162041856515"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-</footer>
-<!--Go Back Top-->
-<button class="goTop fas fa-arrow-up"></button>
-
-<script>
-    // Javascript is used here to show the opening and closing functionality of the tab
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    const form = document.getElementById("bankData");
-    // this for loop will check all the tabs with className "accordion" and provide them the same functionality
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
-    function logOut(){
-        sessionStorage.clear();
-        // Testing code HERE----------
-        //let login = sessionStorage.getItem("login");
-        //let email = sessionStorage.getItem("user_email");
-        //alert(login + email); // return 0 after clearing
-        // Testing code HERE----------
-        alert("You've successfully logged out.");
-        window.location.href = "../../loginPage/login.html";
-    }
-    var inputs = document.getElementsByTagName('input');
-    var data = {};
-    var d = {};
-    function dataLoad(){
+    <script>
+        // Javascript is used here to show the opening and closing functionality of the tab
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        const form = document.getElementById("bankData");
+        // this for loop will check all the tabs with className "accordion" and provide them the same functionality
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        function logOut(){
+            sessionStorage.clear();
+            // Testing code HERE----------
+            //let login = sessionStorage.getItem("login");
+            //let email = sessionStorage.getItem("user_email");
+            //alert(login + email); // return 0 after clearing
+            // Testing code HERE----------
+            alert("You've successfully logged out.");
+            window.location.href = "../../loginPage/login.html";
+        }
+        var inputs = document.getElementsByTagName('input');
+        var data = {};
+        var d = {};
+        function dataLoad(){
 
             if (sessionStorage.getItem("img")){
                 document.getElementById("user_name").innerText = sessionStorage.getItem("name");
@@ -391,37 +392,37 @@
                 console.log("No Img");
             }
 
-        d['email'] = String(sessionStorage.getItem("email"));
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-            //alert(String( xhr.responseText));
-                if(xhr.responseText==='"NO"')
-                    // alert("no data");
-                    console.log("NO data");
-                else{
-                    var response = JSON.parse(xhr.response);
-                    for (var i = 0; i < inputs.length-1; ++i) {
-                        var id = String(inputs[i].id);
-                        if(id!=null)
-                        if(String(xhr.response[id])!=null)
-                        document.getElementById(id).value = String(response[id]);
+            d['email'] = String(sessionStorage.getItem("email"));
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    //alert(String( xhr.responseText));
+                    if(xhr.responseText==='"NO"')
+                        // alert("no data");
+                        console.log("NO data");
+                    else{
+                        var response = JSON.parse(xhr.response);
+                        for (var i = 0; i < inputs.length-1; ++i) {
+                            var id = String(inputs[i].id);
+                            if(id!=null)
+                                if(String(xhr.response[id])!=null)
+                                    document.getElementById(id).value = String(response[id]);
                         }
+                    }
                 }
-            }
-        };
-        xhr.open('POST', 'Financial_load.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        //console.log(JSON.stringify(d));
-        xhr.send(JSON.stringify(d));
+            };
+            xhr.open('POST', 'Financial_load.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //console.log(JSON.stringify(d));
+            xhr.send(JSON.stringify(d));
 
 
-    }
+        }
 
 
 
 
-    // ...and take over its submit event.
+        // ...and take over its submit event.
 
         function submit(event) {
             var form = document.getElementById("bankData");
@@ -430,7 +431,7 @@
                 data[inputs[i].id] = inputs[i].value;
             }
             data['email'] = String(sessionStorage.getItem("email"));
-           // console.log(data);
+            // console.log(data);
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
@@ -445,7 +446,7 @@
             xhr.send(JSON.stringify(data));
             event.preventDefault();
         }
-    document.getElementById("bankData").addEventListener("submit", submit);
-</script>
+        document.getElementById("bankData").addEventListener("submit", submit);
+    </script>
 </body>
 </html>

@@ -179,46 +179,47 @@
 
     </div>
     <form id="legalData" name="legalData" onsubmit="return submit()" method="post">
-    <!-- All the tabs are designed here -->
-    <button type="button" class="accordion">
-        <span class="icon">+</span>
-        Legal
-    </button>
+        <!-- All the tabs are designed here -->
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Legal
+        </button>
 
-    <!-- Content of Home tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the home tab will be clicked -->
-            <label for="basic"><b>Attorney Information</b></label><br>
-            <select id="attinfo">
-                <option>None</option>
-                <option>Name</option>
-                <option>Phone</option>
-                <option>Email</option>
-                <option>Other</option>
-            </select>
-            <br><br><br>
-            <label for="carrier"><b>Name of Lawyer:</b></label><br>
-            <input type="text" id="carrier" placeholder="Lawyer Office"><br><br>
+        <!-- Content of Home tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the home tab will be clicked -->
+                <label for="basic"><b>Attorney Information</b></label><br>
+                <select id="attinfo">
+                    <option>None</option>
+                    <option>Name</option>
+                    <option>Phone</option>
+                    <option>Email</option>
+                    <option>Other</option>
+                </select>
+                <br><br><br>
+                <label for="carrier"><b>Name of Lawyer:</b></label><br>
+                <input type="text" id="carrier" placeholder="Lawyer Office"><br><br>
 
-            <label for="mname"><b>Member Name:</b></label><br>
-            <input type="text" id="mname" placeholder="Memeber Name"><br><br>
+                <label for="mname"><b>Member Name:</b></label><br>
+                <input type="text" id="mname" placeholder="Memeber Name"><br><br>
 
-            <label for="idnumber"><b>Member ID number:</b></label><br>
-            <input type="text" id="idnumber" placeholder="Membership Number"><br><br>
+                <label for="idnumber"><b>Member ID number:</b></label><br>
+                <input type="text" id="idnumber" placeholder="Membership Number"><br><br>
 
-            <label for="gnumber"><b>Group ID Number:</b></label><br>
-            <input type="text" id="gnumber" placeholder="Group Number"><br><br>
+                <label for="gnumber"><b>Group ID Number:</b></label><br>
+                <input type="text" id="gnumber" placeholder="Group Number"><br><br>
 
-            <label for="healthcomment">Anything else you would like to add about your legal right?</label><br>
-            <textarea id="healthcomment" name="healthcomment" placeholder="Any other information?"></textarea>
-        </p>
-    </div>
+                <label for="healthcomment">Anything else you would like to add about your legal right?</label><br>
+                <textarea id="healthcomment" name="healthcomment" placeholder="Any other information?"></textarea>
+            </p>
+        </div>
         <center>
             <input class="submit_button" type="submit" name="submit" value="SAVE"/>
         </center>
     </form>
-
+</center>
+</body>
 
 </center>
 <!-- Footer--->
@@ -286,13 +287,13 @@
     var d = {};
     function dataLoad(){
 
-            if (sessionStorage.getItem("img")){
-                document.getElementById("user_name").innerText = sessionStorage.getItem("name");
-                document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
-            }
-            else{
-                console.log("No Img");
-            }
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+        else{
+            console.log("No Img");
+        }
 
         d['email'] = String(sessionStorage.getItem("email"));
         var xhr = new XMLHttpRequest();

@@ -12,6 +12,9 @@ body{
 h2{
   margin-top: 40px;
 }
+page-form{
+  margin-top: 20px;
+}
  .accordion {
 	 background-color: #eee;
      color: #444;
@@ -391,5 +394,5 @@ label #sidebar_btn:hover{
 .container input {
   width: 100%;
   clear: both;
-} 
+}
 }

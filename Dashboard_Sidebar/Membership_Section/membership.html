@@ -144,7 +144,6 @@
                       </div>
                     </div>
                   </a>
-
                   <a href = "icons/icon3.PNG" class = "work">
                   <img src = "icons/icon3.PNG" alt = "" >
                     <div class ="info">
@@ -156,8 +155,6 @@
                       </div>
                     </div>
                   </a>
-
-
                   <a href = "icons/icon4.PNG" class = "work">
                   <img src = "icons/icon4.PNG" alt = "" >
                     <div class ="info">
@@ -315,6 +312,7 @@
 
 
 </div>
+</body>
 <!-- Footer--->
 
 <footer>
@@ -346,8 +344,8 @@
             document.getElementById("user_name").innerText = sessionStorage.getItem("name");
             document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
         }
-    else{
-        console.log("No Img");
+        else{
+            console.log("No Img");
         }
     }
     $(document).ready(function () {

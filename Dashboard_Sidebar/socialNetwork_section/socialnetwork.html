@@ -154,31 +154,31 @@
 
     </div>
     <form id="socialMedia" name="socialMedia" onsubmit="return submit()" method="post">
-    <!-- All the tabs are designed here -->
-    <button type="button" class="accordion">
-        <span class="icon">+</span>
-        Add Social Media
-    </button>
+        <!-- All the tabs are designed here -->
+        <button type="button" class="accordion">
+            <span class="icon">+</span>
+            Add Social Media
+        </button>
 
-    <!-- Content of Social Network tab which will be displayed when clicked -->
-    <div class="panel">
-        <p>
-            <!-- This form will be displayed when the Add Social Media tab will be clicked -->
-            <input type="checkbox" id="Facebook" name="Facebook">
-            <label for="Facebook"> I have a Facebook account</label><br>
-            <input type="checkbox" id="Twitter" name="Twitter">
-            <label for="Twitter"> I have a Twitter account</label><br>
-            <input type="checkbox" id="Instagram" name="Instagram">
-            <label for="Instagram"> I have an Instagram account</label><br>
-            <input type="checkbox" id="Snapchat" name="Snapchat">
-            <label for="Snapchat"> I have a Snapchat account</label><br>
-            <input type="checkbox" id="LinkedIn" name="LinkedIn">
-            <label for="LinkedIn"> I have a LinkedIn account</label><br>
-            <input type="checkbox" id="Social_other" name="Social_other">
-            <label for="Social_other"> Other:</label><br>
-            <input type="text" id="Social_comment" name="Social_other"><br>
-        </p>
-    </div>
+        <!-- Content of Social Network tab which will be displayed when clicked -->
+        <div class="panel">
+            <p>
+                <!-- This form will be displayed when the Add Social Media tab will be clicked -->
+                <input type="checkbox" id="Facebook" name="Facebook">
+                <label for="Facebook"> I have a Facebook account</label><br>
+                <input type="checkbox" id="Twitter" name="Twitter">
+                <label for="Twitter"> I have a Twitter account</label><br>
+                <input type="checkbox" id="Instagram" name="Instagram">
+                <label for="Instagram"> I have an Instagram account</label><br>
+                <input type="checkbox" id="Snapchat" name="Snapchat">
+                <label for="Snapchat"> I have a Snapchat account</label><br>
+                <input type="checkbox" id="LinkedIn" name="LinkedIn">
+                <label for="LinkedIn"> I have a LinkedIn account</label><br>
+                <input type="checkbox" id="Social_other" name="Social_other">
+                <label for="Social_other"> Other:</label><br>
+                <input type="text" id="Social_comment" name="Social_other"><br>
+            </p>
+        </div>
         <center>
             <input class="submit_button" type="submit" name="submit" value="SAVE"/>
         </center>
@@ -257,13 +257,13 @@
     var d = {};
     function dataLoad() {
 
-            if (sessionStorage.getItem("img")){
-                document.getElementById("user_name").innerText = sessionStorage.getItem("name");
-                document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
-            }
-            else{
-                console.log("No Img");
-            }
+        if (sessionStorage.getItem("img")){
+            document.getElementById("user_name").innerText = sessionStorage.getItem("name");
+            document.getElementById("Pro_pic").src = sessionStorage.getItem("img");
+        }
+        else{
+            console.log("No Img");
+        }
 
         d['email'] = String(sessionStorage.getItem("email"));
         var xhr = new XMLHttpRequest();
