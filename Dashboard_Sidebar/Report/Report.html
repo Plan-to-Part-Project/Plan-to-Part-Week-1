@@ -214,7 +214,10 @@
             if (this.readyState === 4 && this.status === 200) {
                 console.log(xhr.responseText);
                 //alert(String(xhr.responseText));
-                window.open(JSON.parse(xhr.responseText));
+                if(String(xhr.responseText)==="Done") {
+                    document.getElementById("gen").disabled = true;
+                    document.getElementById("gen").innerText = "Report Sent to Email";
+                }
             }
         };
         xhr.open('POST', "Report.php", true);

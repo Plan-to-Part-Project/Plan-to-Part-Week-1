@@ -154,7 +154,7 @@
                 console.log('Signed in as: ' + JSON.parse(xhr.responseText));
                 sessionStorage.setItem("email",googleUser.getBasicProfile().getEmail())
                 sessionStorage.setItem("login", "true");
-                sessionStorage.setItem("user_email", String(email));
+                sessionStorage.setItem("user_email", googleUser.getBasicProfile().getEmail());
                 window.location.assign(String(JSON.parse(xhr.responseText)));
             }
         };
