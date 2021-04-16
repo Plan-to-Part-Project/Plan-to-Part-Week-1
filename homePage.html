@@ -21,6 +21,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="js/homeScript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+
+    <!--chatbot-->
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.convform.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+
+
   </head>
   <body>
 
@@ -52,7 +60,38 @@
         </div>
       </div>
     </nav>
-   
+
+    <!--    ChatBot    -->
+    <div class="chat_icon">
+      <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chat_box">
+      <div class="conv-form-wrapper">
+      <form action="" method="get" class="hidden">
+        <select name="programmer" data-conv-question="So, are you a programmer?
+                                                      (this question will fork the conversation based on your answer)">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <div data-conv-fork="programmer">
+          <!-- when the user click on YES -->
+          <div data-conv-case="yes">
+            <input type="text" data-conv-question="A fellow programmer! Cool." data-no-answer="true">
+          </div>
+          <!-- when the user click on NO -->
+          <div data-conv-case="no">
+            <select name="thought" data-conv-question="Have you ever thought about learning? Programming is fun!">
+              <option value="yes">Yes</option>
+              <option value="no">No..</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+    <!--    ChatBot End    -->
+
     <!-- Home -->
     <section id="home">
       <div class="inner-width">
