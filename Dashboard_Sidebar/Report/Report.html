@@ -156,9 +156,13 @@
 <center><h2>Click to generate report</h2></center>
 
 <center>
-    <button id="gen" class="gen_button" type="button" onclick="report()"><span>Create Report </span></button>
-</center>
+    <button id="gen" class="gen_button" type="button" onclick="report()"><span>Create Report</span></button>
 
+</center>
+<center>
+
+<button id="Financial" class="gen_button" type="button" onclick="Financial_report()"><span>Create Financial Report</span></button>
+</center>
 
 </body>
 <!-- Footer--->
@@ -197,17 +201,14 @@
     }
     function logOut(){
         sessionStorage.clear();
-        // Testing code HERE----------
-        //let login = sessionStorage.getItem("login");
-        //let email = sessionStorage.getItem("user_email");
-        //alert(login + email); // return 0 after clearing
-        // Testing code HERE----------
         alert("You've successfully logged out.");
         window.location.href = "../../loginPage/login.html";
     }
 
     function report(){
+
         data={};
+
         data['email'] = String(sessionStorage.getItem("email"));
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
@@ -216,7 +217,10 @@
                 //alert(String(xhr.responseText));
                 if(String(xhr.responseText)==="Done") {
                     document.getElementById("gen").disabled = true;
-                    document.getElementById("gen").innerText = "Report Sent to Email";
+                    document.getElementById("Financial").innerText = "Report Sent to Email";
+                }
+                else{
+                    document.getElementById("Financial").innerText = "No Financial data Available";
                 }
             }
         };
@@ -226,6 +230,32 @@
         xhr.send(JSON.stringify(data));
 
     }
+
+    function Financial_report(){
+        data={};
+        data['email'] = String(sessionStorage.getItem("email"));
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log(xhr.responseText);
+                //alert(String(xhr.responseText));
+                if(String(xhr.responseText)==="Done") {
+                    document.getElementById("Financial").disabled = true;
+                    document.getElementById("Financial").innerText = "Report Sent to Email";
+                }
+                else{
+                    document.getElementById("Financial").innerText = "No Financial data Available";
+                }
+            }
+        };
+        xhr.open('POST', "Financial_Report.php", true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
+
+    }
+
+
 </script>
 </body>
 </html>
