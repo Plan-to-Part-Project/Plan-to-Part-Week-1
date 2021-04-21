@@ -84,19 +84,30 @@
 
         <div data-conv-fork="programmer">
 
-          <!-- when the user click on YES -->
+
+          <!-- yes: direct to security page, no: take the user back to the original question-->
           <div data-conv-case="help">
-            <input type="text" value="homePage.html" data-conv-question="Please Navigate to our Help Page" data-no-answer="true">
+            <select data-conv-question="Would you like to direct to our help page?">
+              <option data-callback="help">yes</option>
+              <option data-callback="rollback">no</option>
+            </select>
           </div>
 
-          <!-- when the user click on NO -->
+
+          <!-- when the user click on about -->
           <div data-conv-case="about">
-            <input type="text" data-conv-question="Please Navigate to our About Us Page " data-no-answer="false">
+            <select data-conv-question="Would you like to direct to our About page?">
+              <option data-callback="about">yes</option>
+              <option data-callback="rollback">no</option>
+            </select>
           </div>
 
-          <!-- when the user click on n -->
+          <!-- when the user click on contactus -->
           <div data-conv-case="contact">
-            <input type="text" data-conv-question="Please Navigate to our Contact Us Page and fill out the form" data-no-answer="true">
+            <select data-conv-question="Would you like to direct to our Contact page and fill out the request?">
+              <option data-callback="contact">yes</option>
+              <option data-callback="rollback">no</option>
+            </select>
           </div>
 
           <!-- yes: direct to security page, no: take the user back to the original question-->
@@ -111,9 +122,13 @@
           <select data-conv-question="This is it! If you need further support, please contact us." id="">
             <option value="">GoodBye!</option>
           </select>
+
         </div>
+
       </form>
+
       </div>
+
     </div>
     <!--    ChatBot End    -->
 
@@ -414,6 +429,22 @@
     window.open("./SecurityPage/security.html");
     ready();
   }
+
+  function help(stateWrapper, ready) {
+    window.open("./helpPage/help.html");
+    ready();
+  }
+
+  function contact(stateWrapper, ready) {
+    window.open("./contactHtml/contactUs.html");
+    ready();
+  }
+
+  function about(stateWrapper, ready) {
+    window.open("homePage.html#about");
+    ready();
+  }
+
   var rollbackTo = false;
   var originalState = false;
   function storeState(stateWrapper, ready) {
