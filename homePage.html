@@ -72,23 +72,38 @@
     <div class="chat_box">
       <div class="conv-form-wrapper">
       <form action="" method="get" class="hidden">
-        <select name="programmer" data-conv-question="So, are you a programmer?
-                                                      (this question will fork the conversation based on your answer)">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+        <select name="programmer" data-conv-question="Hi there! Welcome to Plan-to-Part!!
+                                                How May I Assist you Today!">
+
+          <option value="help">I need help understanding my plan</option>
+          <option value="about">I want to learn more about Plan-to-Part</option>
+          <option value="contact">I need to contact Plan-to-Part</option>
+          <option value="security">I need to know more about the security of Plan-to-Part</option>
+
         </select>
+
         <div data-conv-fork="programmer">
+
           <!-- when the user click on YES -->
-          <div data-conv-case="yes">
-            <input type="text" data-conv-question="A fellow programmer! Cool." data-no-answer="true">
+          <div data-conv-case="help">
+            <input type="text" value="homePage.html"    data-conv-question="Please Navigate to our Help Page" data-no-answer="true">
           </div>
+
           <!-- when the user click on NO -->
-          <div data-conv-case="no">
-            <select name="thought" data-conv-question="Have you ever thought about learning? Programming is fun!">
-              <option value="yes">Yes</option>
-              <option value="no">No..</option>
-            </select>
+          <div data-conv-case="about">
+            <input type="text" data-conv-question="Please Navigate to our About Us Page " data-no-answer="false">
           </div>
+
+          <!-- when the user click on n -->
+          <div data-conv-case="contact">
+            <input type="text" data-conv-question="Please Navigate to our Contact Us Page and fill out the form" data-no-answer="true">
+          </div>
+
+          <!-- when the user click on o -->
+          <div data-conv-case="security">
+            <input type="text" data-conv-question="Please Navigate to our Security Page" data-no-answer="false">
+          </div>
+
         </div>
       </form>
       </div>
