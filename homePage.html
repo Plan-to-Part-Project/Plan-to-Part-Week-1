@@ -71,64 +71,50 @@
 
     <div class="chat_box">
       <div class="conv-form-wrapper">
-      <form action="" method="get" class="hidden">
-        <select name="programmer" data-callback="storeState" data-conv-question="Hi there! Welcome to Plan-to-Part!!
-                                                How May I Assist you Today!">
-
-          <option value="help">I need help understanding my plan</option>
-          <option value="about">I want to learn more about Plan-to-Part</option>
-          <option value="contact">I need to contact Plan-to-Part</option>
-          <option value="security">I need to know more about the security of Plan-to-Part</option>
-
-        </select>
-
-        <div data-conv-fork="programmer">
-
-
-          <!-- yes: direct to security page, no: take the user back to the original question-->
-          <div data-conv-case="help">
-            <select data-conv-question="Would you like to direct to our help page?">
-              <option data-callback="help">yes</option>
-              <option data-callback="rollback">no</option>
-            </select>
-          </div>
-
-
-          <!-- when the user click on about -->
-          <div data-conv-case="about">
-            <select data-conv-question="Would you like to direct to our About page?">
-              <option data-callback="about">yes</option>
-              <option data-callback="rollback">no</option>
-            </select>
-          </div>
-
-          <!-- when the user click on contactus -->
-          <div data-conv-case="contact">
-            <select data-conv-question="Would you like to direct to our Contact page and fill out the request?">
-              <option data-callback="contact">yes</option>
-              <option data-callback="rollback">no</option>
-            </select>
-          </div>
-
-          <!-- yes: direct to security page, no: take the user back to the original question-->
-          <div data-conv-case="security">
-          <select data-conv-question="Would you like to direct to the security page?">
-            <option data-callback="security">yes</option>
-            <option data-callback="rollback">no</option>
+        <form action="" method="get" class="hidden">
+          <select name="programmer" data-callback="storeState" data-conv-question="Hi there! Welcome to Plan-to-Part!!
+                                                  How May I Assist you Today!">
+            <option value="help">I need help understanding my plan</option>
+            <option value="about">I want to learn more about Plan-to-Part</option>
+            <option value="contact">I need to contact Plan-to-Part</option>
+            <option value="security">I need to know more about the security of Plan-to-Part</option>
           </select>
+          <div data-conv-fork="programmer">
+            <!-- yes: direct to security page, no: take the user back to the original question-->
+            <div data-conv-case="help">
+              <select data-conv-question="Would you like to direct to our help page?">
+                <option data-callback="help">yes</option>
+                <option data-callback="rollback">no</option>
+              </select>
+            </div>
+            <!-- when the user click on about -->
+            <div data-conv-case="about">
+              <select data-conv-question="Would you like to direct to our About page?">
+                <option data-callback="about">yes</option>
+                <option data-callback="rollback">no</option>
+              </select>
+            </div>
+            <!-- when the user click on contactus -->
+            <div data-conv-case="contact">
+              <select data-conv-question="Would you like to direct to our Contact page and fill out the request?">
+                <option data-callback="contact">yes</option>
+                <option data-callback="rollback">no</option>
+              </select>
+            </div>
+            <!-- yes: direct to security page, no: take the user back to the original question-->
+            <div data-conv-case="security">
+              <select data-conv-question="Would you like to direct to the security page?">
+                <option data-callback="security">yes</option>
+                <option data-callback="rollback">no</option>
+              </select>
+            </div>
           </div>
-
           <!-- this will show up after the user was redirected to other page -->
           <select data-conv-question="This is it! If you need further support, please contact us." id="">
             <option value="">GoodBye!</option>
           </select>
-
-        </div>
-
-      </form>
-
+        </form>
       </div>
-
     </div>
     <!--    ChatBot End    -->
 
@@ -338,7 +324,6 @@
             </div>
           </a>
           
-          
           <a href = "icons/icon4.PNG" class = "work">
           <img src = "icons/icon4.PNG" alt = "" > 
             <div class ="info">
@@ -350,8 +335,7 @@
               </div>
             </div>
           </a>
-          
-          
+
           <a href = "icons/icon_social.PNG" class = "work">
           <img src = "icons/icon_social.PNG" alt = "" > 
             <div class ="info">
@@ -363,8 +347,7 @@
               </div>
             </div>
           </a>
-          
-          
+
           <a href = "icons/icon_health.PNG" class = "work">
           <img src = "icons/icon_health.PNG" alt = "" > 
             <div class ="info">
@@ -377,8 +360,6 @@
             </div>
           </a>
           
-          
-          
           <a href = "icons/icon_legal.PNG" class = "work">
           <img src = "icons/icon_legal.PNG" alt = "" > 
             <div class ="info">
@@ -390,9 +371,6 @@
               </div>
             </div>
           </a>
-    
-          
-          
         </div>
       </div>
     
@@ -425,28 +403,45 @@
 </html>
 
 <script>
+  var rollbackTo = false;
+  var originalState = false;
+
   function security(stateWrapper, ready) {
     window.open("./SecurityPage/security.html");
+    if(originalState != false) {
+      stateWrapper.current.next = originalState;
+      console.log('changed current.next to originalState');
+    }
     ready();
   }
 
   function help(stateWrapper, ready) {
     window.open("./helpPage/help.html");
+    if(originalState != false) {
+      stateWrapper.current.next = originalState;
+      console.log('changed current.next to originalState');
+    }
     ready();
   }
 
   function contact(stateWrapper, ready) {
     window.open("./contactHtml/contactUs.html");
+    if(originalState != false) {
+      stateWrapper.current.next = originalState;
+      console.log('changed current.next to originalState');
+    }
     ready();
   }
 
   function about(stateWrapper, ready) {
     window.open("homePage.html#about");
+    if(originalState != false) {
+      stateWrapper.current.next = originalState;
+      console.log('changed current.next to originalState');
+    }
     ready();
   }
 
-  var rollbackTo = false;
-  var originalState = false;
   function storeState(stateWrapper, ready) {
     rollbackTo = stateWrapper.current;
     console.log("storeState called: ",rollbackTo);
