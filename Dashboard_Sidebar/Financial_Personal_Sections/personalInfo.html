@@ -825,7 +825,7 @@
             if (this.readyState === 4 && this.status === 200) {
                 document.getElementById("status").innerText = "Data Saved Successfully";
                 //console.log(xhr.responseText);
-                alert(String(xhr.responseText));
+                //alert(String(xhr.responseText));
             }
         };
         xhr.open('POST', 'personalInfo.php', true);

@@ -156,13 +156,32 @@
 <center><h2>Click to generate report</h2></center>
 
 <center>
-    <button id="gen" class="gen_button" type="button" onclick="report()"><span>Create Report</span></button>
-
+    <button id="gen" class="gen_button" type="button" onclick="re_port()"><span>Create Report</span></button>
 </center>
 <center>
-
-<button id="Financial" class="gen_button" type="button" onclick="Financial_report()"><span>Create Financial Report</span></button>
+    <button id="Financial" class="gen_button" type="button" onclick="Report('Financial')"><span>Create Financial Report</span></button>
 </center>
+<center>
+    <button id="Health" class="gen_button" type="button" onclick="Report('Health')"><span>Create Financial Report</span></button>
+</center>
+<center>
+    <button id="Personal" class="gen_button" type="button" onclick="Report('Health')"><span>Create Financial Report</span></button>
+</center>
+<center>
+    <button id="Home" class="gen_button" type="button" onclick="Report('Home')"><span>Create Financial Report</span></button>
+</center>
+<center>
+    <button id="Social" class="gen_button" type="button" onclick="Report('Social')"><span>Create Financial Report</span></button>
+</center>
+<center>
+    <button id="Legal" class="gen_button" type="button" onclick="Report('Legal')"><span>Create Financial Report</span></button>
+</center>
+
+
+
+
+
+
 
 </body>
 <!-- Footer--->
@@ -205,7 +224,7 @@
         window.location.href = "../../loginPage/login.html";
     }
 
-    function report(){
+    function re_port(){
 
         data={};
 
@@ -231,8 +250,9 @@
 
     }
 
-    function Financial_report(){
-        data={};
+    function Report(name){
+        var data = {};
+        document.getElementById(name).disabled = true;
         data['email'] = String(sessionStorage.getItem("email"));
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
@@ -240,19 +260,39 @@
                 console.log(xhr.responseText);
                 //alert(String(xhr.responseText));
                 if(String(xhr.responseText)==="Done") {
-                    document.getElementById("Financial").disabled = true;
-                    document.getElementById("Financial").innerText = "Report Sent to Email";
+
+                    document.getElementById(name).innerText = "Report Sent to Email";
                 }
                 else{
-                    document.getElementById("Financial").innerText = "No Financial data Available";
+                    document.getElementById(name).innerText = "No data Available";
                 }
             }
         };
-        xhr.open('POST', "Financial_Report.php", true);
+        switch (name){
+            case "Financial":
+                xhr.open('POST', "Financial_Report.php", true);
+                break;
+            case "Health":
+                xhr.open('POST', "Health_Report.php", true);
+                break;
+            case "Personal":
+                xhr.open('POST', "Personal_Report.php", true);
+                break;
+            case "Home":
+                xhr.open('POST', "Home_Report.php", true);
+                break;
+            case "Social":
+                xhr.open('POST', "Social_Report.php", true);
+                break;
+            case "Legal":
+                xhr.open('POST', "Legal_Report.php", true);
+                break;
+            default:
+                console.log("default");
+        }
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         console.log(JSON.stringify(data));
         xhr.send(JSON.stringify(data));
-
     }
 
 

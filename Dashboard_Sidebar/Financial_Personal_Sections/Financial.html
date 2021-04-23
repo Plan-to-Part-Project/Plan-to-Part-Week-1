@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="css/homeStyle.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 
     <style>
 
@@ -66,7 +67,7 @@
 
 
 </head>
-<body>
+
 <!--Make sure User logged in  -->
 <script>
     let login = sessionStorage.getItem("login");
@@ -294,9 +295,9 @@
                 <label for="Ins_policy">Policy number: </label><br>
                 <input type="text" id="Ins_policy" name="Ins_policy" placeholder=""/><br><br>
                 <label for="Ins_issuer">Name of insurer person: </label><br>
-                <input type="text" id="Ins_issuer" name="Ins_issuer" placeholder=""/<br><br>
+                <input type="text" id="Ins_issuer" name="Ins_issuer" placeholder=""/><br><br>
                 <label for="Ins_start">Start date:: </label><br>
-                <input type="text" id="Ins_start" name="Ins_start" placeholder=""/<br><br>
+                <input type="text" id="Ins_start" name="Ins_start" placeholder=""/><br><br>
                 <label for="Ins_exp">Expiration date: </label><br>
                 <input type="date" id="Ins_exp" name="Ins_exp" placeholder=""/><br><br>
                 <label for="Ins_value">Value of death: </label><br>
@@ -325,8 +326,7 @@
         </center>
 
     </form>
-</center>
-</body>
+
 
     <!-- Footer--->
 
@@ -436,7 +436,7 @@
                 if (this.readyState === 4 && this.status === 200) {
                     document.getElementById("status").innerText = "Data Saved Successfully";
                     //console.log(xhr.responseText);
-                    alert(String(xhr.responseText));
+                    //alert(String(xhr.responseText));
                 }
             };
             xhr.open('POST', 'Financial.php', true);

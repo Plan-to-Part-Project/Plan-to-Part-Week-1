@@ -14,9 +14,9 @@ if(isset($res)) {
     $factory = (new Factory)->withServiceAccount(__DIR__ . '\../../secret/plantopart-4c826-firebase-adminsdk-quxvu-242e63036c.json');
     $user = $factory->createAuth()->getUserByEmail($res['email'])->uid;
     $user_name = $factory->createAuth()->getUserByEmail($res['email'])->displayName;
-    if($factory->createDatabase()->getReference('Users/' . $user . '/Financial_Data')->getSnapshot()->exists()) {
+    if($factory->createDatabase()->getReference('Users/' . $user . '/Personal Info')->getSnapshot()->exists()) {
         $data = [];
-        $data = $factory->createDatabase()->getReference('Users/' . $user . '/Financial_Data')->getValue();
+        $data = $factory->createDatabase()->getReference('Users/' . $user . '/Personal Info')->getValue();
 
         $mpdf->WriteHTML("<p style='text-align: center;'><img src='https://firebasestorage.googleapis.com/v0/b/plantopart-4c826.appspot.com/o/logo.PNG?alt=media&amp;token=e8510cfc-0080-4824-833f-04d5c8b7ce13' /></p>
             <p style='text-align: left;'>Name: ". "$user_name" . "</p>
