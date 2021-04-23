@@ -25,9 +25,4 @@ $(document).ready(function(){
     gallery: {enabled:true}
   });
   
-  
-  
-  
-  
-  
 });
