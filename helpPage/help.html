@@ -101,7 +101,7 @@
         <form action="" method="get" class="hidden">
             <select name="programmer" data-callback="storeState" data-conv-question="Hi there! Welcome to Plan-to-Part!!
                                                   How May I Assist you Today!">
-                <option value="help">I need help understanding my plan</option>
+                <option value="help">I want to see my member page</option>
                 <option value="about">I want to learn more about Plan-to-Part</option>
                 <option value="contact">I need to contact Plan-to-Part</option>
                 <option value="security">I need to know more about the security of Plan-to-Part</option>
@@ -109,7 +109,7 @@
             <div data-conv-fork="programmer">
                 <!-- yes: direct to security page, no: take the user back to the original question-->
                 <div data-conv-case="help">
-                    <select data-conv-question="Would you like to direct to our help page?">
+                    <select data-conv-question="Would you like to direct to our login page?">
                         <option data-callback="help">yes</option>
                         <option data-callback="rollback">no</option>
                     </select>
@@ -285,7 +285,7 @@
     var originalState = false;
 
     function security(stateWrapper, ready) {
-        window.open("./SecurityPage/security.html");
+        window.open("../SecurityPage/security.html");
         if(originalState != false) {
             stateWrapper.current.next = originalState;
             console.log('changed current.next to originalState');
@@ -294,7 +294,7 @@
     }
 
     function help(stateWrapper, ready) {
-        window.open("./helpPage/help.html");
+        window.open("../loginPage/login.html");
         if(originalState != false) {
             stateWrapper.current.next = originalState;
             console.log('changed current.next to originalState');
@@ -303,7 +303,7 @@
     }
 
     function contact(stateWrapper, ready) {
-        window.open("./contactHtml/contactUs.html");
+        window.open("../contactHtml/contactUs.html");
         if(originalState != false) {
             stateWrapper.current.next = originalState;
             console.log('changed current.next to originalState');
@@ -312,7 +312,7 @@
     }
 
     function about(stateWrapper, ready) {
-        window.open("homePage.html#about");
+        window.open("../homePage.html#about");
         if(originalState != false) {
             stateWrapper.current.next = originalState;
             console.log('changed current.next to originalState');
