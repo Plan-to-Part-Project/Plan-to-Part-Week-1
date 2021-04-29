@@ -159,8 +159,8 @@
     <div class="inner-width">
         <center><h1 class="section-title" style="margin-left: -10px">
             Home and Property
-        </center>
         </h1>
+        </center>
         <center>
             Morgage & Home Insurance
         </center>
@@ -195,13 +195,13 @@
             <p>
                 <!-- This form will be displayed when the home tab will be clicked -->
                 <label for="basic">Label this home:</label><br>
-                <textarea id="label" name="label" placeholder="Ex: Primary Residence, my apartment"></textarea><br><br>
+                <input type="text" id="label1" name="label1" placeholder="Ex: Primary Residence, my apartment"></input><br><br>
                 <label for="address">Address:</label><br>
-                <input type="country" id="country" name="country" placeholder="Enter Country"><br><br>
-                <input type="address1" id="addres1" name="address1" placeholder="Enter Address Line 1"><br><br>
-                <input type="address2" id="addres2" name="address2" placeholder="Enter Address Line 2"><br><br>
-                <input type="city" id="city" name="city" placeholder="Enter City"><br><br>
-                <input type="state" id="state" name="state" placeholder="State/Province/Region"><br><br>
+                <input type="text" id="country" name="country" placeholder="Enter Country"><br><br>
+                <input type="text" id="address1" name="address1" placeholder="Enter Address Line 1"><br><br>
+                <input type="text" id="address2" name="address2" placeholder="Enter Address Line 2"><br><br>
+                <input type="text" id="city" name="city" placeholder="Enter City"><br><br>
+                <input type="text" id="state" name="state" placeholder="State/Province/Region"><br><br>
                 <input type="text" id="lname" name="lname" placeholder="Enter Zipcode"><br><br>
                 <label for="photos">Upload photos of your property:</label><br><br>
                 <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
@@ -218,7 +218,7 @@
 
                 <!-- This form will be displayed when the Home Insurance tab will be clicked -->
                 <label for="Insurance">Name of the Insurance:</label><br><br>
-                <input type="text" id="ins" name="Insurance"><br><br>
+                <input type="text" id="Insurance" name="Insurance"><br><br>
                 <label for="InsuranceType">What types of home insurance do you have with this company</label><br><br>
                 <input type="checkbox" id="HomeOwners" name="HomeOwners">
                 <label for="HomeOwners">Homeowners</label><br><br>
@@ -232,7 +232,7 @@
                 <label for="Flood">Flood</label><br><br>
                 <input type="checkbox" id="Earthquake" name="Earthquake">
                 <label for="Earthquake">Earthquake</label><br><br>
-                <input type="checkbox" id="Tonado" name="Tonado">
+                <input type="checkbox" id="Tornado" name="Tornado">
                 <label for="Tornado">Tornado</label><br><br>
                 <input type="checkbox" id="Other" name="Other">
                 <label for="Other">Other</label><br><br>
@@ -252,7 +252,7 @@
             <p>
                 <!-- This form will be displayed when the  Other Real Estate tab will be clicked -->
                 <label for="basic">Label this home:</label><br>
-                <textarea id="eslabel" name="label" placeholder="Ex: Primary Residence, my apartment"></textarea><br><br>
+                <input id="basic" name="basic" placeholder="Ex: Primary Residence, my apartment"></input><br><br>
                 <label>Type of property:</label><br><br>
                 <select id="proptype">
                     <option>Rental</option>
@@ -263,12 +263,12 @@
                 </select>
                 <br><br>
                 <label for="address">Address:</label><br>
-                <input type="text" id="escountry" name="country" placeholder="Enter Country"><br><br>
-                <input type="text" id="esaddres1" name="address1" placeholder="Enter Address Line 1"><br><br>
-                <input type="text" id="esaddres2" name="address2" placeholder="Enter Address Line 2"><br><br>
-                <input type="text" id="escity" name="city" placeholder="Enter City"><br><br>
-                <input type="text" id="esstate" name="state" placeholder="State/Province/Region"><br><br>
-                <input type="text" id="escode" name="code" placeholder="Enter Zipcode"><br><br>
+                <input type="text" id="escountry" name="escountry" placeholder="Enter Country"><br><br>
+                <input type="text" id="esaddres1" name="esaddres1" placeholder="Enter Address Line 1"><br><br>
+                <input type="text" id="esaddres2" name="esaddres2" placeholder="Enter Address Line 2"><br><br>
+                <input type="text" id="escity" name="escity" placeholder="Enter City"><br><br>
+                <input type="text" id="esstate" name="esstate" placeholder="State/Province/Region"><br><br>
+                <input type="text" id="code_2" name="code_2" placeholder="Enter Zipcode"><br><br>
                 <label for="photos">Upload photos of your property:</label><br><br>
                 <input type="file" name="fileToUpload" id="esfileToUpload"><br><br>
             </p>
@@ -283,7 +283,7 @@
         <div class="panel">
             <p>
                 <!-- This form will be displayed when the home tab will be clicked -->
-                <label for="basic">Type of Vehicle:</label><br>
+                <label for="cartype">Type of Vehicle:</label><br>
                 <select id="cartype">
                     <option>Car</option>
                     <option>Truck</option>
@@ -294,18 +294,18 @@
                     <option>Other</option>
                 </select><br><br>
                 <label for="make">Make:</label><br>
-                <input type="make" id="make" name="make" placeholder="Example: Toyota"><br><br>
+                <input type="text" id="make" name="make" placeholder="Example: Toyota"><br><br>
                 <label for="model">Model:</label><br>
-                <input type="model" id="model" name="model" placeholder="Example: Camry"><br><br>
+                <input type="text" id="model" name="model" placeholder="Example: Camry"><br><br>
                 <label for="year">Year:</label><br>
-                <input type="year" id="year" name="year"><br><br>
-                <label for="year">Color:</label><br>
-                <input type="carcolor" id="carcolor" name="carcolor"><br><br>
+                <input type="text" id="year" name="year"><br><br>
+                <label for="carcolor">Color:</label><br>
+                <input type="color" id="carcolor" name="carcolor"><br><br>
                 <label for="license">License Plate/Registration number:</label><br>
-                <input type="license" id="license" name="license"><br><br>
+                <input type="text" id="license" name="license"><br><br>
                 <label>State of registration:</label><br><br>
                 <select id='carstate'>
-                    <option value="" selected="selected">Select a State</option>
+                    <option value="" selected="Not selected">Select a State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -358,10 +358,10 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                 </select><br><br>
-                <label for="Vin">Vin number/Serial Number:</label><br>
-                <input type="Vin#" id="Vinnum" name="Vin#"><br><br>
+                <label for="Vinnum">Vin number/Serial Number:</label><br>
+                <input type="text" id="Vinnum" name="Vinnum"><br><br>
                 <label for="location">Location of vehicle:</label><br>
-                <input type="location" id="location" name="location" placeholder="Example:In my garage"><br><br>
+                <input type="text" id="location" name="location" placeholder="Example:In my garage"><br><br>
                 <label for="photos">Upload photos of your vehicle:</label><br><br>
                 <input type="file" name="fileToUpload" id="vehfileToUpload"><br><br>
             </p>
@@ -377,11 +377,11 @@
             <p>
                 <!-- This form will be displayed when the  Vehicle Insurance tab will be clicked -->
                 <label for="insuranceco">Name of insurance company:</label><br>
-                <input type="insuranceco" id="insuranceco" name="insuranceco"><br><br>
+                <input type="text" id="insuranceco" name="insuranceco"><br><br>
                 <label for="accnum">Account number:</label><br>
-                <input type="accnum" id="accnum" name="accnum"><br><br>
+                <input type="text" id="accnum" name="accnum"><br><br>
                 <label for="paperwork">Where do you keep the original policy paperwork?</label><br>
-                <input type="paperwork" id="paperwork" name="paperwork"><br><br>
+                <input type="text" id="paperwork" name="paperwork"><br><br>
                 <label for="photos">Upload a photo,scan, or PDF of policy</label><br><br>
                 <input type="file" name="fileToUpload" id="insfileToUpload"><br><br>
             </p>
@@ -397,16 +397,16 @@
             <p>
                 <!-- This form will be displayed when the Storage Facility tab will be clicked -->
                 <label for="storage">Name of storage facility:</label><br>
-                <input type="storage" id="storage" name="storage"><br><br>
+                <input type="text" id="storage" name="storage"><br><br>
                 <label for="unitnum">Unit Number:</label><br>
-                <input type="unitnum" id="unitnum" name="unitnum"><br><br>
+                <input type="text" id="unitnum" name="unitnum"><br><br>
                 <label for="address">Address:</label><br>
-                <input type="country" id="strcountry" name="country" placeholder="Enter Country"><br><br>
-                <input type="address1" id="straddres1" name="address1" placeholder="Enter Address Line 1"><br><br>
-                <input type="address2" id="straddres2" name="address2" placeholder="Enter Address Line 2"><br><br>
-                <input type="city" id="strcity" name="city" placeholder="Enter City"><br><br>
-                <input type="state" id="strstate" name="state" placeholder="State/Province/Region"><br><br>
-                <input type="text" id="strcode" name="code" placeholder="Enter Zipcode"><br><br>
+                <input type="text" id="strcountry" name="country_3" placeholder="Enter Country"><br><br>
+                <input type="text" id="straddres1" name="address1_3" placeholder="Enter Address Line 1"><br><br>
+                <input type="text" id="straddres2" name="address2_3" placeholder="Enter Address Line 2"><br><br>
+                <input type="text" id="strcity" name="city_3" placeholder="Enter City"><br><br>
+                <input type="text" id="strstate" name="state_3" placeholder="State/Province/Region"><br><br>
+                <input type="text" id="strcode" name="code_3" placeholder="Enter Zipcode"><br><br>
                 <label for="photos">Upload a scan,photo, or PDF of any related documents:</label><br><br>
                 <input type="file" name="fileToUpload" id="strfileToUpload"><br><br>
             </p>
@@ -423,19 +423,19 @@
                 <!-- This form will be displayed when the Storage Facility tab will be clicked -->
                 <label for="bank">Name of bank:</label><br>
                 <input type="text" id="bank" name="bank"><br><br>
-                <label for="unitnum">Location of bank:</label><br>
-                <input type="text" id="boxcountry" name="country" placeholder="Enter Country"><br><br>
-                <input type="text" id="boxaddres1" name="address1" placeholder="Enter Address Line 1"><br><br>
-                <input type="text" id="boxaddres2" name="address2" placeholder="Enter Address Line 2"><br><br>
-                <input type="text" id="boxcity" name="city" placeholder="Enter City"><br><br>
-                <input type="text" id="boxstate" name="state" placeholder="State/Province/Region"><br><br>
-                <input type="text" id="boxcode" name="code" placeholder="Enter Zipcode"><br><br>
-                <label for="accnum">Account Number:</label><br>
-                <input type="text" id="boxaccnum" name="accnum"><br><br>
+                <label for="unnum">Location of bank:</label><br>
+                <input type="text" id="boxcountry" name="boxcountry" placeholder="Enter Country"><br><br>
+                <input type="text" id="boxaddres1" name="boxaddres1" placeholder="Enter Address Line 1"><br><br>
+                <input type="text" id="boxaddres2" name="boxaddres2" placeholder="Enter Address Line 2"><br><br>
+                <input type="text" id="boxcity" name="boxcity" placeholder="Enter City"><br><br>
+                <input type="text" id="boxstate" name="boxstate" placeholder="State/Province/Region"><br><br>
+                <input type="text" id="boxcode" name="boxcode" placeholder="Enter Zipcode"><br><br>
+                <label for="boxaccnum">Account Number:</label><br>
+                <input type="text" id="boxaccnum" name="boxaccnum"><br><br>
                 <label for="boxnum">Box number:</label><br>
                 <input type="text" id="boxnum" name="boxnum"><br><br>
                 <label for="key">Location of key:</label><br>
-                <input type="key" id="key" name="key"><br><br>
+                <input type="text" id="key" name="key"><br><br>
                 <label for="photos">Upload a scan,photo, or PDF of any related documents:</label><br><br>
                 <input type="file" name="fileToUpload" id="boxfileToUpload"><br><br>
             </p>
@@ -450,7 +450,7 @@
             <p>
                 <!-- This form will be displayed when the  Other Important Possessions tab will be clicked -->
                 <label for="possession">Other Possessions:</label><br>
-                <textarea id="possession" name="possession" placeholder="Example:A rare collection,Jewelry"></textarea>
+                <input type="text" id="possession" name="possession" placeholder="Example:A rare collection,Jewelry"></input>
             </p>
         </div>
         <center>
@@ -519,7 +519,7 @@
         alert("You've successfully logged out.");
         window.location.href = "../../loginPage/login.html";
     }
-    var inputs = document.querySelectorAll('select, input, textarea');
+    var inputs = document.querySelectorAll('select, input, input');
     var data = {};
     var d = {};
     function dataLoad(){
@@ -568,7 +568,7 @@
 
     function submit(event) {
         var form = document.getElementById("HomePropertyData");
-        var inputs = document.querySelectorAll('select, input, textarea');
+        var inputs = document.querySelectorAll('select, input');
         for (var i = 0; i < inputs.length; ++i) {
             if (inputs[i].type=="checkbox")
                 data[inputs[i].id] = inputs[i].checked;
